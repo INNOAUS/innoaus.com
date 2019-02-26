@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on INNOAUS 이노스</title>
+    <link>https://innoaus.com/tags/</link>
+    <description>Recent content in Tags on INNOAUS 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://innoaus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang</title>
+      <link>https://innoaus.com/tags/golang/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tip</title>
+      <link>https://innoaus.com/tags/tip/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/tags/tip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vuepress</title>
+      <link>https://innoaus.com/tags/vuepress/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/tags/vuepress/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

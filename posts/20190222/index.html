@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>
+vuepress 사용해보기 (디폴트 테마) - INNOAUS 이노스
+</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="icon" type="image/png" href="https://innoaus.com/images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="title" content="vuepress 사용해보기 (디폴트 테마) - INNOAUS 이노스">
+<meta name="description" content="vuepress의 디폴트 테마 확인">
+<meta property="og:title" content="vuepress 사용해보기 (디폴트 테마)">
+
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-02-22">
+
+<meta property="og:description" content="vuepress의 디폴트 테마 확인">
+<meta property="og:url" content="https://innoaus.com/posts/20190222/">
+<meta property="og:site_name" content="INNOAUS 이노스">
+
+<meta property="og:image" content="https://innoaus.com/images/vuepress_logo.jpg">
+
+
+<meta property="og:tags" content="vuepress">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://innoaus.com/assets/app.min.css">
+<link rel="stylesheet" href="https://innoaus.com/assets/base.css">
+<script src="https://innoaus.com/assets/prism.js"></script>
+
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134640987-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134640987-1');
+  </script>
+
+
+</head>
+<body class=""><header class="navbar">
+<div class="container">
+    <div class="navbar-brand">
+        <a href="https://innoaus.com/" class=""><img src="https://innoaus.com/images/innoaus_s.png" width="100px;"></a>
+    </div>
+    <div class="navbar-link">
+        <a href="https://innoaus.com/">Home</a>
+        <a href="https://innoaus.com/about/">About</a>
+        
+        <a href="https://innoaus.com/posts/">Blog</a>
+    </div>
+</div>
+</header><div class="container main">
+<div class="content">
+<div>
+    
+    <span class="date">2019.02.22</span>
+    
+</div>
+
+<h1 class="title">vuepress 사용해보기 (디폴트 테마) 
+    
+    <div style="font-size: .8rem;padding-top:1rem;">
+            
+            <a href="/tags/vuepress" class="chip">vuepress</a>
+            
+    </div>
+    
+</h1>
+
+
+
+<div class="article">
+    
+
+<p><code>.vuepress</code>폴더에 <code>theme</code>폴더를 만들고, github의 <a href="https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/theme-default">vuepress디폴트 테마</a>를 참고하면서 필요한 폴더와 파일을 작성하면 자동으로 덥어씌우기가 됩니다.<br />
+단, github를 참고하면서 작업을 진행하는 것은 힘드므로 디폴트 테마를 로컬에 복사해서 확인하는 것이 편합니다.</p>
+
+<pre><code class="language-sh">cd dev_docs
+npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용
+</code></pre>
+
+<p><code>.vuepress\theme</code>에 디폴트 테마 파일이 복사됩니다.<br />
+*아직 alpha버젼이므로 디렉토리 구성 등은 추후 변경될 수 있습니다.</p>
+
+<h2 id="home">Home</h2>
+
+<p><code>readme.me</code>의 <code>yaml</code>부분에 다음과 같이 설정을 하면 <a href="https://vuepress.vuejs.org/">vuepress.vuejs.org</a>의 화면과 같이 표시 됩니다.</p>
+
+<pre><code class="language-yaml">home: true
+heroImage: /hero.png
+heroText: Hero Title
+tagline: Hero subtitle
+actionText: Get Started →
+actionLink: /guide/
+features:
+- title: Simplicity First
+  details: Minimal setup with markdown-centered project structure helps you focus on writing.
+- title: Vue-Powered
+  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
+- title: Performant
+  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+</code></pre>
+
+<p><code>.vuepress\theme\components\Home.vue</code>에 yaml내용이 반영되는 것이므로 <code>Home.vue</code>를 직접 편집하는 것도 하나의 방법입니다.</p>
+
+<h2 id="sidebar">sidebar</h2>
+
+<p>사이드 바도 <code>Sidebar***.vue</code>파일이 사용되므로, 필요에 따라서 편집해서 사용합니다.</p>
+
+<h2 id="css-style">CSS style</h2>
+
+<p>vuepress는 Stylus기법을 사용합니다.<br />
+styl파일은 <code>.vuepress\theme\styles</code>에 있으므로 필요에 따라 변경하면 반영됩니다.</p>
+
+</div>
+
+
+</div><div class="sidebar">
+
+<div class="wrap">
+    <h3>Product & Service</h3>
+    <ul class="ad">
+        <li><a href="https://rainpass.io/ko/" target="_blank">RAINPASS One Time ID</a></li>
+        <li><a href="https://innoaus.com/random_id_generator">Random ID Generater</a></li>
+    </ul>
+</div><div class="wrap posts">
+    <h3>Recent Post</h3>
+    <ul>
+        
+        <li><span class="date">2019.02.26</span><br><a href="/posts/20190226/">C&#43;&#43; 콘솔 응용프로그램에 색 적용하기</a></li>
+        
+        <li><span class="date">2019.02.24</span><br><a href="/posts/20190224/">CentOS 7 에 golang 설치하기</a></li>
+        
+        <li><span class="date">2019.02.22</span><br><a href="/posts/20190222/">vuepress 사용해보기 (디폴트 테마)</a></li>
+        
+        <li><span class="date">2019.02.20</span><br><a href="/posts/20190220/">vuepress 사용해보기 (기본 설정: 메뉴, 사이드바, meta요소등)</a></li>
+        
+        <li><span class="date">2019.02.18</span><br><a href="/posts/20190218/">vuepress 사용해보기（환경준비）</a></li>
+        
+    </ul>
+
+</div>
+
+</div>
+</div><div class="footer">
+        <div class="container">
+                <p>(주)이노스코리아<br>서울시 강남구 봉은사로 129-1 3층(논현동 751빌딩)<br>support@innoaus.com</p>
+                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+        </div>
+</div></body>
+</html>

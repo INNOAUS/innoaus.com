@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio on INNOAUS 이노스</title>
+    <link>https://innoaus.com/portfolio/</link>
+    <description>Recent content in Portfolio on INNOAUS 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    
+	<atom:link href="https://innoaus.com/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RAINPASS AppCard2</title>
+      <link>https://innoaus.com/portfolio/rainpass_appcard2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/portfolio/rainpass_appcard2/</guid>
+      <description> 요약  일반적인 앱카드와 달리 일회용 카드번호를 통신없이 자체 생성하여 사용하는 앱카드 시스템  상세기능  오프라인에서 일회용 카드번호 생성 일회용 카드번호가 해당 시스템의 어떤 사용자와도 겹치지 않는 유일성을 보장 일회용 카드번호 유추 불가  개발환경  Android 4.4 이상, iOS 8 이상 Node.js 6, Vue.js 2.x Android Studio 3.1, Xcode 9.2, Visual Studio Code 1.21  홈페이지  RAINPASS 홈페이지 바로가기 데모 홈페이지 바로가기  모바일앱 설치하기  Google Play Store 이동하기 App Store 이동하기  사진 및 동영상 </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>INNOAUS 이노스</title>
+    <link>https://innoaus.com/</link>
+    <description>Recent content on INNOAUS 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 26 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43; 콘솔 응용프로그램에 색 적용하기</title>
+      <link>https://innoaus.com/posts/20190226/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190226/</guid>
+      <description>프로젝트 rang은 Abhinav Gauniyal 이 만든 헤더파일만으로 동작하는 콘솔 텍스트 색 적용하는 오픈소스 라이브러리 입니다. https://github.com/agauniyal/rang
+Colors for your Terminal. Unix-like (리눅스, 유닉스, 맥) Windows Demo 라이브러리 의존성 rang은 C++ standard library만으로 동작하므로 별도의 추가 라이브러리는 필요하지 않습니다.
+설치 $ git clone https://github.com/agauniyal/rang.git  내 프로젝트에 적용하기 설치 폴더내 include/rang.hpp 파일을 자신의 프로젝트의 적정한 위치에 복사하거나, 설치 폴더의 include 폴더를 프로젝트 경로에 추가합니다.
+다양한 설정 Text Styles    Code Linux/Win/Others Old Win     rang::style::bold yes yes   rang::style::dim yes no   rang::style::italic yes no   rang::style::underline yes no   rang::style::blink no no   rang::style::rblink no no   rang::style::reversed yes yes   rang::style::conceal maybe yes   rang::style::crossed yes no    Text Color    Code Linux/Win/Others Old Win     rang::fg::black yes yes   rang::fg::red yes yes   rang::fg::green yes yes   rang::fg::yellow yes yes   rang::fg::blue yes yes   rang::fg::magenta yes yes   rang::fg::cyan yes yes   rang::fg::gray yes yes    Background Color    Code Linux/Win/Others Old Win     rang::bg::black yes yes   rang::bg::red yes yes   rang::bg::green yes yes   rang::bg::yellow yes yes   rang::bg::blue yes yes   rang::bg::magenta yes yes   rang::bg::cyan yes yes   rang::bg::gray yes yes    Bright Foreground Color    Code Linux/Win/Others Old Win     rang::fgB::black yes yes   rang::fgB::red yes yes   rang::fgB::green yes yes   rang::fgB::yellow yes yes   rang::fgB::blue yes yes   rang::fgB::magenta yes yes   rang::fgB::cyan yes yes   rang::fgB::gray yes yes    Bright Background Color    Code Linux/Win/Others Old Win     rang::bgB::black yes yes   rang::bgB::red yes yes   rang::bgB::green yes yes   rang::bgB::yellow yes yes   rang::bgB::blue yes yes   rang::bgB::magenta yes yes   rang::bgB::cyan yes yes   rang::bgB::gray yes yes    Reset Styles/Colors    Code Linux/Win/Others Old Win     rang::style::reset yes yes   rang::fg::reset yes yes   rang::bg::reset yes yes    간단한 sample code #include &amp;quot;rang.</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 에 golang 설치하기</title>
+      <link>https://innoaus.com/posts/20190224/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190224/</guid>
+      <description>go 언어는 구글이 만든 프로그래밍 언어로 최근 많은 개발자들이 이 언어를 이용하여 다양한 분야에서 많은 응용시스템을 만들고 있습니다.
+예를 들면, Docker, Kubernetes, Hugo, Caddy 등이 있습니다.
+설치 전 준비사항 설치 대상 컴퓨터의 모든 사용자가 사용하기를 원하면 sudo 권한이 필요합니다.
+만약, 현재 사용자만을 위한다면 필요없습니다.
+go 설치하기 2019년 2월 22일 현재 시점의 최신버전은 1.11.5 입니다.
+https://golang.org/dl 을 방문하면 최신버전을 다운로드 할 수 있습니다.
+다운로드 다운로드는 웹 사이트를 직접 클릭하거나, console terminal에서 wget 커멘드를 이용하여 다운로드 할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>vuepress 사용해보기 (디폴트 테마)</title>
+      <link>https://innoaus.com/posts/20190222/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190222/</guid>
+      <description>.vuepress폴더에 theme폴더를 만들고, github의 vuepress디폴트 테마를 참고하면서 필요한 폴더와 파일을 작성하면 자동으로 덥어씌우기가 됩니다.
+단, github를 참고하면서 작업을 진행하는 것은 힘드므로 디폴트 테마를 로컬에 복사해서 확인하는 것이 편합니다.
+cd dev_docs npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용  .vuepress\theme에 디폴트 테마 파일이 복사됩니다.
+*아직 alpha버젼이므로 디렉토리 구성 등은 추후 변경될 수 있습니다.
+Home readme.me의 yaml부분에 다음과 같이 설정을 하면 vuepress.vuejs.org의 화면과 같이 표시 됩니다.
+home: true heroImage: /hero.</description>
+    </item>
+    
+    <item>
+      <title>vuepress 사용해보기 (기본 설정: 메뉴, 사이드바, meta요소등)</title>
+      <link>https://innoaus.com/posts/20190220/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190220/</guid>
+      <description>사이트 공통 항목 설정 메뉴, 사이드바 dev_docs폴더에 about.md를 만듭니다.
+.vuepress폴더에 public폴더와 config.js파일을 만들고 다음을 입력합니다.
+public폴더에는 정적파일(이미지 파일등)을 넣어 놓는 곳입니다.
+module.exports = { themeConfig: { logo : &#39;logo.png&#39;, // \dev_docs\.vuepress\public\logo.png search: true, // 검색기능 nav: [ //헤더 메뉴 { text: &#39;Home&#39;, link: &#39;/&#39; }, { text: &#39;About&#39;, link: &#39;/about.html&#39; }, { text: &#39;서브메뉴&#39;, items: [ { text: &#39;메뉴１&#39;, link: &#39;/&#39; }, { text: &#39;메뉴２&#39;, link: &#39;/about.html&#39; }, ] } ], sidebar: [　//사이드바 링크 [&#39;/&#39;, &#39;사이드바 메뉴１&#39;], [&#39;/about.</description>
+    </item>
+    
+    <item>
+      <title>vuepress 사용해보기（환경준비）</title>
+      <link>https://innoaus.com/posts/20190218/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190218/</guid>
+      <description>vuepress는 현재 버젼0.x과 1.x alpha 2가지가 있습니다만, 1.x부터는 plugin기능이 강화되어 Blog사이트 등을 구축하기 쉽게 되어 있다고 합니다.
+(문서용 사이트만을 만든다면 어느 버젼도 크게 차이가 없을 듯 합니다.)
+인스톨 이번은 1.x alpha버젼을 로컬 인스톨 합니다.
+작업용 폴더(vuepress_v1_test)를 만든 후
+cd vuepress_v1_test npm init -y npm install -D vuepress@next  인스톨이 완료되면 폴더dev_docs를 만듭니다.
+vuepress를 로컬 인스톨 한 경우는 vuepress커멘드를 사용할 수 없으므로 npm scripts을 이용합니다.
+package.json파일의 scripts부분을 다음과 같이 변경합니다.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://innoaus.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/about/</guid>
+      <description>OUR VISION 우리는 배움(Knowledge), 도전(Challenge), 변화(Change)의 자세로 우리의 지식, 기술, 경험을 바탕으로 사람을 위한 제품 및 기술 연구 개발에 집중합니다. 그 결과는 구성원 모두 공유하며 더 나아가 사회에 환원할 수 있도록 합니다.
+WORK PROCESS 이노스는 새로운 아이디어가 생기면 팀원들이 모여 브레인스토밍을 시작합니다. 그리고 브레인스토밍 내용을 잘 정리하여 기획안으로 작성한 다음 본격적으로 개발을 시작합니다.
+OUR HISTORY 2018  2018년 평창동계올림픽영상 슬라이싱 및 TAR 생성 개발 수주 국제특허 출원-인도(IN 제201827003273호/랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법) (국제특허등록번호:제10-1572111호/출원일:2015년7월1일) 차량 외관관리 시스템 개발  2017  Smartlogic과 함께 CES2017 참가(RAINPASS 무선 암호화 기술 탑재) SmartMV용 Mobile App 1차 개발 수주 SCADA-PAS 시스템 C# DB편집기 개발 2차 수주 SmartMV용 Mobile App 2차 개발 수주 국제특허-등록-일본(JP 제6199447호/랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법) Smartlogic과 RAINPASS IoT 라이센스 계약 체결 국제특허-등록-호주(AU 제2016204540호/랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법)  2016  SCADA-PAS 시스템 설치 및 설정프로그램 업그레이드 개발 수주 단골플러스 드라이버 설치 패키지 개발 수주 국제특허 출원-미국(US 제15/192,684호/랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법) 국제특허 출원-호주(AU 제2016204540호/랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법) 국제특허 출원-유럽(EP 제16177239.</description>
+    </item>
+    
+    <item>
+      <title>RAINPASS AppCard2</title>
+      <link>https://innoaus.com/portfolio/rainpass_appcard2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/portfolio/rainpass_appcard2/</guid>
+      <description> 요약  일반적인 앱카드와 달리 일회용 카드번호를 통신없이 자체 생성하여 사용하는 앱카드 시스템  상세기능  오프라인에서 일회용 카드번호 생성 일회용 카드번호가 해당 시스템의 어떤 사용자와도 겹치지 않는 유일성을 보장 일회용 카드번호 유추 불가  개발환경  Android 4.4 이상, iOS 8 이상 Node.js 6, Vue.js 2.x Android Studio 3.1, Xcode 9.2, Visual Studio Code 1.21  홈페이지  RAINPASS 홈페이지 바로가기 데모 홈페이지 바로가기  모바일앱 설치하기  Google Play Store 이동하기 App Store 이동하기  사진 및 동영상 </description>
+    </item>
+    
+    <item>
+      <title>Random ID Generator</title>
+      <link>https://innoaus.com/random_id_generator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/random_id_generator/</guid>
+      <description>独自開発したID生成アルゴリズム（RAINPASS）を用いたランダムID生成器
+ 大量のランダムIDを短時間で生成 文字数、文字列のカスタム可能  DEMO 最大10万件までCSVファイル形式でダウンロード可能です。</description>
+    </item>
+    
+  </channel>
+</rss>
