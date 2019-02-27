@@ -76,7 +76,7 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - INNOAUS 이노스
     
 
 <p>프로젝트 rang은 Abhinav Gauniyal 이 만든 헤더파일만으로 동작하는 콘솔 텍스트 색 적용하는 오픈소스 라이브러리 입니다.
-<a href="https://github.com/agauniyal/rang">https://github.com/agauniyal/rang</a></p>
+<a href="https://github.com/agauniyal/rang" target="_blank"><a href="https://github.com/agauniyal/rang">https://github.com/agauniyal/rang</a></a></p>
 
 <h5 id="colors-for-your-terminal">Colors for your Terminal.</h5>
 
@@ -455,9 +455,9 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - INNOAUS 이노스
 int main()
 {
     rang::setControlMode(rang::control::Auto); 
-    // 터미널이 색을 지원하는지 자동으로 검출하여 적용여부 결정
-    // rang::control::Off : 색 적용기능을 해제
-    // rang::control::Force : 터미널 색 지원여부 상관없이 강제 적용
+    // rang::control::Auto　//터미널이 색을 지원하는지 자동으로 검출하여 적용여부 결정
+    // rang::control::Off  //색 적용기능을 해제
+    // rang::control::Force  //터미널 색 지원여부 상관없이 강제 적용
     
     std::cout &lt;&lt; &quot;Hello world !!!&quot; 
               &lt;&lt; rang::style::bold 
@@ -466,9 +466,6 @@ int main()
     return 0;
 }
 </code></pre>
-
-<p>output :
-<code>Hello world !!!</code></p>
 
 </div>
 

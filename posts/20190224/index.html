@@ -85,43 +85,45 @@ CentOS 7 에 golang 설치하기 - INNOAUS 이노스
 
 <h2 id="go-설치하기">go 설치하기</h2>
 
-<p>2019년 2월 22일 현재 시점의 최신버전은 1.11.5 입니다.<br />
+<p>2019년 2월 22일 현재 시점의 최신버전은 1.12 입니다.<br />
 <a href="https://golang.org/dl">https://golang.org/dl</a> 을 방문하면 최신버전을 다운로드 할 수 있습니다.</p>
 
 <h3 id="다운로드">다운로드</h3>
 
 <p>다운로드는 웹 사이트를 직접 클릭하거나, console terminal에서 wget 커멘드를 이용하여 다운로드 할 수 있습니다.</p>
 
-<pre><code class="language-sh">$ wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
+<pre><code class="language-sh">$ wget https://dl.google.com/go/go1.12.linux-amd64.tar.gz
 </code></pre>
 
 <h3 id="다운로드-파일-무결성-검증-옵션">다운로드 파일 무결성 검증 (옵션)</h3>
 
 <p>무결성 검증을 위하여 <code>sha256 checksum</code> 을 사용합니다. 다운로드 사이트에 해당 파일의 <code>sha256 checksum</code> 이 있습니다.<br />
-1.11.5 linux-amd64 버전의 경우는 <code>'ff54aafedff961eb94792487e827515da683d61a5f9482f668008832631e5d25'</code> 입니다.<br />
+1.12 linux-amd64 버전의 경우는 <code>750a07fef8579ae4839458701f4df690e0b20b8bcce33b437e4df89c451b6f13</code> 입니다.<br />
 다음 커멘드를 실행하여 다운로드된 파일의 <code>checksum</code> 을 구하여 다운로드 사이트에 표기된 <code>checksum</code>과 직접 구한 것과 같은지 확인합니다.</p>
 
-<pre><code class="language-sh">$ sha256checkup go1.11.5.linux-amd64.tar.gz 
-ff54aafedff961eb94792487e827515da683d61a5f9482f668008832631e5d25  go1.11.5.linux-amd64.tar.gz
+<pre><code class="language-sh">$ sha256checkup go1.12.linux-amd64.tar.gz 
+750a07fef8579ae4839458701f4df690e0b20b8bcce33b437e4df89c451b6f13  go1.12.linux-amd64.tar.gz
 </code></pre>
 
 <h3 id="다운로드-파일-풀기">다운로드 파일 풀기</h3>
 
 <p>다운로드한 패키지는 이미 CentOS7 에서 동작할 수 있도록 빌드되어 있으므로 압축파일만 풀어서 바로 사용할 수 있습니다.</p>
 
-<pre><code class="language-sh">$ tar xvfz go1.11.5.linux-amd64.tar.gz
+<pre><code class="language-sh">$ tar xvfz go1.12.linux-amd64.tar.gz
 </code></pre>
 
 <p>압축을 풀면 go, gocache, tmp 폴더가 생깁니다.</p>
 
 <h3 id="go-버전-확인하기">go 버전 확인하기</h3>
 
-<p>현재 다운로드한 go 버전은 <code>1.11.5</code> 입니다.</p>
+<p>현재 다운로드한 go 버전은 <code>1.12</code> 입니다.</p>
 
 <pre><code class="language-sh">$ cd go/bin
 $ ./go version
-go version go1.11.5 linux/amd64
+go version go1.12 linux/amd64
 </code></pre>
+
+<p>go 앞에 <code>./</code>를 붙여야 합니다.</p>
 
 <h3 id="go-실행을-환경변수에-지정하기">go 실행을 환경변수에 지정하기</h3>
 
@@ -131,7 +133,7 @@ go version go1.11.5 linux/amd64
 export PATH=$PATH:{go 압축해제폴더}/go/bin
 </code></pre>
 
-<h3 id="환경변수-바로-읽어오기">환경변수 바로 읽어오기</h3>
+<p>지정한 것만으로는 바로 반영이 아니되므로, 재로그인 아니면</p>
 
 <pre><code class="language-sh">$ source ~/.bash_profile
 </code></pre>
@@ -139,11 +141,13 @@ export PATH=$PATH:{go 압축해제폴더}/go/bin
 <p>혹은</p>
 
 <pre><code class="language-sh">$ . ~./bash_profile
-$ go version
-go version go1.11.5 linux/amd64
 </code></pre>
 
-<p>이상입니다.</p>
+<p>확인합니다. <code>./</code>안붙임</p>
+
+<pre><code class="language-sh">$ go version
+go version go1.12 linux/amd64
+</code></pre>
 
 </div>
 
