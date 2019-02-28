@@ -6,10 +6,22 @@
     <description>Recent content on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 26 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43; 에서 Lambda 함수 호출하기</title>
+      <link>https://innoaus.com/posts/20190228/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190228/</guid>
+      <description>Lambda 혹은 anonymous function 개념은 C++11 부터 추가된 것으로 보통 함수와는 달리 함수명이 없는 특징을 가지고 있습니다.
+다음은 이러한 익명함수를 호출하는 경험을 간단히 정리한 것입니다.
+그리고, 다양한 C++ 컴파일러에서 제공하는 C++ 특징을 정리한 것을 https://en.cppreference.com/w/cpp/compiler_support 에서 확인 할 수 있습니다.
+function pointer를 이용한 익명 함수 호출 예제 auto a_lamda_function = [](const std::string&amp;amp; msg) { std::cout &amp;lt;&amp;lt; &amp;quot;function pointer를 이용한 람다함수 호출 예제 : &amp;quot; &amp;lt;&amp;lt; msg &amp;lt;&amp;lt; std::endl; } void (* funcPtr)(int) = a_lamda_function; funcPtr(&amp;quot;Hello World!</description>
+    </item>
     
     <item>
       <title>C&#43;&#43; 콘솔 응용프로그램에 색 적용하기</title>
