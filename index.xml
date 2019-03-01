@@ -6,10 +6,27 @@
     <description>Recent content on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux 에서 패스워드 입력없이 &#39;sudo&#39; 커멘드 실행하기</title>
+      <link>https://innoaus.com/posts/20190301/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190301/</guid>
+      <description>개발환경 등에서 매번 sudo패스워드를 입력하는 것은 상당히 번거로운 일입니다.
+패스워드 입력 없이 sudo 커멘드를 실행 할 수 있는 방법을 소개합니다.
+user1 이라는 계정을 가정하여 설명.
+sudo 커멘드 실행과 관련된 설정 파일은 /etc/sudoers 파일이고, user1 계정에 대해 패스워드 업력 없도록 설정하기 위하여 이 파일에 설정을 합니다.
+/etc/sudoers 파일 수정
+# sudo vi /etc/sudoers  관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면
+파일의 끝에
+%user1 ALL=(ALL) NOPASSWD: ALL  을 추가.
+특정 커멘드(/bin/kill, /bin/rm)에 대해 적용하려면</description>
+    </item>
     
     <item>
       <title>C&#43;&#43; 에서 Lambda 함수 호출하기</title>
