@@ -30,7 +30,7 @@ Linux 에서 패스워드 입력없이 &#39;sudo&#39; 커멘드 실행하기 - I
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 <link rel="stylesheet" href="https://innoaus.com/assets/app.min.css">
-<link rel="stylesheet" href="https://innoaus.com/assets/base.css">
+<link rel="stylesheet" href="https://innoaus.com/assets/base.css?1511516232">
 <script src="https://innoaus.com/assets/prism.js"></script>
 
 
@@ -124,6 +124,8 @@ sudo 커멘드 실행과 관련된 설정 파일은 <code>/etc/sudoers</code> �
     <h3>Recent Post</h3>
     <ul>
         
+        <li><span class="date">2019.03.02</span><br><a href="/posts/20190302/">CentOS 7 에 Cisco VPN 연결을 위한 VPN 클라이언트 vpnc 설치하기</a></li>
+        
         <li><span class="date">2019.03.01</span><br><a href="/posts/20190301/">Linux 에서 패스워드 입력없이 &#39;sudo&#39; 커멘드 실행하기</a></li>
         
         <li><span class="date">2019.02.28</span><br><a href="/posts/20190228/">C&#43;&#43; 에서 Lambda 함수 호출하기</a></li>
@@ -134,18 +136,28 @@ sudo 커멘드 실행과 관련된 설정 파일은 <code>/etc/sudoers</code> �
         
         <li><span class="date">2019.02.22</span><br><a href="/posts/20190222/">vuepress 사용해보기 (디폴트 테마)</a></li>
         
-        <li><span class="date">2019.02.20</span><br><a href="/posts/20190220/">vuepress 사용해보기 (기본 설정: 메뉴, 사이드바, meta요소등)</a></li>
-        
     </ul>
 
 </div>
 
 </div><script>
-var el = document.getElementById('article').getElementsByTagName('a');
-for(var i = 0; i < el.length; ++i){
-    if (el[i].hostname !== window.location.hostname) {
-        el[i].target = '_blank';
+window.onload = function () {
+    var article = document.getElementById('article');
+    
+    var el = article.getElementsByTagName('a');
+    for(var i = 0; i < el.length; ++i){
+        if (el[i].hostname !== window.location.hostname) {
+            el[i].target = '_blank';
+        }
     }
+
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var alink = '<a href="#'+heading.id+'" aria-hidden="true" class="header-anchor">#</a>';
+        heading.innerHTML = heading.innerHTML + alink;
+      }
+    });
 }
 </script>
 

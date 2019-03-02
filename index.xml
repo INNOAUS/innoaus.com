@@ -6,10 +6,21 @@
     <description>Recent content on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS 7 에 Cisco VPN 연결을 위한 VPN 클라이언트 vpnc 설치하기</title>
+      <link>https://innoaus.com/posts/20190302/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190302/</guid>
+      <description>vpnc 패키지는 기본 리포지터리에 패키지가 없어 EPEL(Extra Packages for Enterprise Linux) 최신 패키지 목록을 설치해야 합니다.
+EPEL 최신 패키지 목록 설치하기 EPEL Site : https://fedoraproject.org/wiki/EPEL
+# yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm Loaded plugins: fastestmirror epel-release-latest-7.noarch.rpm | 15 kB 00:00:00 Examining /var/tmp/yum-root-I01hVd/epel-release-latest-7.noarch.rpm: epel-release-7-11.noarch Marking /var/tmp/yum-root-I01hVd/epel-release-latest-7.noarch.rpm to be installed Resolving Dependencies --&amp;gt; Running transaction check ---&amp;gt; Package epel-release.noarch 0:7-11 will be installed --&amp;gt; Finished Dependency Resolution Dependencies Resolved ====================================================================================================================================================== Package Arch Version Repository Size ====================================================================================================================================================== Installing: epel-release noarch 7-11 /epel-release-latest-7.</description>
+    </item>
     
     <item>
       <title>Linux 에서 패스워드 입력없이 &#39;sudo&#39; 커멘드 실행하기</title>
