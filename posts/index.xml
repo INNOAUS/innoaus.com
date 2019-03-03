@@ -6,10 +6,21 @@
     <description>Recent content in Blog on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 02 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS 6/7 에 gcc 7 및 관련된 개발도구 설치하기</title>
+      <link>https://innoaus.com/posts/20190303/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190303/</guid>
+      <description>SoftwareCollections.org 프로젝트 SoftwareCollections.org 프로젝트는 레드헷(Red Hat Enterprise Linux), Fedora, CentOS, 그리고 Scientific Linux를 위한 Software Collections(SCLs)를 만드는 프로젝트 입니다. https://www.softwarecollections.org
+이 것은 패키지간의 영향없이 하나의 시스템에 다양한 버전을 설치하여 개발에 도움을 줍니다.
+Software Collection 패키지 설치하기 $ sudo yum -y install centos-release-scl Loaded plugins: fastestmirror Determining fastest mirrors * base: data.aonenetworks.kr * extras: data.aonenetworks.kr * updates: data.aonenetworks.kr base | 3.6 kB 00:00:00 extras | 3.4 kB 00:00:00 updates | 3.</description>
+    </item>
     
     <item>
       <title>CentOS 7 에 Cisco VPN 연결을 위한 VPN 클라이언트 vpnc 설치하기</title>
