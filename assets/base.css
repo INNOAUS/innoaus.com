@@ -101,6 +101,9 @@ a.header-anchor {
 .article p{
 	line-height: 1.9;
 }
+.article img{
+	margin : .5rem 0;
+}
 .container{
     max-width: 1050px;
 }
@@ -213,9 +216,6 @@ a.header-anchor {
 }
 .post-index .img-responsive{
     border: 1px solid #f5f1f1;
-}
-.home.post-index .img-responsive{
-    border-bottom: 1px solid #f5f1f1;
 }
 
 
