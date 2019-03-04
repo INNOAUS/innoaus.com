@@ -23,7 +23,7 @@
     <item>
       <title>Centos</title>
       <link>https://innoaus.com/tags/centos/</link>
-      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/tags/centos/</guid>
       <description></description>
@@ -44,6 +44,15 @@
       <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgresql</title>
+      <link>https://innoaus.com/tags/postgresql/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/tags/postgresql/</guid>
       <description></description>
     </item>
     

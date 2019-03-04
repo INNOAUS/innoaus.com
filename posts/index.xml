@@ -6,10 +6,33 @@
     <description>Recent content in Blog on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS 7 에 Postgresql Service 설정하기</title>
+      <link>https://innoaus.com/posts/20190304_2/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190304_2/</guid>
+      <description>다음은 소스코드를 이용하여 빌드하였거나 복사한 데이터베이스를 서비스로 동작하기 위한 방법을 정리한 것입니다.
+서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 # # It&#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;quot;/etc/systemd/system/postgresql-9.4.service&amp;quot;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
+    </item>
+    
+    <item>
+      <title>CentOS7에 PostgreSQL Multi-Master 데이터베이스 Postgresql-BDR 9.4 설치하기</title>
+      <link>https://innoaus.com/posts/20190304_1/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190304_1/</guid>
+      <description>다음은 2ndQuadrant사에서 만든 PostgreSQL Multi-Master 플러그인 bdr(Bidirectional Replication Plugin)을 설치방법을 정리한 것입니다.
+Postgres-BDR 을 소스코드 컴파일 하여 설치하기 소스코드를 컴파일하기 위해서 gcc 컴파일러를 설치해야 합니다.
+여기서는 gcc 7을 사용할 것입니다.
+gcc 7 인스톨 관련 글
+준비사항 $ sudo yum -y install centos-release-scl $ sudo yum -y install devtoolset-7 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel $ sudo yum -y install git  Postgres-BDR-9.4 설치하기 최신 소스코드를 $HOME/2ndquadrant_bdr 폴더에 다운로드한 후 컴파일 합니다.</description>
+    </item>
     
     <item>
       <title>CentOS 6/7 에 gcc 7 및 관련된 개발도구 설치하기</title>
