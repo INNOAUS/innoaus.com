@@ -34,18 +34,5 @@ gcc 7 인스톨 관련 글
 준비사항 $ sudo yum -y install centos-release-scl $ sudo yum -y install devtoolset-7 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel $ sudo yum -y install git  Postgres-BDR-9.4 설치하기 최신 소스코드를 $HOME/2ndquadrant_bdr 폴더에 다운로드한 후 컴파일 합니다.</description>
     </item>
     
-    <item>
-      <title>VirtualBox에 CentOS 7 추가하기</title>
-      <link>https://innoaus.com/posts/20190304_3/</link>
-      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://innoaus.com/posts/20190304_3/</guid>
-      <description>개발환경  Windows 10 x64 ASUS BIOS  준비물 Download VirtualBox VirtualBox를 다운로드합니다.
-VirtualBox Download Page Download CentOS 7 ISO 최신 iso파일을 미러사이트에서 다운로드합니다.
-CentOS Download Page
-* 파일이름 참고: CentOS-7-x86_64-DVD-1810.iso VirtualBox에 CentOS 7 새로 만들기 VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.
- VirtualBox를 설치합니다. VirtualBox 실행. VirtualBox -&amp;gt; 새로 만들기.  Name : centos7 64 종류 : Linux 버전 : Red Hat(64-bit) / 64비트 표시되지 않을 때는 4번 진행후 다시 확인합니다.</description>
-    </item>
-    
   </channel>
 </rss>
