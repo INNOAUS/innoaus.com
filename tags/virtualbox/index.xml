@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualbox on Innoaus 이노스</title>
+    <link>https://innoaus.com/tags/virtualbox/</link>
+    <description>Recent content in Virtualbox on Innoaus 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://innoaus.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VirtualBox에 CentOS 7 추가하기</title>
+      <link>https://innoaus.com/posts/20190304_3/</link>
+      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190304_3/</guid>
+      <description>개발환경  Windows 10 x64 ASUS BIOS  준비물 Download VirtualBox VirtualBox를 다운로드합니다.
+VirtualBox Download Page Download CentOS 7 ISO 최신 iso파일을 미러사이트에서 다운로드합니다.
+CentOS Download Page
+* 파일이름 참고: CentOS-7-x86_64-DVD-1810.iso VirtualBox에 CentOS 7 새로 만들기 VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.
+ VirtualBox를 설치합니다. VirtualBox 실행. VirtualBox -&amp;gt; 새로 만들기.  Name : centos7 64 종류 : Linux 버전 : Red Hat(64-bit) / 64비트 표시되지 않을 때는 4번 진행후 다시 확인합니다.</description>
+    </item>
+    
+  </channel>
+</rss>
