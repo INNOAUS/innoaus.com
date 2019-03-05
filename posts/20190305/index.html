@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+<meta charset="utf-8" />
+
+<title>
+CentOS 7 에 ICE(Internet Communications Engine) 설치하기 - Innoaus 이노스
+</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="icon" type="image/png" href="https://innoaus.com/images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="title" content="CentOS 7 에 ICE(Internet Communications Engine) 설치하기 - Innoaus 이노스">
+<meta name="description" content="CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.">
+<meta property="og:title" content="CentOS 7 에 ICE(Internet Communications Engine) 설치하기">
+
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-03-05">
+
+<meta property="og:description" content="CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.">
+<meta property="og:url" content="https://innoaus.com/posts/20190305/">
+<meta property="og:site_name" content="Innoaus 이노스">
+
+<meta property="og:image" content="https://innoaus.com/images/network_1.jpg">
+
+
+<meta property="og:tags" content="CentOS">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://innoaus.com/assets/app.min.css">
+<link rel="stylesheet" href="https://innoaus.com/assets/base.css?1511516234">
+<script src="https://innoaus.com/assets/prism.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135259912-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135259912-1');
+</script>
+
+
+</head>
+<body class=""><header class="navbar">
+<div class="container">
+    <div class="navbar-brand">
+        <a href="https://innoaus.com/" class=""><img src="https://innoaus.com/images/innoaus_s.png" width="100px;"></a>
+    </div>
+    <div class="navbar-link">
+        <a href="https://innoaus.com/">Home</a>
+        <a href="https://innoaus.com/about/">About</a>
+        
+        <a href="https://innoaus.com/posts/">Blog</a>
+    </div>
+</div>
+</header><div class="container main">
+<div class="content">
+<div>
+    
+    <span class="date">2019.03.05</span>
+    
+</div>
+
+<h1 class="title">CentOS 7 에 ICE(Internet Communications Engine) 설치하기 
+    
+    <div style="font-size: .8rem;padding-top:1rem;">
+            
+            <a href="/tags/centos" class="chip">CentOS</a>
+            
+    </div>
+    
+</h1>
+
+
+
+<div id="article" class="article">
+    
+
+<p>ICE는 ZeroC, Inc. (<a href="https://www.zeroc.com">https://www.zeroc.com</a>) 이 개발한 분산객체모델을 위한 프레임워크로 다양한 언어환경을 지원합니다.<br />
+다음은 CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.</p>
+
+<h2 id="yum-리포지터리-구성하기">yum 리포지터리 구성하기</h2>
+
+<pre><code class="language-shell">$ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo
+$ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/
+</code></pre>
+
+<h2 id="ice-설치하기-c-python-php-그리고-ice-기반-서비스-설치">Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치)</h2>
+
+<pre><code class="language-shell">$ sudo yum -y install ice-all-runtime ice-all-devel
+</code></pre>
+
+<h2 id="설치-확인하기">설치 확인하기</h2>
+
+<p><code>slice2cpp</code> 커멘드는 Slice 파일을 하여 C++ 코드로 생성하는 유틸리티로 설치여부를 확인합니다.</p>
+
+<pre><code class="language-shell">$ slice2cpp
+slice2cpp: error: no input file
+Usage: slice2cpp [options] slice-files...
+Options:
+-h, --help               Show this message.
+-v, --version            Display the Ice version.
+-DNAME                   Define NAME as 1.
+-DNAME=DEF               Define NAME as DEF.
+-UNAME                   Remove any definition for NAME.
+-IDIR                    Put DIR in the include file search path.
+-E                       Print preprocessor output on stdout.
+--output-dir DIR         Create files in the directory DIR.
+-d, --debug              Print debug messages.
+--depend                 Generate Makefile dependencies.
+--depend-xml             Generate dependencies in XML format.
+--depend-file FILE       Write dependencies to FILE instead of standard output.
+--validate               Validate command line options.
+--header-ext EXT         Use EXT instead of the default `h' extension.
+--source-ext EXT         Use EXT instead of the default `cpp' extension.
+--add-header HDR[,GUARD] Add #include for HDR (with guard GUARD) to generated source file.
+--include-dir DIR        Use DIR as the header include directory in source files.
+--impl-c++11             Generate sample implementations for C++11 mapping.
+--impl-c++98             Generate sample implementations for C++98 mapping.
+--checksum               Generate checksums for Slice definitions.
+--dll-export SYMBOL      Use SYMBOL for DLL exports
+                         deprecated: use instead [[&quot;cpp:dll-export:SYMBOL&quot;]] metadata.
+--ice                    Allow reserved Ice prefix in Slice identifiers
+                         deprecated: use instead [[&quot;ice-prefix&quot;]] metadata.
+--underscore             Allow underscores in Slice identifiers
+                         deprecated: use instead [[&quot;underscore&quot;]] metadata.
+
+</code></pre>
+
+<h2 id="설치-버전-확인하기">설치 버전 확인하기</h2>
+
+<pre><code class="language-shell">$ slice2cpp --version
+3.7.2
+</code></pre>
+
+</div>
+
+
+</div><div class="sidebar">
+
+<div class="wrap">
+    <h3>Product & Service</h3>
+    <ul class="ad">
+        <li><a href="https://rainpass.io/ko/" target="_blank">RAINPASS One Time ID</a></li>
+        <li><a href="https://innoaus.com/random_id_generator">Random ID Generater</a></li>
+    </ul>
+</div><div class="wrap posts">
+    <h3>Recent Post</h3>
+    <ul>
+        
+        <li><span class="date">2019.03.05</span><br><a href="/posts/20190305/">CentOS 7 에 ICE(Internet Communications Engine) 설치하기</a></li>
+        
+        <li><span class="date">2019.03.05</span><br><a href="/posts/20190305_2/">안드로이드 코드에서 Date &amp; Time 설정 확인하기</a></li>
+        
+        <li><span class="date">2019.03.04</span><br><a href="/posts/20190304_2/">CentOS 7 에 Postgresql Service 설정하기</a></li>
+        
+        <li><span class="date">2019.03.04</span><br><a href="/posts/20190304_1/">CentOS7에 PostgreSQL Multi-Master 데이터베이스 Postgresql-BDR 9.4 설치하기</a></li>
+        
+        <li><span class="date">2019.03.04</span><br><a href="/posts/20190304_3/">VirtualBox에 CentOS 7 추가하기</a></li>
+        
+        <li><span class="date">2019.03.03</span><br><a href="/posts/20190303/">CentOS 6/7 에 gcc 7 및 관련된 개발도구 설치하기</a></li>
+        
+    </ul>
+
+</div>
+
+</div><script>
+window.onload = function () {
+    var article = document.getElementById('article');
+    
+    var el = article.getElementsByTagName('a');
+    for(var i = 0; i < el.length; ++i){
+        if (el[i].hostname !== window.location.hostname) {
+            el[i].target = '_blank';
+        }
+    }
+
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var alink = '<a href="#'+heading.id+'" aria-hidden="true" class="header-anchor">#</a>';
+        heading.innerHTML = heading.innerHTML + alink;
+      }
+    });
+}
+</script>
+
+
+</div><div class="footer">
+        <div class="container">
+                <p>(주)이노스코리아<br>서울시 강남구 봉은사로 129-1 3층(논현동 751빌딩)<br>support@innoaus.com</p>
+                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+        </div>
+</div></body>
+</html>
