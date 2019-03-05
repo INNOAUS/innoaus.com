@@ -91,18 +91,21 @@ VirtualBox에 CentOS 7 추가하기 - Innoaus 이노스
 
 <h2 id="준비물">준비물</h2>
 
-<h3 id="download-virtualbox">Download VirtualBox</h3>
+<h4 id="download-virtualbox">Download VirtualBox</h4>
 
 <p>VirtualBox를 다운로드합니다.<br />
 <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Download Page</a>
 <img src="/images/20190304_3_image1.jpg" alt="image" /></p>
 
-<h3 id="download-centos-7-iso">Download CentOS 7 ISO</h3>
+<h4 id="download-centos-7-iso">Download CentOS 7 ISO</h4>
 
 <p>최신 iso파일을 미러사이트에서 다운로드합니다.<br />
-<a href="https://www.centos.org/download/">CentOS Download Page</a><br />
-* 파일이름 참고: <code>CentOS-7-x86_64-DVD-1810.iso</code>
-<img src="/images/20190304_3_image2.jpg" alt="image" /></p>
+<a href="https://www.centos.org/download/">CentOS Download Page</a></p>
+
+<ul>
+<li>파일이름 참고: <code>CentOS-7-x86_64-DVD-1810.iso</code>
+<img src="/images/20190304_3_image2.jpg" alt="image" /></li>
+</ul>
 
 <h2 id="virtualbox에-centos-7-새로-만들기">VirtualBox에 CentOS 7 새로 만들기</h2>
 
@@ -119,10 +122,10 @@ VirtualBox에 CentOS 7 추가하기 - Innoaus 이노스
 <li>버전 : Red Hat(64-bit) / 64비트 표시되지 않을 때는 4번 진행후 다시 확인합니다.
 <img src="/images/20190304_3_image4.jpg" alt="" /></li>
 </ul></li>
-<li>3번 진행시에 64비트가 표시되지 않을 때만 진행합니다.<br />
+<li><code>3번 진행시에 64비트가 표시되지 않을 때만 진행합니다.</code>
 BIOS Setting에서 Advanced &gt; Intel Virtualization Technology 설정을 <strong>Enabled</strong>로 변경.
 <img src="/images/20190304_3_image3.jpg" alt="" /></li>
-<li>새로 만든 Centos7을 실행하기 전에 다음을 설정합니다.
+<li>새로 만든 CentOS 7을 실행하기 전에 다음을 설정합니다.
 
 <ol>
 <li>&lsquo;centos7 64&rsquo;설정에서 [시스템 -&gt; 포인팅 장치 -&gt; USB태블릿] 으로 변경합니다.<br />
@@ -145,7 +148,7 @@ BIOS Setting에서 Advanced &gt; Intel Virtualization Technology 설정을 <stro
 <img src="/images/20190304_3_image7.jpg" alt="" /></li>
 <li>Date &amp; Time: Seoul
 <img src="/images/20190304_3_image8.jpg" alt="" /></li>
-<li>Network &amp; Hostname: Ethernet On
+<li>Network &amp; Host name: Ethernet On
 <img src="/images/20190304_3_image9.jpg" alt="" /></li>
 <li><strong>Begin Installation</strong><br /></li>
 <li>Root Password 설정
@@ -159,21 +162,25 @@ BIOS Setting에서 Advanced &gt; Intel Virtualization Technology 설정을 <stro
 
 <h2 id="centos-7-vm에-ssh로-접속하기">CentOS 7 VM에 SSH로 접속하기</h2>
 
-<p>호스트 컴퓨터에서 SSH로 CentOS 7에 접속하기 위해서 다음 네트워크 설정을 추가함.<br />
-1. &lsquo;centos7 64&rsquo; 설정에서 [네트워크 &gt; 어댑터1] 설정을 다음과 같이 변경
-<img src="/images/20190304_3_image13.jpg" alt="" />
-2. CentOS 7 VM을 시작하고 아래 커맨드로 IP Address를 확인하고 같은 네트워크대역인지 확인.<br />
-SSH 데몬이 실행중인지 확인.</p>
+<p>호스트 컴퓨터에서 SSH로 CentOS 7에 접속하기 위해서 다음 네트워크 설정을 추가합니다.</p>
 
-<pre><code class="language-shell">&gt; hostname -I
-&gt; ps -ef | grep ssh
+<p>&lsquo;centos7 64&rsquo; 설정에서 [네트워크 &gt; 어댑터1] 설정을 다음과 같이 변경
+<img src="/images/20190304_3_image13.jpg" alt="" /></p>
+
+<p>CentOS 7 VM을 시작하고 아래 커맨드로 IP Address를 확인하고 같은 네트워크대역인지 확인. SSH 데몬이 실행중인지 확인.</p>
+
+<pre><code class="language-shell">hostname -I
+ps -ef | grep ssh
 </code></pre>
 
-<p><img src="/images/20190304_3_image14.jpg" alt="" />
-3. 호스트 컴퓨터에서 터미널을 열고 ssh 커맨드로 centos7에 접속</p>
+<p><img src="/images/20190304_3_image14.jpg" alt="" /></p>
 
-<pre><code class="language-shell">&gt; ssh [**username**]@[**centos ip address**]
+<p>호스트 컴퓨터에서 터미널을 열고 ssh 커맨드로 centos7에 접속</p>
+
+<pre><code class="language-shell">$ ssh [username]@[centos ip address]
 </code></pre>
+
+<h4 id="접속완료-화면">접속완료 화면</h4>
 
 <p><img src="/images/20190304_3_image15.jpg" alt="" /></p>
 
