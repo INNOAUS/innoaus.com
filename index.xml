@@ -6,10 +6,24 @@
     <description>Recent content on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS 7 에서 ACE 라이브러리 빌드하기</title>
+      <link>https://innoaus.com/posts/20190306/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190306/</guid>
+      <description>다음은 https://github.com/DOCGroup/ACE_TAO 에 있는 소스코드를 이용하여 CentOS 7 에서 ACE 라이브러리 빌드하는 방법을 정리한 것입니다.
+준비사항 gcc, g++ 컴파일러가 설치되어 있어야 합니다.
+CentOS 6&amp;frasl;7 에 gcc 7 및 관련된 개발도구 설치하기 참고
+최신 릴리스 버전 다운로드 하기 https://github.com/DOCGroup/ACE_TAO/releases 에서 최신 버젼을 다운로드 합니다.
+2019년 3월 4일 현재 최신버전은 6.5.4 입니다. ACE-6.5.4.tar.gz
+$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz  압축해제하기 $ tar xvfz ACE-5.6.4.tar.gz  컴파일 환경 설정하기 ACE 라이브러리 컴파일을 위해서 환경변수 ACE_ROOT를 설정해야 합니다.</description>
+    </item>
     
     <item>
       <title>CentOS 7 에 ICE(Internet Communications Engine) 설치하기</title>
@@ -19,8 +33,8 @@
       <guid>https://innoaus.com/posts/20190305/</guid>
       <description>ICE는 ZeroC, Inc. (https://www.zeroc.com) 이 개발한 분산객체모델을 위한 프레임워크로 다양한 언어환경을 지원합니다.
 다음은 CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.
-yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/  Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치) $ sudo yum -y install ice-all-runtime ice-all-devel  설치 확인하기 slice2cpp 커멘드는 Slice 파일을 하여 C++ 코드로 생성하는 유틸리티로 설치여부를 확인합니다.
-$ slice2cpp slice2cpp: error: no input file Usage: slice2cpp [options] slice-files.</description>
+yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/  Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치) $ sudo yum -y install ice-all-runtime ice-all-devel  설치 확인하기 slice2cpp 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.
+설치여부를 이 커멘드를 실행하여 확인합니다.</description>
     </item>
     
     <item>
