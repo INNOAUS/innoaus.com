@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://innoaus.com/posts/20190307/</loc>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://innoaus.com/posts/20190307_1/</loc>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://innoaus.com/posts/20190306/</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
   </url>
@@ -79,7 +89,7 @@
   
   <url>
     <loc>https://innoaus.com/</loc>
-    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -94,7 +104,7 @@
   
   <url>
     <loc>https://innoaus.com/posts/</loc>
-    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -110,7 +120,13 @@
   
   <url>
     <loc>https://innoaus.com/tags/centos/</loc>
-    <lastmod>2019-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://innoaus.com/tags/github/</loc>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -142,6 +158,12 @@
   
   <url>
     <loc>https://innoaus.com/random_id_generator/</loc>
+  </url>
+  
+  <url>
+    <loc>https://innoaus.com/tags/slack/</loc>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

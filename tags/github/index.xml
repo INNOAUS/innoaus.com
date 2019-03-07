@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Innoaus 이노스</title>
+    <link>https://innoaus.com/tags/github/</link>
+    <description>Recent content in Github on Innoaus 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://innoaus.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slack(슬랙)에 GitHub 정보를 연계하는 방법</title>
+      <link>https://innoaus.com/posts/20190307_1/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190307_1/</guid>
+      <description>GitHub App 추가 Slack의 을 선택면 APP검색창이 표시됩니다.
+Github를 검색하여 [인스톨]을 선택합니다.
+인스톨 하면 Slack Apps부분에 GitHub가 추가됩니다.
+GitHub repository 통지 등록 GitHub 선택 후, 입력 창에 추가 하고자 하는 github repository를 /github subscribe owner/repository 형식으로 입력합니다.
+GitHub 인증 Github계정 정보를 연결하는 버튼이 표시되므로 connect GitHub account를 선택합니다. 브라우져가 열리고 GitHub에 로그인하면 Slack에 다음과 같이 통지가 옵니다. 계속해서 어느 repository를 연계할 것인지 체크합니다.
+완료되면 Slack에 Subscribed to...이라고 통지가 오는 것으로 설정이 완료됩니다.</description>
+    </item>
+    
+  </channel>
+</rss>
