@@ -6,10 +6,23 @@
     <description>Recent content in Blog on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx 1.14를 CentOS7에 인스톨하기</title>
+      <link>https://innoaus.com/posts/20190308/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190308/</guid>
+      <description>작업 로그 형태로 남김니다.
+Nginx리포지터리추가 sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  팩키지 정보에서 버젼 확인 # sudo yum info --enablerepo=nginx nginx ~~~ Version : 1.14.2.  인스톨 sudo yum -y install --enablerepo=nginx nginx  버젼 확인 # nginx -v nginx version: nginx/1.14.2  Nginx기동 sudo systemctl start nginx  브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
+루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html
+/var/www/html/exemple.com 로 변경할 경우
+cd /etc/nginx/conf.d // 혹시 모르니 백업합니다.</description>
+    </item>
     
     <item>
       <title>CentOS 7 에서 사용자 서비스 업데이트 하는 방법</title>
