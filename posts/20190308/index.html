@@ -84,30 +84,30 @@ Nginx 1.14를 CentOS7에 인스톨하기 - Innoaus 이노스
 
 <h2 id="nginx리포지터리추가">Nginx리포지터리추가</h2>
 
-<pre><code class="language-shell">sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+<pre><code class="language-shell">$ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 </code></pre>
 
 <h2 id="팩키지-정보에서-버젼-확인">팩키지 정보에서 버젼 확인</h2>
 
-<pre><code class="language-shell"># sudo yum info --enablerepo=nginx nginx
-~~~
+<pre><code class="language-shell">$ sudo yum info --enablerepo=nginx nginx
+#~~~
 Version     : 1.14.2.
 </code></pre>
 
 <h2 id="인스톨">인스톨</h2>
 
-<pre><code class="language-shell">sudo yum -y install --enablerepo=nginx nginx
+<pre><code class="language-shell">$ sudo yum -y install --enablerepo=nginx nginx
 </code></pre>
 
 <h2 id="버젼-확인">버젼 확인</h2>
 
-<pre><code class="language-shell"># nginx -v
+<pre><code class="language-shell">$ nginx -v
 nginx version: nginx/1.14.2
 </code></pre>
 
 <h2 id="nginx기동">Nginx기동</h2>
 
-<pre><code class="language-shell">sudo systemctl start nginx
+<pre><code class="language-shell">$ sudo systemctl start nginx
 </code></pre>
 
 <p>브라우져로 IP어드레스(<code>http://xxx.xxx.xxx.xxx/</code>)에 접속해 nginx페이지가 표시되는지 확인합니다.</p>
@@ -117,15 +117,15 @@ nginx version: nginx/1.14.2
 <p>Nginx에 설정된 디폴트 디렉터리 ： <code>/usr/share/nginx/html</code><br />
 <code>/var/www/html/exemple.com</code> 로 변경할 경우</p>
 
-<pre><code class="language-shell">cd /etc/nginx/conf.d
+<pre><code class="language-shell">$ cd /etc/nginx/conf.d
 // 혹시 모르니 백업합니다.
-sudo cp default.conf default.conf.back
-sudo mv default.conf exemple.com.conf
+$ sudo cp default.conf default.conf.back
+$ sudo mv default.conf exemple.com.conf
 </code></pre>
 
 <p><code>exemple.com.conf</code>의 <code>location</code>부분 <code>root</code>패스를 수정합니다.</p>
 
-<pre><code class="language-shell">sudo vi localhost.conf
+<pre><code class="language-shell">$ sudo vi localhost.conf
 - location / {
 -     root   /usr/share/nginx/html;
 -     index  index.html index.htm;
@@ -138,21 +138,21 @@ sudo mv default.conf exemple.com.conf
 
 <p><code>.conf</code> 파일 편집에 문제가 없는지 확인합니다.</p>
 
-<pre><code class="language-shell"># nginx -t
+<pre><code class="language-shell">$ nginx -t
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 </code></pre>
 
 <p>Nginx를 재기동해 확인합니다.</p>
 
-<pre><code class="language-shell">sudo systemctl restart nginx
+<pre><code class="language-shell">$ sudo systemctl restart nginx
 </code></pre>
 
 <h2 id="서비스-자동실행-유효화">서비스 자동실행 유효화</h2>
 
 <p>OS부팅시 Nginx가 자동으로 실행되도록 설정합니다.</p>
 
-<pre><code class="language-shell">sudo systemctl enable nginx
+<pre><code class="language-shell">$ sudo systemctl enable nginx
 </code></pre>
 
 </div>
