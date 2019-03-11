@@ -6,10 +6,20 @@
     <description>Recent content in Nginx on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 08 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 2 (php7.2,php-fpm인스톨)</title>
+      <link>https://innoaus.com/posts/20190311/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190311/</guid>
+      <description>Nginx인스톨은 Nginx 1.14인스톨편 기사를 참고해 주세요.
+php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm  yum info로 PHP팩키지 정보 확인 $ sudo yum info --enablerepo=remi php #~~~ Version : 7.2.16  인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm  버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS )  서비스 자동시작 설정 $ sudo systemctl enable php-fpm  Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
+    </item>
     
     <item>
       <title>CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 1 (Nginx 1.14인스톨편)</title>
