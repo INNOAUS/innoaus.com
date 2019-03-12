@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://innoaus.com/posts/20190312/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://innoaus.com/posts/20190311/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url>
@@ -99,7 +104,7 @@
   
   <url>
     <loc>https://innoaus.com/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -125,7 +130,7 @@
   
   <url>
     <loc>https://innoaus.com/tags/centos/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,13 +154,13 @@
   
   <url>
     <loc>https://innoaus.com/tags/nginx/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://innoaus.com/tags/php/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -171,7 +176,7 @@
   
   <url>
     <loc>https://innoaus.com/posts/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>

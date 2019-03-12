@@ -4,27 +4,31 @@
 <meta charset="utf-8" />
 
 <title>
-vuepress 사용해보기 (디폴트 테마) - Innoaus 이노스
+CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정) - Innoaus 이노스
 </title>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="icon" type="image/png" href="https://innoaus.com/images/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="title" content="vuepress 사용해보기 (디폴트 테마) - Innoaus 이노스">
-<meta name="description" content="vuepress의 디폴트 테마 확인">
-<meta property="og:title" content="vuepress 사용해보기 (디폴트 테마)">
+<meta name="title" content="CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정) - Innoaus 이노스">
+<meta name="description" content="CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 2 (php-fpm UNIX socket접속설정)">
+<meta property="og:title" content="CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정)">
 
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2019-02-22">
+<meta property="article:published_time" content="2019-03-12">
 
-<meta property="og:description" content="vuepress의 디폴트 테마 확인">
-<meta property="og:url" content="https://innoaus.com/posts/20190222/">
+<meta property="og:description" content="CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 2 (php-fpm UNIX socket접속설정)">
+<meta property="og:url" content="https://innoaus.com/posts/20190312/">
 <meta property="og:site_name" content="Innoaus 이노스">
 
-<meta property="og:image" content="https://innoaus.com/images/vuepress_logo.jpg">
+<meta property="og:image" content="https://innoaus.com/images/php-fpm.jpg">
 
 
-<meta property="og:tags" content="vuepress">
+<meta property="og:tags" content="Nginx">
+
+<meta property="og:tags" content="CentOS">
+
+<meta property="og:tags" content="php">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 <link rel="stylesheet" href="https://innoaus.com/assets/app.min.css">
@@ -59,15 +63,19 @@ vuepress 사용해보기 (디폴트 테마) - Innoaus 이노스
 <div class="content">
 <div>
     
-    <span class="date">2019.02.22</span>
+    <span class="date">2019.03.12</span>
     
 </div>
 
-<h1 class="title">vuepress 사용해보기 (디폴트 테마) 
+<h1 class="title">CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정) 
     
     <div style="font-size: .8rem;padding-top:1rem;">
             
-            <a href="/tags/vuepress" class="chip tag">vuepress</a>
+            <a href="/tags/nginx" class="chip tag">Nginx</a>
+            
+            <a href="/tags/centos" class="chip tag">CentOS</a>
+            
+            <a href="/tags/php" class="chip tag">php</a>
             
     </div>
     
@@ -76,45 +84,65 @@ vuepress 사용해보기 (디폴트 테마) - Innoaus 이노스
 <div id="article" class="article">
     
 
-<p><code>.vuepress</code>폴더에 <code>theme</code>폴더를 만들고, github의 <a href="https://github.com/vuejs/vuepress/tree/master/packages/%40vuepress/theme-default">vuepress디폴트 테마</a>를 참고하면서 필요한 폴더와 파일을 작성하면 자동으로 덥어씌우기가 됩니다.<br />
-단, github를 참고하면서 작업을 진행하는 것은 힘드므로 디폴트 테마를 로컬에 복사해서 확인하는 것이 편합니다.</p>
+<ul>
+<li><a href="/posts/20190308/">Nginx 1.14인스톨</a></li>
+<li><a href="/posts/201903011/">php7.2,php-fpm인스톨</a></li>
+<li>php-fpm UNIX socket접속설정</li>
+</ul>
 
-<pre><code class="language-sh">cd dev_docs
-npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용
+<h2 id="php-fpm설정">php-fpm설정</h2>
+
+<pre><code class="language-shell">$ cd /etc/php-fpm.d
+$ vi www.conf
+
+# 24행
+- user = apache
++ user = nginx
+- group = apache
++ group = nginx
+
+# 38행
+- listen = 127.0.0.1:9000
++ listen = /var/run/php-fpm/php-fpm.sock
+
+# 48행
+- ;listen.owner = nobody
+- ;listen.group = nobody
+- ;listen.mode = 0660
++ listen.owner = nginx
++ listen.group = nginx
++ listen.mode = 0660
 </code></pre>
 
-<p><code>.vuepress\theme</code>에 디폴트 테마 파일이 복사됩니다.<br />
-*아직 alpha버젼이므로 디렉토리 구성 등은 추후 변경될 수 있습니다.</p>
+<p>php-fpm 재기동 후、<code>php-fpm.sock</code>파일이 생성되어 있는지 확인합니다.</p>
 
-<h2 id="home">Home</h2>
-
-<p><code>readme.me</code>의 <code>yaml</code>부분에 다음과 같이 설정을 하면 <a href="https://vuepress.vuejs.org/">vuepress.vuejs.org</a>의 화면과 같이 표시 됩니다.</p>
-
-<pre><code class="language-yaml">home: true
-heroImage: /hero.png
-heroText: Hero Title
-tagline: Hero subtitle
-actionText: Get Started →
-actionLink: /guide/
-features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+<pre><code class="language-shell">$ sudo systemctl restart php-fpm
+$ cd /var/run/php-fpm/
+$ ls
+php-fpm.pid  php-fpm.sock
 </code></pre>
 
-<p><code>.vuepress\theme\components\Home.vue</code>에 yaml내용이 반영되는 것이므로 <code>Home.vue</code>를 직접 편집하는 것도 하나의 방법입니다.</p>
+<h2 id="nginx수정">nginx수정</h2>
 
-<h2 id="sidebar">sidebar</h2>
+<pre><code class="language-shell">$ sudo vi /etc/nginx/conf.d/exemple.com.conf
+location ~ \.php$ {
+        root   /usr/share/nginx/html;
+        - fastcgi_pass   127.0.0.1:9000;
+        + fastcgi_pass   unix:/var/run/php-fpm/php-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+</code></pre>
 
-<p>사이드 바도 <code>Sidebar***.vue</code>파일이 사용되므로, 필요에 따라서 편집해서 사용합니다.</p>
+<p>Nginx 재기동</p>
 
-<h2 id="css-style">CSS style</h2>
+<pre><code class="language-shell">sudo systemctl restart nginx
+</code></pre>
 
-<p>vuepress는 Stylus기법을 사용합니다.<br />
-styl파일은 <code>.vuepress\theme\styles</code>에 있으므로 필요에 따라 변경하면 반영됩니다.</p>
+<h2 id="php동작확인">php동작확인</h2>
+
+<p>브라우져로 ip어드레스(<code>http://xxx.xxx.xxx.xxx/phpinfo.php</code>)를 입력하여 php 정보확인 화면이 표시 되는지 확인합니다.</p>
 
 </div>
 
