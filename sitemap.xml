@@ -140,6 +140,12 @@
   </url>
   
   <url>
+    <loc>https://innoaus.com/tags/embedded/</loc>
+    <lastmod>2019-03-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://innoaus.com/tags/github/</loc>
     <lastmod>2019-03-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -148,6 +154,12 @@
   <url>
     <loc>https://innoaus.com/tags/golang/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://innoaus.com/tags/iot/</loc>
+    <lastmod>2019-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

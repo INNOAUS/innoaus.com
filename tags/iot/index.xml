@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iot on Innoaus 이노스</title>
+    <link>https://innoaus.com/tags/iot/</link>
+    <description>Recent content in Iot on Innoaus 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://innoaus.com/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Onion Omega2&#43; 초기 설정 및 접속하기</title>
+      <link>https://innoaus.com/posts/20190319/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190319/</guid>
+      <description>준비물  Onion Omega2+ Expansion Dock  단계 전원 켜기  Omega2+, Expansion Dock, 전원케이블을 준비합니다.  Expansion Dock에 Omega2+를 다음과 같이 준비합니다.  USB케이블을 컴퓨터에 연결하면 Omega2+에 LED가 켜집니다. 켜지지 않는다면 Expansion Dock의 왼쪽 전원스위치를 확인하세요.   Omega2+에 연결하기  Omega2+의 LED가 깜빡이다가 멈추면 부팅이 완료된 것입니다. 내 컴퓨터에서 무선네트워크를 검색하면 Omega-[Omega MAC주소의 뒤 4자리 영숫자]이름으로 된 것을 찾을 수 있습니다. 여기서는 Omega-33FB를 찾고 선택합니다. 초기 패스워드는 12345678입니다.</description>
+    </item>
+    
+  </channel>
+</rss>
