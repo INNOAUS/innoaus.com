@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+<meta charset="utf-8" />
+
+<title>
+Raspberry Pi와 MotionEyeOS로 웹캠 구성하기 - Innoaus 이노스
+</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="icon" type="image/png" href="https://innoaus.com/images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="title" content="Raspberry Pi와 MotionEyeOS로 웹캠 구성하기 - Innoaus 이노스">
+<meta name="description" content="MotionEyeOS를 설치하고 웹캠을 구성합니다.">
+<meta property="og:title" content="Raspberry Pi와 MotionEyeOS로 웹캠 구성하기">
+
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-03-25">
+
+<meta property="og:description" content="MotionEyeOS를 설치하고 웹캠을 구성합니다.">
+<meta property="og:url" content="https://innoaus.com/posts/20190325/">
+<meta property="og:site_name" content="Innoaus 이노스">
+
+<meta property="og:image" content="https://innoaus.com/images/rasp_motioneye.jpg">
+
+
+<meta property="og:tags" content="raspberrypi">
+
+<meta property="og:tags" content="motioneyeos">
+
+<meta property="og:tags" content="IoT">
+
+<meta property="og:tags" content="Embedded">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://innoaus.com/assets/app.min.css">
+<link rel="stylesheet" href="https://innoaus.com/assets/base.css?1511516239">
+<script src="https://innoaus.com/assets/prism.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135259912-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135259912-1');
+</script>
+
+
+</head>
+<body class=""><header class="navbar">
+<div class="container">
+    <div class="navbar-brand">
+        <a href="https://innoaus.com/" class=""><img src="https://innoaus.com/images/innoaus_s.png" width="100px;"></a>
+    </div>
+    <div class="navbar-link">
+        <a href="https://innoaus.com/">Home</a>
+        <a href="https://innoaus.com/about/">About</a>
+        
+        <a href="https://innoaus.com/posts/">Blog</a>
+    </div>
+</div>
+</header><div class="container main">
+<div class="content">
+<div>
+    
+    <span class="date">2019.03.25</span>
+    
+</div>
+
+<h1 class="title">Raspberry Pi와 MotionEyeOS로 웹캠 구성하기 
+    
+    <div style="font-size: .8rem;padding-top:1rem;">
+            
+            <a href="/tags/raspberrypi" class="chip tag">raspberrypi</a>
+            
+            <a href="/tags/motioneyeos" class="chip tag">motioneyeos</a>
+            
+            <a href="/tags/iot" class="chip tag">IoT</a>
+            
+            <a href="/tags/embedded" class="chip tag">Embedded</a>
+            
+    </div>
+    
+</h1>
+
+<div id="article" class="article">
+    
+
+<h2 id="준비물">준비물</h2>
+
+<p><img src="/images/20190325_image1.jpg" alt="" /></p>
+
+<ul>
+<li>라즈베리파이 3B+(또는 3B)</li>
+<li>라즈베리파이 Camera Module v2.1</li>
+<li>라즈비안(Raspbian)이 설치된 상태에서 진행(=라즈비안이 설치된 micro SD Card)</li>
+<li>MotionEyeOS를 설치할 Micro SD Card 준비</li>
+<li>LAN 케이블</li>
+</ul>
+
+<h2 id="개발환경">개발환경</h2>
+
+<p><img src="/images/20190325_image2.png" alt="" /></p>
+
+<p>개발환경은 위와 같이 구성했습니다. 라즈베리파이와 컴퓨터는 같은 네트워크 상에 있습니다.
+<br/>라즈베리파이에는 모니터대신 터치스크린을 사용했습니다.</p>
+
+<h2 id="단계-미리보기">단계 미리보기</h2>
+
+<p>1) <a href="#라즈비안에서-카메라-모듈-확인하기">라즈비안에서 카메라 모듈 확인하기</a>
+   : 라즈비안에서 카메라 모듈이 정상동작하는지 확인합니다.</p>
+
+<p>2) <a href="#motioneyeos-준비하기">MotionEyeOS 준비하기</a>
+   : MotionEyeOS 이미지를 SD Card에 설치하는 방법을 설명합니다.</p>
+
+<p>3) <a href="#motioneyeos에서-웹캠-사용하기">MotionEyeOS에서 웹캠 사용하기</a>
+   : MotionEyeOS에 접속하고 실시간 웹캠을 확인합니다.</p>
+
+<h2 id="라즈비안에서-카메라-모듈-확인하기">라즈비안에서 카메라 모듈 확인하기</h2>
+
+<h3 id="라즈베리파이에-카메라-모듈-꽃기">라즈베리파이에 카메라 모듈 꽃기</h3>
+
+<p>라즈베리파이의 전원을 끈 상태에서 Camera 모듈을 라즈베리파이 Camera 연결부에 꽂습니다.
+<img src="/images/20190325_image3.jpg" alt="camera1" /></p>
+
+<p><img src="/images/20190325_image4.jpg" alt="camera2" /></p>
+
+<h3 id="라즈비안에서-사진-찍기">라즈비안에서 사진 찍기</h3>
+
+<p>1) 라즈베리파이를 켭니다.
+   <img src="/images/20190325_image5.jpg" alt="" /></p>
+
+<p>2) 터미널을 열고 다음을 실행합니다.</p>
+
+<pre><code class="language-sh">raspistill -o /home/pi/Pictures/test.jpg
+</code></pre>
+
+<p>3) Pictures 폴더에 test.jpg 이미지가 만들어졌는지 확인합니다.
+   <img src="/images/20190325_image6.jpg" alt="" /></p>
+
+<p>4) 이미지가 뒤집혀서 만들어졌다면 다음 명령을 실행해서 확인합니다.</p>
+
+<pre><code class="language-sh">raspistill -o -vf -hf /home/pi/Pictures/test.jpg
+</code></pre>
+
+<p><img src="/images/20190325_image7.jpg" alt="" /></p>
+
+<p>카메라 모듈이 정상적으로 동작하면 MotionEyeOS를 준비할 차례입니다.</p>
+
+<h2 id="motioneyeos-준비하기">MotionEyeOS 준비하기</h2>
+
+<h3 id="motioneyeos-이미지-다운로드">MotionEyeOS 이미지 다운로드</h3>
+
+<p>다음 링크에서 MotionEyeOS를 다운로드합니다.<br/>
+<a href="https://github.com/ccrisan/motioneyeos/releases">https://github.com/ccrisan/motioneyeos/releases</a></p>
+
+<p>설치할 보드에 해당하는 이미지를 선택하여 다운로드 합니다.<br/>
+<code>motioneyeos-raspberrypi3-devxxxxxxxx.img.xz</code></p>
+
+<h3 id="balenaetcher-설치">BalenaEtcher 설치</h3>
+
+<p>MotionEyeOS 이미지를 SD Card에 설치하기 위해 BalenaEtcher 응용프로그램을 다운로드 합니다.<br/>
+<a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+
+<h3 id="motioneyeos-설치하기">MotionEyeOS 설치하기</h3>
+
+<p>1) BalenaEtcher를 실행하고, <strong>Select image</strong>를 클릭하여 다운로드한 <code>motioneyeos-raspberrypi3-devxxxxxxxx.img.xz</code>를 선택합니다.
+   <img src="/images/20190325_image8.png" alt="" />
+2) 내 컴퓨터에 SD Card를 꽂고, <strong>Select drive</strong>를 클릭하여 해당 SD Card를 선택합니다.
+   <img src="/images/20190325_image9.png" alt="" />
+3) <strong>Flash</strong>를 클릭하면 SD Card에 MotionEyeOS가 설치됩니다.
+   <img src="/images/20190325_image10.png" alt="" />
+4) 설치가 완료되면 SD Card를 내 컴퓨터에서 추출합니다.
+   <img src="/images/20190325_image11.png" alt="" /></p>
+
+<h2 id="motioneyeos에서-웹캠-사용하기">MotionEyeOS에서 웹캠 사용하기</h2>
+
+<h3 id="motioneyeos-부팅-전에">MotionEyeOS 부팅 전에</h3>
+
+<p><img src="/images/20190325_image15.jpg" alt="" />
+1) 사용하고 있던 라즈비안을 종료하고, MotionEyeOS를 설치한 SD Card를 라즈베리파이에 꽂습니다.</p>
+
+<p>2) 라즈베리파이 LAN포트에 LAN케이블을 꽂아서 로컬 네트워크에 연결되도록 합니다.</p>
+
+<p>3) 전원을 꽂고 부팅합니다.</p>
+
+<div class="tip-wrap "><p>모니터나 터치스크린이 없어도 MotionEyeOS에 접속할 수 있습니다.</p>
+</div>
+
+<h3 id="motioneyeos-찾기">MotionEyeOS 찾기</h3>
+
+<p>1) 로컬네트워크에 있는 MotionEyeOS의 IP주소를 찾기 위해서, Angry IP Scanner 응용프로그램을 다운로드 및 설치합니다.
+<a href="https://angryip.org/download/">https://angryip.org/download/</a></p>
+
+<p>2) Angry IP Scanner에서 <strong>Start</strong>버튼을 클릭하여 스캔을 시작합니다.
+   <img src="/images/20190325_image12.png" alt="" /></p>
+
+<p>3) 호스트이름이 <strong>MEYE-xxxx</strong>에 해당하는 IP주소를 확인합니다.
+   <img src="/images/20190325_image13.png" alt="" /></p>
+
+<h3 id="웹캠-실시간-확인하기">웹캠 실시간 확인하기</h3>
+
+<p>내 컴퓨터에서 브라우저를 열고 해당 IP주소로 접속하면 실시간으로 웹캠을 확인할 수 있습니다.
+   초기 Username은 <code>admin</code>이고, Password는 없습니다.
+   <img src="/images/20190325_image14.png" alt="" /></p>
+
+</div>
+
+</div><div class="sidebar">
+
+<div class="wrap">
+    <h3>Product & Service</h3>
+    <ul class="ad">
+        <li><a href="https://rainpass.io/ko/" target="_blank">RAINPASS One Time ID</a></li>
+        <li><a href="https://innoaus.com/random_id_generator">Random ID Generater</a></li>
+    </ul>
+</div><div class="wrap posts">
+    <h3>Recent Post</h3>
+    <ul>
+        
+        <li><span class="date">2019.03.25</span><br><a href="/posts/20190325/">Raspberry Pi와 MotionEyeOS로 웹캠 구성하기</a></li>
+        
+        <li><span class="date">2019.03.20</span><br><a href="/posts/20190320/">Onion Omega2&#43; Oled Expansion을 이용한 QR Code Generator</a></li>
+        
+        <li><span class="date">2019.03.19</span><br><a href="/posts/20190319/">Onion Omega2&#43; 초기 설정 및 접속하기</a></li>
+        
+        <li><span class="date">2019.03.12</span><br><a href="/posts/20190312/">CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정)</a></li>
+        
+        <li><span class="date">2019.03.11</span><br><a href="/posts/20190311/">CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 2 (php7.2,php-fpm인스톨)</a></li>
+        
+        <li><span class="date">2019.03.08</span><br><a href="/posts/20190308/">CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 1 (Nginx 1.14인스톨편)</a></li>
+        
+        <li><span class="date">2019.03.07</span><br><a href="/posts/20190307/">CentOS 7 에서 사용자 서비스 업데이트 하는 방법</a></li>
+        
+        <li><span class="date">2019.03.07</span><br><a href="/posts/20190307_1/">Slack(슬랙)에 GitHub 정보를 연계하는 방법</a></li>
+        
+        <li><span class="date">2019.03.06</span><br><a href="/posts/20190306/">CentOS 7 에서 ACE 라이브러리 빌드하기</a></li>
+        
+    </ul>
+
+</div>
+
+</div><script>
+window.onload = function () {
+    var article = document.getElementById('article');
+    
+    var el = article.getElementsByTagName('a');
+    for(var i = 0; i < el.length; ++i){
+        if (el[i].hostname !== window.location.hostname) {
+            el[i].target = '_blank';
+        }
+    }
+
+    var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(function(heading){
+      if(heading.id){
+        var alink = '<a href="#'+heading.id+'" aria-hidden="true" class="header-anchor">#</a>';
+        heading.innerHTML = heading.innerHTML + alink;
+      }
+    });
+}
+</script>
+
+
+</div><div class="footer">
+        <div class="container">
+                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
+                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+        </div>
+</div></body>
+</html>
