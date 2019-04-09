@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arduino on Innoaus 이노스</title>
+    <link>https://innoaus.com/tags/arduino/</link>
+    <description>Recent content in Arduino on Innoaus 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 09 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://innoaus.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HackRF One을 이용하여 RF 433MHz Replay Attack 시연</title>
+      <link>https://innoaus.com/posts/20190409/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190409/</guid>
+      <description>개발환경  MacOS 10.14 Arduino.app Visual Studio Code GNURadio Companion XQuartz RadioHead Library  시연 도구  Arduino 2개 RF 433MHz Transmitter(송신기) 1개, Receiver(수신기) 1개 HackRF One 1개  아두이노에서 RF 433MHz 통신 확인하기 아두이노 보드와 송,수신기를 다음과 같이 준비했습니다. 왼쪽 아두이노는 RF 433.92MHz로 데이터를 전송하고, 오른쪽 아두이노는 RF 433.92MHz 무선 신호로 전송된 데이터를 수신합니다.
+송신 아두이노에서는 &amp;ldquo;Hello, Arduino?&amp;ldquo;라는 메시지를 1초마다 한번씩 보냅니다. 수신 아두이노에서는 수신한 데이터를 시리얼포트에 출력합니다. RF 433MHz 무선 신호 캡쳐하기 GNU Radio Companion 프로그램과 HackRF One을 이용하여 무선신호를 캡쳐하고, 파일형태로 저장할 수 있습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
