@@ -6,10 +6,22 @@
     <description>Recent content in Hacking on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 09 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/tags/hacking/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HackRF One을 이용하여 드론 Replay Attack 시연</title>
+      <link>https://innoaus.com/posts/20190410/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190410/</guid>
+      <description>개발환경  MacOS 10.14 GNURadio Companion XQuartz GQRX  시연 도구  드론 1대, 리모컨 HackRF One 1개  1. 드론 GQRX 스펙트럼 | Drone GQRX Spectrum 드론리모컨에서 드론으로 보내는 신호를 HackRF One과 GQRX프로그램을 이용하여 확인할 수 있습니다.
+아래는 드론리모컨으로 드론을 제어하는 무선 신호를 스펙트럼으로 확인하는 영상입니다.
+  2. 드론 무선 신호 캡쳐하기 | Capture Drone Signal HackRF One과 GNU Raido Companion을 이용하여 드론리모컨의 신호를 레코딩합니다.
+아래는 드론리모컨의 무선 신호를 레코딩하는 영상입니다.</description>
+    </item>
     
     <item>
       <title>HackRF One을 이용하여 RF 433MHz Replay Attack 시연</title>
