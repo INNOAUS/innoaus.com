@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://innoaus.com/posts/20190412/</loc>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://innoaus.com/posts/20190410/</loc>
     <lastmod>2019-04-10T00:00:00+00:00</lastmod>
   </url>
@@ -129,7 +134,7 @@
   
   <url>
     <loc>https://innoaus.com/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -144,7 +149,7 @@
   
   <url>
     <loc>https://innoaus.com/tags/arduino/</loc>
-    <lastmod>2019-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -243,7 +248,7 @@
   
   <url>
     <loc>https://innoaus.com/posts/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -262,7 +267,7 @@
   
   <url>
     <loc>https://innoaus.com/tags/rf/</loc>
-    <lastmod>2019-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
