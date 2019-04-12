@@ -17,7 +17,7 @@
       <pubDate>Fri, 12 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190412/</guid>
-      <description>개발환경  MacOS 10.14 Arduino.app  준비물  Arduino UNO 2개 RF 433MHz Transmitter 1개, Receiver 1개 Breadboard 1개 LED Green, Yellow, Red 저항 220Ω 3개 RadioHead Library  RadioHead 라이브러리 준비하기 다음 링크를 클릭하여 바로 다운로드 할 수 있습니다. http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.89.zip
+      <description>개발환경  MacOS 10.14 Arduino.app  준비물  Arduino UNO 2개 RF 433MHz 송신기(Transmitter) 1개, 수신기(Receiver) 1개 Breadboard 1개 LED Green, Yellow, Red 저항 220Ω 3개 RadioHead Library  RadioHead 라이브러리 준비하기 다음 링크를 클릭하여 바로 다운로드 할 수 있습니다. http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.89.zip
  또는 아래 URL에서 RadioHead 라이브러리를 다운로드할 수 있습니다. https://www.airspayce.com/mikem/arduino/RadioHead/index.html   다운로드 받은 RadioHead 폴더를 Arduino.app(아두이노 프로그램 폴더)의 libraries 폴더 아래에 넣어줍니다.
  MacOS: ~/Documents/Arduino/libraries/ Windows: My Documents\Arduino\libraries</description>
     </item>
