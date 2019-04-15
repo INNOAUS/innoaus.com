@@ -6,10 +6,19 @@
     <description>Recent content in Rf on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 12 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://innoaus.com/tags/rf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>아두이노와 nRF24L01 모듈을 활용하여 무선통신 구성하기</title>
+      <link>https://innoaus.com/posts/20190415/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/posts/20190415/</guid>
+      <description>개발환경  MacOS 10.14 Visual Studio Code Platform IO Extension for VSCode RadioHead Library  준비물  Arduino 2개 nRF24L01 Transceiver(송수신기) 모듈 2개  nRF24L01 모듈 아두이노와 연결하기    nRF24 Arduino     1 - GND GND   2 - VCC 3.3V   3 - CE 8   4 - CSN 10   5 - SCK 13   6 - MOSI 11   7 - MISO 12    연결 완료 소스코드 업로드 Visual Studio Code에서 PlatformIO Extension이 설치되어 있는 환경에서 진행합니다.</description>
+    </item>
     
     <item>
       <title>아두이노와 RF 433MHz 모듈을 활용하여 무선통신 구성하기</title>
