@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Innoaus 이노스</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Linux on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux 에서 패스워드 입력없이 &#39;sudo&#39; 커멘드 실행하기</title>
       <link>https://innoaus.com/posts/20190301/</link>
@@ -22,9 +18,9 @@
 user1 이라는 계정을 가정하여 설명.
 sudo 커멘드 실행과 관련된 설정 파일은 /etc/sudoers 파일이고, user1 계정에 대해 패스워드 업력 없도록 설정하기 위하여 이 파일에 설정을 합니다.
 /etc/sudoers 파일 수정
-# sudo vi /etc/sudoers  관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면
+# sudo vi /etc/sudoers 관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면
 파일의 끝에
-%user1 ALL=(ALL) NOPASSWD: ALL  을 추가.
+%user1 ALL=(ALL) NOPASSWD: ALL 을 추가.
 특정 커멘드(/bin/kill, /bin/rm)에 대해 적용하려면</description>
     </item>
     

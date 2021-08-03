@@ -78,19 +78,13 @@
 </h1>
 
 <div id="article" class="article">
-    
-
-<h2 id="개발환경">개발환경</h2>
-
+    <h2 id="개발환경">개발환경</h2>
 <ul>
 <li>MacOS 10.14</li>
 <li>Arduino.app</li>
 </ul>
-
 <h2 id="준비물">준비물</h2>
-
-<p><img src="/images/20190412_image1.jpg" alt="" /></p>
-
+<p><img src="/images/20190412_image1.jpg" alt=""></p>
 <ul>
 <li>Arduino UNO 2개</li>
 <li>RF 433MHz 송신기(Transmitter) 1개, 수신기(Receiver) 1개</li>
@@ -99,34 +93,23 @@
 <li>저항 220Ω 3개</li>
 <li>RadioHead Library</li>
 </ul>
-
 <h2 id="radiohead-라이브러리-준비하기">RadioHead 라이브러리 준비하기</h2>
-
 <p>다음 링크를 클릭하여 바로 다운로드 할 수 있습니다.
 <a href="http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.89.zip">http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.89.zip</a></p>
-
 <blockquote>
 <p>또는 아래 URL에서 RadioHead 라이브러리를 다운로드할 수 있습니다.
 <a href="https://www.airspayce.com/mikem/arduino/RadioHead/index.html">https://www.airspayce.com/mikem/arduino/RadioHead/index.html</a>
-<img src="/images/20190412_image2.png" alt="" /></p>
+<img src="/images/20190412_image2.png" alt=""></p>
 </blockquote>
-
-<p><br/>
-다운로드 받은 RadioHead 폴더를 Arduino.app(아두이노 프로그램 폴더)의 libraries 폴더 아래에 넣어줍니다.</p>
-
+<!-- raw HTML omitted -->
 <ul>
 <li><strong>MacOS</strong>: ~/Documents/Arduino/libraries/</li>
-<li><strong>Windows</strong>: My Documents\Arduino\libraries<br /></li>
+<li><strong>Windows</strong>: My Documents\Arduino\libraries\</li>
 </ul>
-
 <h2 id="아두이노와-rf-433mhz-송신기-연결하기">아두이노와 RF 433MHz 송신기 연결하기</h2>
-
 <p>아두이노에 RF 433MHz 송신기를 연결할 차례입니다.</p>
-
 <h3 id="1-연결하기">1. 연결하기</h3>
-
 <p>아래 그림과 같이 매우 간단하게 아두이노와 송신기를 연결할 수 있습니다.</p>
-
 <table>
 <thead>
 <tr>
@@ -134,83 +117,69 @@
 <th>DATA</th>
 </tr>
 </thead>
-
-<tbody>
-</tbody>
 </table>
-
-<p><img src="/images/20190412_image3.png" alt="" /></p>
-
+<p><img src="/images/20190412_image3.png" alt=""></p>
 <h3 id="2-소스코드-업로드">2. 소스코드 업로드</h3>
-
-<p><img src="/images/20190412_image4.png" alt="" /></p>
-
+<p><img src="/images/20190412_image4.png" alt=""></p>
 <p>Arduino.app을 열고 아래의 소스코드를 아두이노에 업로드합니다.</p>
-
-<pre><code class="language-cpp">#include &lt;RH_ASK.h&gt;
-#include &lt;SPI.h&gt; // Not actually used but needed to compile
-#include &lt;time.h&gt;
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;RH_ASK.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;SPI.h&gt; // Not actually used but needed to compile</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;time.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
 RH_ASK driver;
 
-void setup()
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>()
 {
-    Serial.begin(115200);    // Debugging only
-    if (!driver.init())
-         Serial.println(&quot;init failed&quot;);
+    Serial.begin(<span style="color:#ae81ff">115200</span>);    <span style="color:#75715e">// Debugging only
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>driver.init())
+         Serial.println(<span style="color:#e6db74">&#34;init failed&#34;</span>);
 
     srand(time(NULL));
 }
 
-void loop()
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>()
 {
-    int randnum = rand();
+    <span style="color:#66d9ef">int</span> randnum <span style="color:#f92672">=</span> rand();
 
-    int modnum = randnum % 3;
-    if (modnum == 0) { // send red
-        const char *msg = &quot;red&quot;;
-        if (driver.send((uint8_t *)msg, strlen(msg))) {
+    <span style="color:#66d9ef">int</span> modnum <span style="color:#f92672">=</span> randnum <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>;
+    <span style="color:#66d9ef">if</span> (modnum <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) { <span style="color:#75715e">// send red
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>;
+        <span style="color:#66d9ef">if</span> (driver.send((<span style="color:#66d9ef">uint8_t</span> <span style="color:#f92672">*</span>)msg, strlen(msg))) {
             driver.waitPacketSent();
             Serial.println(msg);
         }
-        else {
-          Serial.println(&quot;Failed to send a message...&quot;);
+        <span style="color:#66d9ef">else</span> {
+          Serial.println(<span style="color:#e6db74">&#34;Failed to send a message...&#34;</span>);
         }
     }
-    else if (modnum == 1) { // send green
-        const char *msg = &quot;green&quot;;
-        if (driver.send((uint8_t *)msg, strlen(msg))) {
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (modnum <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// send green
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;green&#34;</span>;
+        <span style="color:#66d9ef">if</span> (driver.send((<span style="color:#66d9ef">uint8_t</span> <span style="color:#f92672">*</span>)msg, strlen(msg))) {
             driver.waitPacketSent();
             Serial.println(msg);
         }
-        else {
-          Serial.println(&quot;Failed to send a message...&quot;);
+        <span style="color:#66d9ef">else</span> {
+          Serial.println(<span style="color:#e6db74">&#34;Failed to send a message...&#34;</span>);
         }
     }
-    else { // send yellow
-        const char *msg = &quot;yellow&quot;;
-        if (driver.send((uint8_t *)msg, strlen(msg))) {
+    <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// send yellow
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yellow&#34;</span>;
+        <span style="color:#66d9ef">if</span> (driver.send((<span style="color:#66d9ef">uint8_t</span> <span style="color:#f92672">*</span>)msg, strlen(msg))) {
             driver.waitPacketSent();
             Serial.println(msg);
         }
-        else {
-          Serial.println(&quot;Failed to send a message...&quot;);
+        <span style="color:#66d9ef">else</span> {
+          Serial.println(<span style="color:#e6db74">&#34;Failed to send a message...&#34;</span>);
         }
     }
     
-    delay(1000);
+    delay(<span style="color:#ae81ff">1000</span>);
 }
-</code></pre>
-
-<p>송신 아두이노는 green, yellow, red 글자 중 하나를 1초에 한번씩 무작위로 보냅니다.
-<img src="/images/20190412_image5.png" alt="" /></p>
-
+</code></pre></div><p>송신 아두이노는 green, yellow, red 글자 중 하나를 1초에 한번씩 무작위로 보냅니다.
+<img src="/images/20190412_image5.png" alt=""></p>
 <h2 id="아두이노와-rf-433mhz-수신기-연결하기">아두이노와 RF 433MHz 수신기 연결하기</h2>
-
 <p>다른 아두이노에 RF 433MHz 수신기를 연결할 차례입니다.</p>
-
 <h3 id="1-연결하기-1">1. 연결하기</h3>
-
 <table>
 <thead>
 <tr>
@@ -218,39 +187,29 @@ void loop()
 <th>DATA</th>
 </tr>
 </thead>
-
-<tbody>
-</tbody>
 </table>
-
-<p><img src="/images/20190412_image6.png" alt="" /></p>
-
+<p><img src="/images/20190412_image6.png" alt=""></p>
 <h3 id="2-led-추가하기">2. LED 추가하기</h3>
-
 <p>송신기에서 받은 데이터를 받아서 LED로 출력하기위해 GREEN, YELLOW, RED LED를 수신아두이노와 연결합니다.</p>
-
-<p><img src="/images/20190412_image7.png" alt="" /></p>
-
+<p><img src="/images/20190412_image7.png" alt=""></p>
 <h3 id="3-소스코드-업로드">3. 소스코드 업로드</h3>
-
-<p><img src="/images/20190412_image8.png" alt="" />
+<p><img src="/images/20190412_image8.png" alt="">
 Arduino.app에서 [File &gt; New]로 새 파일을 만들고 아래의 소스코드를 아두이노에 업로드합니다.</p>
-
-<pre><code class="language-cpp">#include &lt;RH_ASK.h&gt;
-#include &lt;SPI.h&gt; // Not actualy used but needed to compile
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;RH_ASK.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;SPI.h&gt; // Not actualy used but needed to compile</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
 RH_ASK driver;
-int ledRed = 3;
-int ledYellow = 5;
-int ledGreen = 6;
+<span style="color:#66d9ef">int</span> ledRed <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+<span style="color:#66d9ef">int</span> ledYellow <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#66d9ef">int</span> ledGreen <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
 
-void setup()
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>()
 {
-    Serial.begin(115200);
-    if (!driver.init()) {
-      Serial.println(&quot;init failed&quot;);
-    } else {
-      Serial.println(&quot;init success!&quot;);
+    Serial.begin(<span style="color:#ae81ff">115200</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>driver.init()) {
+      Serial.println(<span style="color:#e6db74">&#34;init failed&#34;</span>);
+    } <span style="color:#66d9ef">else</span> {
+      Serial.println(<span style="color:#e6db74">&#34;init success!&#34;</span>);
     }    
 
     pinMode(ledRed, OUTPUT);
@@ -258,42 +217,38 @@ void setup()
     pinMode(ledGreen, OUTPUT);
 }
 
-void loop()
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>()
 {    
-    uint8_t buf[50];
-    memset(buf, 0, 50);
-    uint8_t buflen = sizeof(buf);
-    if (driver.recv(buf, &amp;buflen))
+    <span style="color:#66d9ef">uint8_t</span> buf[<span style="color:#ae81ff">50</span>];
+    memset(buf, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>);
+    <span style="color:#66d9ef">uint8_t</span> buflen <span style="color:#f92672">=</span> <span style="color:#66d9ef">sizeof</span>(buf);
+    <span style="color:#66d9ef">if</span> (driver.recv(buf, <span style="color:#f92672">&amp;</span>buflen))
     {
       digitalWrite(ledRed, LOW);
       digitalWrite(ledYellow, LOW);
       digitalWrite(ledGreen, LOW);
       
-      int i;      
-      String message = (char*)buf;                                                  
-      Serial.print(&quot;Message: &quot;);
+      <span style="color:#66d9ef">int</span> i;      
+      String message <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)buf;                                                  
+      Serial.print(<span style="color:#e6db74">&#34;Message: &#34;</span>);
       Serial.println(message);                   
       
-      if (message.equals(&quot;red&quot;)) {
+      <span style="color:#66d9ef">if</span> (message.equals(<span style="color:#e6db74">&#34;red&#34;</span>)) {
         digitalWrite(ledRed, HIGH);
-      } else if(message.equals(&quot;yellow&quot;)) {
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(message.equals(<span style="color:#e6db74">&#34;yellow&#34;</span>)) {
         digitalWrite(ledYellow, HIGH);
-      } else if(message.equals(&quot;green&quot;)) {
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(message.equals(<span style="color:#e6db74">&#34;green&#34;</span>)) {
         digitalWrite(ledGreen, HIGH);
       }
     } 
-    delay(100);
+    delay(<span style="color:#ae81ff">100</span>);
 }
-</code></pre>
-
-<h2 id="결과-화면">결과 화면</h2>
-
+</code></pre></div><h2 id="결과-화면">결과 화면</h2>
 <p>수신 아두이노에서는 송신 아두이노로부터 받은 글자를 시리얼모니터에 출력합니다. 또한 글자 색깔에 해당하는 LED가 켜지는 것도 확인할 수 있습니다.
-<img src="/images/20190412_image9.png" alt="" /></p>
-
+<img src="/images/20190412_image9.png" alt=""></p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/a9DXPeZX_94" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/a9DXPeZX_94" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
@@ -357,8 +312,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

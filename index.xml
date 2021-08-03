@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Innoaus 이노스</title>
@@ -6,11 +6,7 @@
     <description>Recent content on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>아두이노와 nRF24L01 모듈을 활용하여 무선통신 구성하기</title>
       <link>https://innoaus.com/posts/20190415/</link>
@@ -27,8 +23,7 @@
       
       <guid>https://innoaus.com/posts/20190412/</guid>
       <description>개발환경  MacOS 10.14 Arduino.app  준비물  Arduino UNO 2개 RF 433MHz 송신기(Transmitter) 1개, 수신기(Receiver) 1개 Breadboard 1개 LED Green, Yellow, Red 저항 220Ω 3개 RadioHead Library  RadioHead 라이브러리 준비하기 다음 링크를 클릭하여 바로 다운로드 할 수 있습니다. http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.89.zip
- 또는 아래 URL에서 RadioHead 라이브러리를 다운로드할 수 있습니다. https://www.airspayce.com/mikem/arduino/RadioHead/index.html   다운로드 받은 RadioHead 폴더를 Arduino.app(아두이노 프로그램 폴더)의 libraries 폴더 아래에 넣어줍니다.
- MacOS: ~/Documents/Arduino/libraries/ Windows: My Documents\Arduino\libraries</description>
+ 또는 아래 URL에서 RadioHead 라이브러리를 다운로드할 수 있습니다. https://www.airspayce.com/mikem/arduino/RadioHead/index.html   MacOS: ~/Documents/Arduino/libraries/ Windows: My Documents\Arduino\libraries\  아두이노와 RF 433MHz 송신기 연결하기 아두이노에 RF 433MHz 송신기를 연결할 차례입니다.</description>
     </item>
     
     <item>
@@ -50,7 +45,7 @@
       
       <guid>https://innoaus.com/posts/20190409/</guid>
       <description>개발환경  MacOS 10.14 Arduino.app Visual Studio Code GNURadio Companion XQuartz RadioHead Library  시연 도구  Arduino UNO 2개 RF 433MHz Transmitter(송신기) 1개, Receiver(수신기) 1개 HackRF One 1개  아두이노에서 RF 433MHz 통신 확인하기 아두이노 보드와 송,수신기를 다음과 같이 준비했습니다. 왼쪽 아두이노는 RF 433.92MHz로 데이터를 전송하고, 오른쪽 아두이노는 RF 433.92MHz 무선 신호로 전송된 데이터를 수신합니다.
-송신 아두이노에서는 &amp;ldquo;Hello, Arduino?&amp;ldquo;라는 메시지를 1초마다 한번씩 보냅니다. 수신 아두이노에서는 수신한 데이터를 시리얼모니터에 출력합니다.</description>
+송신 아두이노에서는 &amp;ldquo;Hello, Arduino?&amp;ldquo;라는 메시지를 1초마다 한번씩 보냅니다. 수신 아두이노에서는 수신한 데이터를 시리얼모니터에 출력합니다. RF 433MHz 무선 신호 캡쳐하기 GNU Radio Companion 프로그램과 HackRF One을 이용하여 무선신호를 캡쳐하고, 파일형태로 저장할 수 있습니다.</description>
     </item>
     
     <item>
@@ -60,9 +55,7 @@
       
       <guid>https://innoaus.com/posts/20190325/</guid>
       <description>준비물  라즈베리파이 3B+(또는 3B) 라즈베리파이 Camera Module v2.1 라즈비안(Raspbian)이 설치된 상태에서 진행(=라즈비안이 설치된 micro SD Card) MotionEyeOS를 설치할 Micro SD Card 준비 LAN 케이블  구성하기 개발환경은 위와 같이 구성했습니다. 라즈베리파이와 컴퓨터는 같은 네트워크 상에 있습니다. 라즈베리파이에는 모니터대신 터치스크린을 사용했습니다.
-단계 미리보기 1) 라즈비안에서 카메라 모듈 확인하기 : 라즈비안에서 카메라 모듈이 정상동작하는지 확인합니다.
-2) MotionEyeOS 준비하기 : MotionEyeOS 이미지를 SD Card에 설치하는 방법을 설명합니다.
-3) MotionEyeOS에서 웹캠 사용하기 : MotionEyeOS에 접속하고 실시간 웹캠을 확인합니다.</description>
+단계 미리보기    라즈비안에서 카메라 모듈 확인하기 라즈비안에서 카메라 모듈이 정상동작하는지 확인합니다.     MotionEyeOS 준비하기 MotionEyeOS 이미지를 SD Card에 설치하는 방법을 설명합니다.     MotionEyeOS에서 웹캠 사용하기 MotionEyeOS에 접속하고 실시간 웹캠을 확인합니다.</description>
     </item>
     
     <item>
@@ -71,10 +64,10 @@
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190320/</guid>
-      <description>준비물  Onion Omega2+ Expansion Dock OLED Expansion  Omega2+ 의 초기 설정이 완료된 상태에서 진행합니다. 초기 설정은 이전 포스트를 참고합니다.
- 단계 Omega2+ 접속하기  브라우저를 열고 주소창에 [omega 이름].local을 입력하여 접속합니다.  로그인 후 처음화면에 보이는 Terminal을 선택하면 Omega의 터미널로 접속합니다.  브라우저에서 로그인했던 Username, Password로 로그인합니다.   Open Package 설치 opkg 툴을 사용하여 오픈소스로 제공되는 라이브러리들을 설치하여 사용할 수 있습니다.
+      <description>준비물  Onion Omega2+ Expansion Dock OLED Expansion  단계 Omega2+ 접속하기  브라우저를 열고 주소창에 [omega 이름].local을 입력하여 접속합니다.  로그인 후 처음화면에 보이는 Terminal을 선택하면 Omega의 터미널로 접속합니다.  브라우저에서 로그인했던 Username, Password로 로그인합니다.   Open Package 설치 opkg 툴을 사용하여 오픈소스로 제공되는 라이브러리들을 설치하여 사용할 수 있습니다.
 먼저 opkg 툴을 업데이트합니다.
-opkg update  opkg 툴을 이용하여 필요한 패키지를 설치합니다.</description>
+opkg update opkg 툴을 이용하여 필요한 패키지를 설치합니다.
+opkg install python-light python-codecs pyOledExp git git-http ca-bundle Git 소스코드 다운로드 위의 설치가 완료되면 git 커맨드로 Onion에서 제공하는 oledQrCodeGenerator 소스코드를 내려받을 수 있습니다.</description>
     </item>
     
     <item>
@@ -83,7 +76,7 @@ opkg update  opkg 툴을 이용하여 필요한 패키지를 설치합니다.</d
       <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190319/</guid>
-      <description>준비물  Onion Omega2+ Expansion Dock  단계 전원 켜기  Omega2+, Expansion Dock, 전원케이블을 준비합니다.  Expansion Dock에 Omega2+를 다음과 같이 준비합니다.  USB케이블을 컴퓨터에 연결하면 Omega2+에 LED가 켜집니다. 켜지지 않는다면 Expansion Dock의 왼쪽 전원스위치를 확인하세요.   Omega2+에 연결하기  Omega2+의 LED가 깜빡이다가 멈추면 부팅이 완료된 것입니다. 내 컴퓨터에서 무선네트워크를 검색하면 Omega-[Omega MAC주소의 뒤 4자리 영숫자]이름으로 된 것을 찾을 수 있습니다. 여기서는 Omega-33FB를 찾고 선택합니다. 초기 패스워드는 12345678입니다.</description>
+      <description>준비물  Onion Omega2+ Expansion Dock  단계 전원 켜기  Omega2+, Expansion Dock, 전원케이블을 준비합니다.  Expansion Dock에 Omega2+를 다음과 같이 준비합니다.  USB케이블을 컴퓨터에 연결하면 Omega2+에 LED가 켜집니다. 켜지지 않는다면 Expansion Dock의 왼쪽 전원스위치를 확인하세요.   Omega2+에 연결하기  Omega2+의 LED가 깜빡이다가 멈추면 부팅이 완료된 것입니다. 내 컴퓨터에서 무선네트워크를 검색하면 Omega-[Omega MAC주소의 뒤 4자리 영숫자]이름으로 된 것을 찾을 수 있습니다. 여기서는 Omega-33FB를 찾고 선택합니다. 초기 패스워드는 12345678입니다.  브라우저를 열고 주소창에 192.</description>
     </item>
     
     <item>
@@ -92,7 +85,7 @@ opkg update  opkg 툴을 이용하여 필요한 패키지를 설치합니다.</d
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190312/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660  php-fpm 재기동 후、php-fpm.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660 php-fpm 재기동 후、php-fpm.</description>
     </item>
     
     <item>
@@ -101,7 +94,7 @@ opkg update  opkg 툴을 이용하여 필요한 패키지를 설치합니다.</d
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190311/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm  yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16  인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm  버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS )  서비스 자동시작 설정 $ sudo systemctl enable php-fpm  Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16 인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm 버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS ) 서비스 자동시작 설정 $ sudo systemctl enable php-fpm Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
     </item>
     
     <item>
@@ -111,8 +104,9 @@ opkg update  opkg 툴을 이용하여 필요한 패키지를 설치합니다.</d
       
       <guid>https://innoaus.com/posts/20190308/</guid>
       <description>작업 로그 형태로 남김니다.
- Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2.  인스톨 $ sudo yum -y install --enablerepo=nginx nginx  버젼 확인 $ nginx -v nginx version: nginx/1.14.2  Nginx기동 $ sudo systemctl start nginx  브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
-루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html</description>
+ Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2. 인스톨 $ sudo yum -y install --enablerepo=nginx nginx 버젼 확인 $ nginx -v nginx version: nginx/1.14.2 Nginx기동 $ sudo systemctl start nginx 브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
+루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html
+/var/www/html/exemple.com 로 변경할 경우</description>
     </item>
     
     <item>
@@ -152,7 +146,7 @@ GitHub 인증 Github계정 정보를 연결하는 버튼이 표시되므로 conn
 CentOS 6,7 에 gcc 7 및 관련된 개발도구 설치하기 참고
 최신 릴리스 버전 다운로드 하기 https://github.com/DOCGroup/ACE_TAO/releases 에서 최신 버젼을 다운로드 합니다.
 2019년 3월 4일 현재 최신버전은 6.5.4 입니다. ACE-6.5.4.tar.gz
-$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz  압축해제하기 $ tar xvfz ACE-5.6.4.tar.gz  컴파일 환경 설정하기 ACE 라이브러리 컴파일을 위해서 환경변수 ACE_ROOT를 설정해야 합니다.</description>
+$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz 압축해제하기 $ tar xvfz ACE-5.6.4.tar.gz 컴파일 환경 설정하기 ACE 라이브러리 컴파일을 위해서 환경변수 ACE_ROOT를 설정해야 합니다.</description>
     </item>
     
     <item>
@@ -163,8 +157,9 @@ $ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE
       <guid>https://innoaus.com/posts/20190305/</guid>
       <description>ICE는 ZeroC, Inc. (https://www.zeroc.com) 이 개발한 분산객체모델을 위한 프레임워크로 다양한 언어환경을 지원합니다.
 다음은 CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.
-yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/  Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치) $ sudo yum -y install ice-all-runtime ice-all-devel  설치 확인하기 slice2cpp 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.
-설치여부를 이 커멘드를 실행하여 확인합니다.</description>
+yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/ Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치) $ sudo yum -y install ice-all-runtime ice-all-devel 설치 확인하기 slice2cpp 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.
+설치여부를 이 커멘드를 실행하여 확인합니다.
+$ slice2cpp slice2cpp: error: no input file Usage: slice2cpp [options] slice-files.</description>
     </item>
     
     <item>
@@ -179,7 +174,8 @@ New Project 새 Project를 생성합니다.
 EmptyActivity Template를 선택하여 시작합니다.
 샘플 소스코드 결과를 표시할 TextView를 하나 추가합니다.
  activity_main.xml
-&amp;lt;TextView android:id=&amp;quot;@+id/text_result&amp;quot; android:layout_width=&amp;quot;wrap_content&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot;/&amp;gt;   다음 함수를 원하는 곳에서 호출합니다.</description>
+ &amp;lt;TextView android:id=&amp;#34;@+id/text_result&amp;#34; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;/&amp;gt; 다음 함수를 원하는 곳에서 호출합니다.
+ MainActivity.kt</description>
     </item>
     
     <item>
@@ -189,7 +185,7 @@ EmptyActivity Template를 선택하여 시작합니다.
       
       <guid>https://innoaus.com/posts/20190304_2/</guid>
       <description>다음은 소스코드를 이용하여 빌드하였거나 복사한 데이터베이스를 서비스로 동작하기 위한 방법을 정리한 것입니다.
-서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 # # It&#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;quot;/etc/systemd/system/postgresql-9.4.service&amp;quot;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
+서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 #  # It&amp;#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;#34;/etc/systemd/system/postgresql-9.4.service&amp;#34;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
     </item>
     
     <item>
@@ -202,7 +198,7 @@ EmptyActivity Template를 선택하여 시작합니다.
 Postgres-BDR 을 소스코드 컴파일 하여 설치하기 소스코드를 컴파일하기 위해서 gcc 컴파일러를 설치해야 합니다.
 여기서는 gcc 7을 사용할 것입니다.
 gcc 7 인스톨 관련 글
-준비사항 $ sudo yum -y install centos-release-scl $ sudo yum -y install devtoolset-7 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel $ sudo yum -y install git  Postgres-BDR-9.4 설치하기 최신 소스코드를 $HOME/2ndquadrant_bdr 폴더에 다운로드한 후 컴파일 합니다.</description>
+준비사항 $ sudo yum -y install centos-release-scl $ sudo yum -y install devtoolset-7 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel $ sudo yum -y install git Postgres-BDR-9.4 설치하기 최신 소스코드를 $HOME/2ndquadrant_bdr 폴더에 다운로드한 후 컴파일 합니다.</description>
     </item>
     
     <item>
@@ -226,7 +222,7 @@ CentOS Download Page
       <guid>https://innoaus.com/posts/20190303/</guid>
       <description>SoftwareCollections.org 프로젝트 SoftwareCollections.org 프로젝트는 레드헷(Red Hat Enterprise Linux), Fedora, CentOS, 그리고 Scientific Linux를 위한 Software Collections(SCLs)를 만드는 프로젝트 입니다. https://www.softwarecollections.org
 이 것은 패키지간의 영향없이 하나의 시스템에 다양한 버전을 설치하여 개발에 도움을 줍니다.
-Software Collection 패키지 설치하기 $ sudo yum -y install centos-release-scl Loaded plugins: fastestmirror Determining fastest mirrors * base: data.aonenetworks.kr * extras: data.aonenetworks.kr * updates: data.aonenetworks.kr base | 3.6 kB 00:00:00 extras | 3.4 kB 00:00:00 updates | 3.</description>
+Software Collection 패키지 설치하기 $ sudo yum -y install centos-release-scl Loaded plugins: fastestmirror Determining fastest mirrors * base: data.aonenetworks.kr * extras: data.aonenetworks.kr * updates: data.aonenetworks.kr base | 3.6 kB 00:00:00 extras | 3.4 kB 00:00:00 updates | 3.4 kB 00:00:00 (1/4): base/7/x86_64/group_gz | 166 kB 00:00:00 (2/4): extras/7/x86_64/primary_db | 180 kB 00:00:00 (3/4): updates/7/x86_64/primary_db | 2.</description>
     </item>
     
     <item>
@@ -251,9 +247,9 @@ EPEL 최신 패키지 목록 설치하기 EPEL Site : https://fedoraproject.org/
 user1 이라는 계정을 가정하여 설명.
 sudo 커멘드 실행과 관련된 설정 파일은 /etc/sudoers 파일이고, user1 계정에 대해 패스워드 업력 없도록 설정하기 위하여 이 파일에 설정을 합니다.
 /etc/sudoers 파일 수정
-# sudo vi /etc/sudoers  관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면
+# sudo vi /etc/sudoers 관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면
 파일의 끝에
-%user1 ALL=(ALL) NOPASSWD: ALL  을 추가.
+%user1 ALL=(ALL) NOPASSWD: ALL 을 추가.
 특정 커멘드(/bin/kill, /bin/rm)에 대해 적용하려면</description>
     </item>
     
@@ -266,7 +262,7 @@ sudo 커멘드 실행과 관련된 설정 파일은 /etc/sudoers 파일이고, u
       <description>Lambda 혹은 anonymous function 개념은 C++11 부터 추가된 것으로 보통 함수와는 달리 함수명이 없는 특징을 가지고 있습니다.
 다음은 이러한 익명함수를 호출하는 경험을 간단히 정리한 것입니다.
 그리고, 다양한 C++ 컴파일러에서 제공하는 C++ 특징을 정리한 것을 https://en.cppreference.com/w/cpp/compiler_support 에서 확인 할 수 있습니다.
-function pointer를 이용한 익명 함수 호출 예제 auto a_lamda_function = [](const std::string&amp;amp; msg) { std::cout &amp;lt;&amp;lt; &amp;quot;function pointer를 이용한 람다함수 호출 예제 : &amp;quot; &amp;lt;&amp;lt; msg &amp;lt;&amp;lt; std::endl; } void (* funcPtr)(int) = a_lamda_function; funcPtr(&amp;quot;Hello World!</description>
+function pointer를 이용한 익명 함수 호출 예제 auto a_lamda_function = [](const std::string&amp;amp; msg) { std::cout &amp;lt;&amp;lt; &amp;#34;function pointer를 이용한 람다함수 호출 예제 : &amp;#34; &amp;lt;&amp;lt; msg &amp;lt;&amp;lt; std::endl; } void (* funcPtr)(int) = a_lamda_function; funcPtr(&amp;#34;Hello World!</description>
     </item>
     
     <item>
@@ -275,10 +271,9 @@ function pointer를 이용한 익명 함수 호출 예제 auto a_lamda_function 
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190226/</guid>
-      <description>프로젝트 rang은 Abhinav Gauniyal 이 만든 헤더파일만으로 동작하는 콘솔 텍스트 색 적용하는 오픈소스 라이브러리 입니다. https://github.com/agauniyal/rang
-Colors for your Terminal. Unix-like (리눅스, 유닉스, 맥) Windows Demo 라이브러리 의존성 rang은 C++ standard library만으로 동작하므로 별도의 추가 라이브러리는 필요하지 않습니다.
-설치 $ git clone https://github.com/agauniyal/rang.git  내 프로젝트에 적용하기 설치 폴더내 include/rang.hpp 파일을 자신의 프로젝트의 적정한 위치에 복사하거나, 설치 폴더의 include 폴더를 프로젝트 경로에 추가합니다.
-다양한 설정 Text Styles    Code Linux/Win/Others Old Win     rang::style::bold yes yes   rang::style::dim yes no   rang::style::italic yes no   rang::style::underline yes no   rang::style::blink no no   rang::style::rblink no no   rang::style::reversed yes yes   rang::style::conceal maybe yes   rang::style::crossed yes no    Text Color    Code Linux/Win/Others Old Win     rang::fg::black yes yes   rang::fg::red yes yes   rang::fg::green yes yes   rang::fg::yellow yes yes   rang::fg::blue yes yes   rang::fg::magenta yes yes   rang::fg::cyan yes yes   rang::fg::gray yes yes    Background Color    Code Linux/Win/Others Old Win     rang::bg::black yes yes   rang::bg::red yes yes   rang::bg::green yes yes   rang::bg::yellow yes yes   rang::bg::blue yes yes   rang::bg::magenta yes yes   rang::bg::cyan yes yes   rang::bg::gray yes yes    Bright Foreground Color    Code Linux/Win/Others Old Win     rang::fgB::black yes yes   rang::fgB::red yes yes   rang::fgB::green yes yes   rang::fgB::yellow yes yes   rang::fgB::blue yes yes   rang::fgB::magenta yes yes   rang::fgB::cyan yes yes   rang::fgB::gray yes yes    Bright Background Color    Code Linux/Win/Others Old Win     rang::bgB::black yes yes   rang::bgB::red yes yes   rang::bgB::green yes yes   rang::bgB::yellow yes yes   rang::bgB::blue yes yes   rang::bgB::magenta yes yes   rang::bgB::cyan yes yes   rang::bgB::gray yes yes    Reset Styles/Colors    Code Linux/Win/Others Old Win     rang::style::reset yes yes   rang::fg::reset yes yes   rang::bg::reset yes yes    간단한 sample code #include &amp;quot;rang.</description>
+      <description>프로젝트 rang은 Abhinav Gauniyal 이 만든 헤더파일만으로 동작하는 콘솔 텍스트 색 적용하는 오픈소스 라이브러리 입니다. https://github.com/agauniyal/rangColors for your Terminal. Unix-like (리눅스, 유닉스, 맥) Windows Demo 라이브러리 의존성 rang은 C++ standard library만으로 동작하므로 별도의 추가 라이브러리는 필요하지 않습니다.
+설치 $ git clone https://github.com/agauniyal/rang.git 내 프로젝트에 적용하기 설치 폴더내 include/rang.hpp 파일을 자신의 프로젝트의 적정한 위치에 복사하거나, 설치 폴더의 include 폴더를 프로젝트 경로에 추가합니다.
+다양한 설정 Text Styles    Code Linux/Win/Others Old Win     rang::style::bold yes yes   rang::style::dim yes no   rang::style::italic yes no   rang::style::underline yes no   rang::style::blink no no   rang::style::rblink no no   rang::style::reversed yes yes   rang::style::conceal maybe yes   rang::style::crossed yes no    Text Color    Code Linux/Win/Others Old Win     rang::fg::black yes yes   rang::fg::red yes yes   rang::fg::green yes yes   rang::fg::yellow yes yes   rang::fg::blue yes yes   rang::fg::magenta yes yes   rang::fg::cyan yes yes   rang::fg::gray yes yes    Background Color    Code Linux/Win/Others Old Win     rang::bg::black yes yes   rang::bg::red yes yes   rang::bg::green yes yes   rang::bg::yellow yes yes   rang::bg::blue yes yes   rang::bg::magenta yes yes   rang::bg::cyan yes yes   rang::bg::gray yes yes    Bright Foreground Color    Code Linux/Win/Others Old Win     rang::fgB::black yes yes   rang::fgB::red yes yes   rang::fgB::green yes yes   rang::fgB::yellow yes yes   rang::fgB::blue yes yes   rang::fgB::magenta yes yes   rang::fgB::cyan yes yes   rang::fgB::gray yes yes    Bright Background Color    Code Linux/Win/Others Old Win     rang::bgB::black yes yes   rang::bgB::red yes yes   rang::bgB::green yes yes   rang::bgB::yellow yes yes   rang::bgB::blue yes yes   rang::bgB::magenta yes yes   rang::bgB::cyan yes yes   rang::bgB::gray yes yes    Reset Styles/Colors    Code Linux/Win/Others Old Win     rang::style::reset yes yes   rang::fg::reset yes yes   rang::bg::reset yes yes    간단한 sample code #include &amp;#34;rang.</description>
     </item>
     
     <item>
@@ -304,10 +299,10 @@ https://golang.org/dl 을 방문하면 최신버전을 다운로드 할 수 있�
       <guid>https://innoaus.com/posts/20190222/</guid>
       <description>.vuepress폴더에 theme폴더를 만들고, github의 vuepress디폴트 테마를 참고하면서 필요한 폴더와 파일을 작성하면 자동으로 덥어씌우기가 됩니다.
 단, github를 참고하면서 작업을 진행하는 것은 힘드므로 디폴트 테마를 로컬에 복사해서 확인하는 것이 편합니다.
-cd dev_docs npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용  .vuepress\theme에 디폴트 테마 파일이 복사됩니다.
+cd dev_docs npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용 .vuepress\theme에 디폴트 테마 파일이 복사됩니다.
 *아직 alpha버젼이므로 디렉토리 구성 등은 추후 변경될 수 있습니다.
 Home readme.me의 yaml부분에 다음과 같이 설정을 하면 vuepress.vuejs.org의 화면과 같이 표시 됩니다.
-home: true heroImage: /hero.</description>
+home: true heroImage: /hero.png heroText: Hero Title tagline: Hero subtitle actionText: Get Started → actionLink: /guide/ features: - title: Simplicity First details: Minimal setup with markdown-centered project structure helps you focus on writing.</description>
     </item>
     
     <item>
@@ -319,7 +314,7 @@ home: true heroImage: /hero.</description>
       <description>사이트 공통 항목 설정 메뉴, 사이드바 dev_docs폴더에 about.md를 만듭니다.
 .vuepress폴더에 public폴더와 config.js파일을 만들고 다음을 입력합니다.
 public폴더에는 정적파일(이미지 파일등)을 넣어 놓는 곳입니다.
-module.exports = { themeConfig: { logo : &#39;logo.png&#39;, // \dev_docs\.vuepress\public\logo.png search: true, // 검색기능 nav: [ //헤더 메뉴 { text: &#39;Home&#39;, link: &#39;/&#39; }, { text: &#39;About&#39;, link: &#39;/about.html&#39; }, { text: &#39;서브메뉴&#39;, items: [ { text: &#39;메뉴１&#39;, link: &#39;/&#39; }, { text: &#39;메뉴２&#39;, link: &#39;/about.html&#39; }, ] } ], sidebar: [　//사이드바 링크 [&#39;/&#39;, &#39;사이드바 메뉴１&#39;], [&#39;/about.</description>
+module.exports = { themeConfig: { logo : &amp;#39;logo.png&amp;#39;, // \dev_docs\.vuepress\public\logo.png  search: true, // 검색기능  nav: [ //헤더 메뉴  { text: &amp;#39;Home&amp;#39;, link: &amp;#39;/&amp;#39; }, { text: &amp;#39;About&amp;#39;, link: &amp;#39;/about.html&amp;#39; }, { text: &amp;#39;서브메뉴&amp;#39;, items: [ { text: &amp;#39;메뉴１&amp;#39;, link: &amp;#39;/&amp;#39; }, { text: &amp;#39;메뉴２&amp;#39;, link: &amp;#39;/about.html&amp;#39; }, ] } ], sidebar: [　//사이드바 링크  [&amp;#39;/&amp;#39;, &amp;#39;사이드바 메뉴１&amp;#39;], [&amp;#39;/about.</description>
     </item>
     
     <item>
@@ -332,9 +327,10 @@ module.exports = { themeConfig: { logo : &#39;logo.png&#39;, // \dev_docs\.vuepr
 (문서용 사이트만을 만든다면 어느 버젼도 크게 차이가 없을 듯 합니다.)
 인스톨 이번은 1.x alpha버젼을 로컬 인스톨 합니다.
 작업용 폴더(vuepress_v1_test)를 만든 후
-cd vuepress_v1_test npm init -y npm install -D vuepress@next  인스톨이 완료되면 폴더dev_docs를 만듭니다.
+cd vuepress_v1_test npm init -y npm install -D vuepress@next 인스톨이 완료되면 폴더dev_docs를 만듭니다.
 vuepress를 로컬 인스톨 한 경우는 vuepress커멘드를 사용할 수 없으므로 npm scripts을 이용합니다.
-package.json파일의 scripts부분을 다음과 같이 변경합니다.</description>
+package.json파일의 scripts부분을 다음과 같이 변경합니다.
+&amp;#34;scripts&amp;#34;: { &amp;#34;dev&amp;#34;: &amp;#34;vuepress dev dev_docs&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;vuepress build dev_docs&amp;#34; }, *scripts를 사용 안하는 경우는</description>
     </item>
     
     <item>
@@ -344,8 +340,8 @@ package.json파일의 scripts부분을 다음과 같이 변경합니다.</descri
       
       <guid>https://innoaus.com/about/</guid>
       <description>OUR VISION 우리는 배움(Knowledge), 도전(Challenge), 변화(Change)의 자세로 우리의 지식, 기술, 경험을 바탕으로 사람을 위한 제품 및 기술 연구 개발에 집중합니다. 그 결과는 구성원 모두 공유하며 더 나아가 사회에 환원할 수 있도록 합니다.
-WORK PROCESS 이노스는 새로운 아이디어가 생기면 팀원들이 모여 브레인스토밍을 시작합니다. 그리고 브레인스토밍 내용을 잘 정리하여 기획안으로 작성한 다음 본격적으로 개발을 시작합니다.
-OUR HISTORY 2019  국제특허등록 - 영국 (EP 제16177239.7호 / 랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법) 국제특허등록 - 프랑스 (EP 제16177239.</description>
+ WORK PROCESS 이노스는 새로운 아이디어가 생기면 팀원들이 모여 브레인스토밍을 시작합니다. 그리고 브레인스토밍 내용을 잘 정리하여 기획안으로 작성한 다음 본격적으로 개발을 시작합니다.
+ OUR HISTORY 2019  국제특허등록 - 영국 (EP 제16177239.7호 / 랜덤하면서 유일한 코드를 생성하는 전자 장치 및 방법) 국제특허등록 - 프랑스 (EP 제16177239.</description>
     </item>
     
     <item>
@@ -354,7 +350,7 @@ OUR HISTORY 2019  국제특허등록 - 영국 (EP 제16177239.7호 / 랜덤하�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/portfolio/rainpass_appcard2/</guid>
-      <description> 요약  일반적인 앱카드와 달리 일회용 카드번호를 통신없이 자체 생성하여 사용하는 앱카드 시스템  상세기능  오프라인에서 일회용 카드번호 생성 일회용 카드번호가 해당 시스템의 어떤 사용자와도 겹치지 않는 유일성을 보장 일회용 카드번호 유추 불가  개발환경  Android 4.4 이상, iOS 8 이상 Node.js 6, Vue.js 2.x Android Studio 3.1, Xcode 9.2, Visual Studio Code 1.21  홈페이지  RAINPASS 홈페이지 바로가기 데모 홈페이지 바로가기  모바일앱 설치하기  Google Play Store 이동하기 App Store 이동하기  사진 및 동영상 </description>
+      <description>요약  일반적인 앱카드와 달리 일회용 카드번호를 통신없이 자체 생성하여 사용하는 앱카드 시스템  상세기능  오프라인에서 일회용 카드번호 생성 일회용 카드번호가 해당 시스템의 어떤 사용자와도 겹치지 않는 유일성을 보장 일회용 카드번호 유추 불가  개발환경  Android 4.4 이상, iOS 8 이상 Node.js 6, Vue.js 2.x Android Studio 3.1, Xcode 9.2, Visual Studio Code 1.21  홈페이지  RAINPASS 홈페이지 바로가기 데모 홈페이지 바로가기  모바일앱 설치하기  Google Play Store 이동하기 App Store 이동하기  사진 및 동영상 </description>
     </item>
     
     <item>
@@ -364,7 +360,7 @@ OUR HISTORY 2019  국제특허등록 - 영국 (EP 제16177239.7호 / 랜덤하�
       
       <guid>https://innoaus.com/random_id_generator/</guid>
       <description>독자 개발한 ID생성 알고리즘（RAINPASS）를 이용한 랜덤 ID생성기
- 대량의 랜덤한 ID를 단시간에 생성합니다. 문자수, 문자열의 커스터마이징이 가능합니다.  DEMO 최대 20만개까지 CSV파일로 다운로드 하실 수 있습니다.</description>
+ 대량의 랜덤한 ID를 단시간에 생성합니다. 문자수, 문자열의 커스터마이징이 가능합니다.   DEMO 최대 20만개까지 CSV파일로 다운로드 하실 수 있습니다.</description>
     </item>
     
   </channel>

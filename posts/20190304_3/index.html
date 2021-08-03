@@ -78,109 +78,82 @@ VirtualBox에 CentOS 7 추가하기 - Innoaus 이노스
 </h1>
 
 <div id="article" class="article">
-    
-
-<h2 id="개발환경">개발환경</h2>
-
+    <h2 id="개발환경">개발환경</h2>
 <ul>
 <li>Windows 10 x64</li>
 <li>ASUS BIOS</li>
 </ul>
-
 <h2 id="준비물">준비물</h2>
-
 <h4 id="download-virtualbox">Download VirtualBox</h4>
-
-<p>VirtualBox를 다운로드합니다.<br />
+<p>VirtualBox를 다운로드합니다.<br>
 <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Download Page</a>
-<img src="/images/20190304_3_image1.jpg" alt="image" /></p>
-
+<img src="/images/20190304_3_image1.jpg" alt="image"></p>
 <h4 id="download-centos-7-iso">Download CentOS 7 ISO</h4>
-
-<p>최신 iso파일을 미러사이트에서 다운로드합니다.<br />
+<p>최신 iso파일을 미러사이트에서 다운로드합니다.<br>
 <a href="https://www.centos.org/download/">CentOS Download Page</a></p>
-
 <ul>
 <li>파일이름 참고: <code>CentOS-7-x86_64-DVD-1810.iso</code>
-<img src="/images/20190304_3_image2.jpg" alt="image" /></li>
+<img src="/images/20190304_3_image2.jpg" alt="image"></li>
 </ul>
-
 <h2 id="virtualbox에-centos-7-새로-만들기">VirtualBox에 CentOS 7 새로 만들기</h2>
-
 <p>VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.</p>
-
 <ol>
 <li>VirtualBox를 설치합니다.</li>
 <li>VirtualBox 실행.</li>
 <li>VirtualBox -&gt; 새로 만들기.
-
 <ul>
 <li>Name : centos7 64</li>
 <li>종류 : Linux</li>
 <li>버전 : Red Hat(64-bit) / 64비트 표시되지 않을 때는 4번 진행후 다시 확인합니다.
-<img src="/images/20190304_3_image4.jpg" alt="" /></li>
-</ul></li>
+<img src="/images/20190304_3_image4.jpg" alt=""></li>
+</ul>
+</li>
 <li><code>3번 진행시에 64비트가 표시되지 않을 때만 진행합니다.</code>
 BIOS Setting에서 Advanced &gt; Intel Virtualization Technology 설정을 <strong>Enabled</strong>로 변경.
-<img src="/images/20190304_3_image3.jpg" alt="" /></li>
+<img src="/images/20190304_3_image3.jpg" alt=""></li>
 <li>새로 만든 CentOS 7을 실행하기 전에 다음을 설정합니다.
-
 <ol>
-<li>&lsquo;centos7 64&rsquo;설정에서 [시스템 -&gt; 포인팅 장치 -&gt; USB태블릿] 으로 변경합니다.<br />
+<li>&lsquo;centos7 64&rsquo;설정에서 [시스템 -&gt; 포인팅 장치 -&gt; USB태블릿] 으로 변경합니다.<br>
 (CentOS 실행시 마우스포인트가 안보여서 추가함)
-<img src="/images/20190304_3_image5.jpg" alt="" /></li>
-<li>VirtualBox 설정에서 [입력 -&gt; 호스트 키 설정 -&gt; Ctrl + Alt] 로 변경합니다.<br />
+<img src="/images/20190304_3_image5.jpg" alt=""></li>
+<li>VirtualBox 설정에서 [입력 -&gt; 호스트 키 설정 -&gt; Ctrl + Alt] 로 변경합니다.<br>
 (CentOS 실행시 마우스포인트가 기본설정인 Right Ctrl키를 눌러도 호스트로 빠져나오지 않아서 추가함)</li>
-</ol></li>
+</ol>
+</li>
 <li>&lsquo;centos7 64&rsquo;을 선택하고 [시작]합니다.</li>
 </ol>
-
 <h2 id="centos-7-셋업하기">CentOS 7 셋업하기</h2>
-
 <p>CentOS 셋업 설정을 진행합니다.</p>
-
 <ol>
 <li>Install CentOS 7
-<img src="/images/20190304_3_image6.jpg" alt="" /></li>
+<img src="/images/20190304_3_image6.jpg" alt=""></li>
 <li>Language: English / English
-<img src="/images/20190304_3_image7.jpg" alt="" /></li>
+<img src="/images/20190304_3_image7.jpg" alt=""></li>
 <li>Date &amp; Time: Seoul
-<img src="/images/20190304_3_image8.jpg" alt="" /></li>
+<img src="/images/20190304_3_image8.jpg" alt=""></li>
 <li>Network &amp; Host name: Ethernet On
-<img src="/images/20190304_3_image9.jpg" alt="" /></li>
-<li><strong>Begin Installation</strong><br /></li>
+<img src="/images/20190304_3_image9.jpg" alt=""></li>
+<li><strong>Begin Installation</strong></li>
 <li>Root Password 설정
-<img src="/images/20190304_3_image10.jpg" alt="" /></li>
+<img src="/images/20190304_3_image10.jpg" alt=""></li>
 <li>User Creation: User name과 Password 설정. 관리자 체크 안함.
-<img src="/images/20190304_3_image11.jpg" alt="" /></li>
+<img src="/images/20190304_3_image11.jpg" alt=""></li>
 <li><strong>Reboot</strong></li>
 <li>위에서 설정한 User name과 Password로 로그인
-<img src="/images/20190304_3_image12.jpg" alt="" /></li>
+<img src="/images/20190304_3_image12.jpg" alt=""></li>
 </ol>
-
 <h2 id="centos-7-vm에-ssh로-접속하기">CentOS 7 VM에 SSH로 접속하기</h2>
-
 <p>호스트 컴퓨터에서 SSH로 CentOS 7에 접속하기 위해서 다음 네트워크 설정을 추가합니다.</p>
-
 <p>&lsquo;centos7 64&rsquo; 설정에서 [네트워크 &gt; 어댑터1] 설정을 다음과 같이 변경
-<img src="/images/20190304_3_image13.jpg" alt="" /></p>
-
+<img src="/images/20190304_3_image13.jpg" alt=""></p>
 <p>CentOS 7 VM을 시작하고 아래 커맨드로 IP Address를 확인하고 같은 네트워크대역인지 확인. SSH 데몬이 실행중인지 확인.</p>
-
-<pre><code class="language-shell">hostname -I
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hostname -I
 ps -ef | grep ssh
-</code></pre>
-
-<p><img src="/images/20190304_3_image14.jpg" alt="" /></p>
-
+</code></pre></div><p><img src="/images/20190304_3_image14.jpg" alt=""></p>
 <p>호스트 컴퓨터에서 터미널을 열고 ssh 커맨드로 centos7에 접속</p>
-
-<pre><code class="language-shell">$ ssh [username]@[centos ip address]
-</code></pre>
-
-<h4 id="접속완료-화면">접속완료 화면</h4>
-
-<p><img src="/images/20190304_3_image15.jpg" alt="" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ssh <span style="color:#f92672">[</span>username<span style="color:#f92672">]</span>@<span style="color:#f92672">[</span>centos ip address<span style="color:#f92672">]</span>
+</code></pre></div><h4 id="접속완료-화면">접속완료 화면</h4>
+<p><img src="/images/20190304_3_image15.jpg" alt=""></p>
 
 </div>
 
@@ -242,8 +215,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

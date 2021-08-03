@@ -86,12 +86,8 @@ Raspberry Pi와 MotionEyeOS로 웹캠 구성하기 - Innoaus 이노스
 </h1>
 
 <div id="article" class="article">
-    
-
-<h2 id="준비물">준비물</h2>
-
-<p><img src="/images/20190325_image1.jpg" alt="" /></p>
-
+    <h2 id="준비물">준비물</h2>
+<p><img src="/images/20190325_image1.jpg" alt=""></p>
 <ul>
 <li>라즈베리파이 3B+(또는 3B)</li>
 <li>라즈베리파이 Camera Module v2.1</li>
@@ -99,112 +95,113 @@ Raspberry Pi와 MotionEyeOS로 웹캠 구성하기 - Innoaus 이노스
 <li>MotionEyeOS를 설치할 Micro SD Card 준비</li>
 <li>LAN 케이블</li>
 </ul>
-
 <h2 id="구성하기">구성하기</h2>
-
-<p><img src="/images/20190325_image2.png" alt="" /></p>
-
+<p><img src="/images/20190325_image2.png" alt=""></p>
 <p>개발환경은 위와 같이 구성했습니다. 라즈베리파이와 컴퓨터는 같은 네트워크 상에 있습니다.
-<br/>라즈베리파이에는 모니터대신 터치스크린을 사용했습니다.</p>
-
+<!-- raw HTML omitted -->라즈베리파이에는 모니터대신 터치스크린을 사용했습니다.</p>
 <h2 id="단계-미리보기">단계 미리보기</h2>
-
-<p>1) <a href="#라즈비안에서-카메라-모듈-확인하기">라즈비안에서 카메라 모듈 확인하기</a>
-   : 라즈비안에서 카메라 모듈이 정상동작하는지 확인합니다.</p>
-
-<p>2) <a href="#motioneyeos-준비하기">MotionEyeOS 준비하기</a>
-   : MotionEyeOS 이미지를 SD Card에 설치하는 방법을 설명합니다.</p>
-
-<p>3) <a href="#motioneyeos에서-웹캠-사용하기">MotionEyeOS에서 웹캠 사용하기</a>
-   : MotionEyeOS에 접속하고 실시간 웹캠을 확인합니다.</p>
-
+<ol>
+<li>
+<dl>
+<dt><a href="#%EB%9D%BC%EC%A6%88%EB%B9%84%EC%95%88%EC%97%90%EC%84%9C-%EC%B9%B4%EB%A9%94%EB%9D%BC-%EB%AA%A8%EB%93%88-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0">라즈비안에서 카메라 모듈 확인하기</a></dt>
+<dd>라즈비안에서 카메라 모듈이 정상동작하는지 확인합니다.</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt><a href="#motioneyeos-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0">MotionEyeOS 준비하기</a></dt>
+<dd>MotionEyeOS 이미지를 SD Card에 설치하는 방법을 설명합니다.</dd>
+</dl>
+</li>
+<li>
+<dl>
+<dt><a href="#motioneyeos%EC%97%90%EC%84%9C-%EC%9B%B9%EC%BA%A0-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">MotionEyeOS에서 웹캠 사용하기</a></dt>
+<dd>MotionEyeOS에 접속하고 실시간 웹캠을 확인합니다.</dd>
+</dl>
+</li>
+</ol>
 <h2 id="라즈비안에서-카메라-모듈-확인하기">라즈비안에서 카메라 모듈 확인하기</h2>
-
 <h3 id="라즈베리파이에-카메라-모듈-꽃기">라즈베리파이에 카메라 모듈 꽃기</h3>
-
 <p>라즈베리파이의 전원을 끈 상태에서 Camera 모듈을 라즈베리파이 Camera 연결부에 꽂습니다.
-<img src="/images/20190325_image3.jpg" alt="camera1" /></p>
-
-<p><img src="/images/20190325_image4.jpg" alt="camera2" /></p>
-
+<img src="/images/20190325_image3.jpg" alt="camera1"></p>
+<p><img src="/images/20190325_image4.jpg" alt="camera2"></p>
 <h3 id="라즈비안에서-사진-찍기">라즈비안에서 사진 찍기</h3>
-
-<p>1) 라즈베리파이를 켭니다.
-   <img src="/images/20190325_image5.jpg" alt="" /></p>
-
-<p>2) 터미널을 열고 다음을 실행합니다.</p>
-
-<pre><code class="language-sh">raspistill -o /home/pi/Pictures/test.jpg
-</code></pre>
-
-<p>3) Pictures 폴더에 test.jpg 이미지가 만들어졌는지 확인합니다.
-   <img src="/images/20190325_image6.jpg" alt="" /></p>
-
-<p>4) 이미지가 뒤집혀서 만들어졌다면 다음 명령을 실행해서 확인합니다.</p>
-
-<pre><code class="language-sh">raspistill -o -vf -hf /home/pi/Pictures/test.jpg
-</code></pre>
-
-<p><img src="/images/20190325_image7.jpg" alt="" /></p>
-
+<ol>
+<li>
+<p>라즈베리파이를 켭니다.
+<img src="/images/20190325_image5.jpg" alt=""></p>
+</li>
+<li>
+<p>터미널을 열고 다음을 실행합니다.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">raspistill -o /home/pi/Pictures/test.jpg
+</code></pre></div><ol start="3">
+<li>
+<p>Pictures 폴더에 test.jpg 이미지가 만들어졌는지 확인합니다.
+<img src="/images/20190325_image6.jpg" alt=""></p>
+</li>
+<li>
+<p>이미지가 뒤집혀서 만들어졌다면 다음 명령을 실행해서 확인합니다.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">raspistill -o -vf -hf /home/pi/Pictures/test.jpg
+</code></pre></div><p><img src="/images/20190325_image7.jpg" alt=""></p>
 <p>카메라 모듈이 정상적으로 동작하면 MotionEyeOS를 준비할 차례입니다.</p>
-
 <h2 id="motioneyeos-준비하기">MotionEyeOS 준비하기</h2>
-
 <h3 id="motioneyeos-이미지-다운로드">MotionEyeOS 이미지 다운로드</h3>
-
-<p>다음 링크에서 MotionEyeOS를 다운로드합니다.<br/>
+<p>다음 링크에서 MotionEyeOS를 다운로드합니다.<!-- raw HTML omitted -->
 <a href="https://github.com/ccrisan/motioneyeos/releases">https://github.com/ccrisan/motioneyeos/releases</a></p>
-
-<p>설치할 보드에 해당하는 이미지를 선택하여 다운로드 합니다.<br/>
+<p>설치할 보드에 해당하는 이미지를 선택하여 다운로드 합니다.<!-- raw HTML omitted -->
 <code>motioneyeos-raspberrypi3-devxxxxxxxx.img.xz</code></p>
-
 <h3 id="balenaetcher-설치">BalenaEtcher 설치</h3>
-
-<p>MotionEyeOS 이미지를 SD Card에 설치하기 위해 BalenaEtcher 응용프로그램을 다운로드 합니다.<br/>
+<p>MotionEyeOS 이미지를 SD Card에 설치하기 위해 BalenaEtcher 응용프로그램을 다운로드 합니다.<!-- raw HTML omitted -->
 <a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
-
 <h3 id="motioneyeos-설치하기">MotionEyeOS 설치하기</h3>
-
-<p>1) BalenaEtcher를 실행하고, <strong>Select image</strong>를 클릭하여 다운로드한 <code>motioneyeos-raspberrypi3-devxxxxxxxx.img.xz</code>를 선택합니다.
-   <img src="/images/20190325_image8.png" alt="" />
-2) 내 컴퓨터에 SD Card를 꽂고, <strong>Select drive</strong>를 클릭하여 해당 SD Card를 선택합니다.
-   <img src="/images/20190325_image9.png" alt="" />
-3) <strong>Flash</strong>를 클릭하면 SD Card에 MotionEyeOS가 설치됩니다.
-   <img src="/images/20190325_image10.png" alt="" />
-4) 설치가 완료되면 SD Card를 내 컴퓨터에서 추출합니다.
-   <img src="/images/20190325_image11.png" alt="" /></p>
-
+<ol>
+<li>BalenaEtcher를 실행하고, <strong>Select image</strong>를 클릭하여 다운로드한 <code>motioneyeos-raspberrypi3-devxxxxxxxx.img.xz</code>를 선택합니다.
+<img src="/images/20190325_image8.png" alt=""></li>
+<li>내 컴퓨터에 SD Card를 꽂고, <strong>Select drive</strong>를 클릭하여 해당 SD Card를 선택합니다.
+<img src="/images/20190325_image9.png" alt=""></li>
+<li><strong>Flash</strong>를 클릭하면 SD Card에 MotionEyeOS가 설치됩니다.
+<img src="/images/20190325_image10.png" alt=""></li>
+<li>설치가 완료되면 SD Card를 내 컴퓨터에서 추출합니다.
+<img src="/images/20190325_image11.png" alt=""></li>
+</ol>
 <h2 id="motioneyeos에서-웹캠-사용하기">MotionEyeOS에서 웹캠 사용하기</h2>
-
 <h3 id="motioneyeos-부팅-전에">MotionEyeOS 부팅 전에</h3>
-
-<p><img src="/images/20190325_image15.jpg" alt="" />
-1) 사용하고 있던 라즈비안을 종료하고, MotionEyeOS를 설치한 SD Card를 라즈베리파이에 꽂습니다.</p>
-
-<p>2) 라즈베리파이 LAN포트에 LAN케이블을 꽂아서 내 컴퓨터와 같은 로컬 네트워크에 연결되도록 합니다.</p>
-
-<p>3) 전원을 꽂고 부팅합니다.</p>
-
-<div class="tip-wrap "><p>모니터나 터치스크린이 없어도 MotionEyeOS에 접속할 수 있습니다.</p>
-</div>
-
+<p><img src="/images/20190325_image15.jpg" alt=""></p>
+<ol>
+<li>
+<p>사용하고 있던 라즈비안을 종료하고, MotionEyeOS를 설치한 SD Card를 라즈베리파이에 꽂습니다.</p>
+</li>
+<li>
+<p>라즈베리파이 LAN포트에 LAN케이블을 꽂아서 내 컴퓨터와 같은 로컬 네트워크에 연결되도록 합니다.</p>
+</li>
+<li>
+<p>전원을 꽂고 부팅합니다.</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
 <h3 id="motioneyeos-찾기">MotionEyeOS 찾기</h3>
-
-<p>1) 로컬네트워크에 있는 MotionEyeOS의 IP주소를 찾기 위해서, Angry IP Scanner 응용프로그램을 다운로드 및 설치합니다.
+<ol>
+<li>
+<p>로컬네트워크에 있는 MotionEyeOS의 IP주소를 찾기 위해서, Angry IP Scanner 응용프로그램을 다운로드 및 설치합니다.
 <a href="https://angryip.org/download/">https://angryip.org/download/</a></p>
-
-<p>2) Angry IP Scanner에서 <strong>Start</strong>버튼을 클릭하여 스캔을 시작합니다.
-   <img src="/images/20190325_image12.png" alt="" /></p>
-
-<p>3) 호스트이름이 <strong>MEYE-xxxx</strong>에 해당하는 IP주소를 확인합니다.
-   <img src="/images/20190325_image13.png" alt="" /></p>
-
+</li>
+<li>
+<p>Angry IP Scanner에서 <strong>Start</strong>버튼을 클릭하여 스캔을 시작합니다.
+<img src="/images/20190325_image12.png" alt=""></p>
+</li>
+<li>
+<p>호스트이름이 <strong>MEYE-xxxx</strong>에 해당하는 IP주소를 확인합니다.
+<img src="/images/20190325_image13.png" alt=""></p>
+</li>
+</ol>
 <h3 id="웹캠-실시간-확인하기">웹캠 실시간 확인하기</h3>
-
 <p>내 컴퓨터에서 브라우저를 열고 해당 IP주소로 접속하면 실시간으로 웹캠을 확인할 수 있습니다.
-   초기 Username은 <code>admin</code>이고, Password는 없습니다.
-   <img src="/images/20190325_image14.png" alt="" /></p>
+초기 Username은 <code>admin</code>이고, Password는 없습니다.
+<img src="/images/20190325_image14.png" alt=""></p>
 
 </div>
 
@@ -266,8 +263,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

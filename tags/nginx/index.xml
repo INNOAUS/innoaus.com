@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Innoaus 이노스</title>
@@ -6,18 +6,14 @@
     <description>Recent content in Nginx on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정)</title>
       <link>https://innoaus.com/posts/20190312/</link>
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190312/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660  php-fpm 재기동 후、php-fpm.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660 php-fpm 재기동 후、php-fpm.</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190311/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm  yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16  인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm  버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS )  서비스 자동시작 설정 $ sudo systemctl enable php-fpm  Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16 인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm 버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS ) 서비스 자동시작 설정 $ sudo systemctl enable php-fpm Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
     </item>
     
     <item>
@@ -36,8 +32,9 @@
       
       <guid>https://innoaus.com/posts/20190308/</guid>
       <description>작업 로그 형태로 남김니다.
- Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2.  인스톨 $ sudo yum -y install --enablerepo=nginx nginx  버젼 확인 $ nginx -v nginx version: nginx/1.14.2  Nginx기동 $ sudo systemctl start nginx  브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
-루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html</description>
+ Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2. 인스톨 $ sudo yum -y install --enablerepo=nginx nginx 버젼 확인 $ nginx -v nginx version: nginx/1.14.2 Nginx기동 $ sudo systemctl start nginx 브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
+루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html
+/var/www/html/exemple.com 로 변경할 경우</description>
     </item>
     
   </channel>

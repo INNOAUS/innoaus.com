@@ -78,52 +78,42 @@ C&#43;&#43; 에서 Lambda 함수 호출하기 - Innoaus 이노스
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>Lambda 혹은 anonymous function 개념은 C++11 부터 추가된 것으로 보통 함수와는 달리 함수명이 없는 특징을 가지고 있습니다.</p>
-
+    <p>Lambda 혹은 anonymous function 개념은 C++11 부터 추가된 것으로 보통 함수와는 달리 함수명이 없는 특징을 가지고 있습니다.</p>
 <p>다음은 이러한 익명함수를 호출하는 경험을 간단히 정리한 것입니다.</p>
-
 <p>그리고, 다양한 C++ 컴파일러에서 제공하는 C++ 특징을 정리한 것을 <a href="https://en.cppreference.com/w/cpp/compiler_support">https://en.cppreference.com/w/cpp/compiler_support</a> 에서 확인 할 수 있습니다.</p>
-
 <h3 id="function-pointer를-이용한-익명-함수-호출-예제">function pointer를 이용한 익명 함수 호출 예제</h3>
-
-<pre><code class="language-c++">auto a_lamda_function = [](const std::string&amp; msg) {
-    std::cout &lt;&lt; &quot;function pointer를 이용한 람다함수 호출 예제 : &quot; &lt;&lt; msg &lt;&lt; std::endl;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">auto</span> a_lamda_function <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>string<span style="color:#f92672">&amp;</span> msg) {
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;function pointer를 이용한 람다함수 호출 예제 : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> msg <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
 }
 
-void (* funcPtr)(int) = a_lamda_function;
+<span style="color:#66d9ef">void</span> (<span style="color:#f92672">*</span> funcPtr)(<span style="color:#66d9ef">int</span>) <span style="color:#f92672">=</span> a_lamda_function;
 
-funcPtr(&quot;Hello World!!!&quot;);
-</code></pre>
-
-<h3 id="c-17-부터-제공되는-std-apply-함수-이용하여-호출">C++17 부터 제공되는 <code>std::apply</code> 함수 이용하여 호출</h3>
-
-<pre><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;tuple&gt;
-#include &lt;utility&gt;
+funcPtr(<span style="color:#e6db74">&#34;Hello World!!!&#34;</span>);
+</code></pre></div><h3 id="c17-부터-제공되는-stdapply-함수-이용하여-호출">C++17 부터 제공되는 <code>std::apply</code> 함수 이용하여 호출</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;tuple&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;utility&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span> 
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> first, <span style="color:#66d9ef">int</span> second) { <span style="color:#66d9ef">return</span> first <span style="color:#f92672">+</span> second; }
  
-int add(int first, int second) { return first + second; }
+<span style="color:#66d9ef">template</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typename</span> T<span style="color:#f92672">&gt;</span>
+T add_generic(T first, T second) { <span style="color:#66d9ef">return</span> first <span style="color:#f92672">+</span> second; }
  
-template&lt;typename T&gt;
-T add_generic(T first, T second) { return first + second; }
+<span style="color:#66d9ef">auto</span> add_lambda <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">auto</span> first, <span style="color:#66d9ef">auto</span> second) { <span style="color:#66d9ef">return</span> first <span style="color:#f92672">+</span> second; };
  
-auto add_lambda = [](auto first, auto second) { return first + second; };
- 
-int main()
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 {
-    // OK
-    std::cout &lt;&lt; std::apply(add, std::make_pair(1, 2)) &lt;&lt; '\n';
+    <span style="color:#75715e">// OK
+</span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>apply(add, std<span style="color:#f92672">::</span>make_pair(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
  
-   // Error: can't deduce the function type
-   // std::cout &lt;&lt; std::apply(add_generic, std::make_pair(2.0f, 3.0f)) &lt;&lt; '\n'; 
- 
-   // OK
-   std::cout &lt;&lt; std::apply(add_lambda, std::make_pair(2.0f, 3.0f)) &lt;&lt; '\n';
+   <span style="color:#75715e">// Error: can&#39;t deduce the function type
+</span><span style="color:#75715e"></span>   <span style="color:#75715e">// std::cout &lt;&lt; std::apply(add_generic, std::make_pair(2.0f, 3.0f)) &lt;&lt; &#39;\n&#39;; 
+</span><span style="color:#75715e"></span> 
+   <span style="color:#75715e">// OK
+</span><span style="color:#75715e"></span>   std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>apply(add_lambda, std<span style="color:#f92672">::</span>make_pair(<span style="color:#ae81ff">2.0f</span>, <span style="color:#ae81ff">3.0f</span>)) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
 }
 
-</code></pre>
-
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -184,8 +174,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

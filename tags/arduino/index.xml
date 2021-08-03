@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arduino on Innoaus 이노스</title>
+    <title>arduino on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/arduino/</link>
-    <description>Recent content in Arduino on Innoaus 이노스</description>
+    <description>Recent content in arduino on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>아두이노와 nRF24L01 모듈을 활용하여 무선통신 구성하기</title>
       <link>https://innoaus.com/posts/20190415/</link>
@@ -27,8 +23,7 @@
       
       <guid>https://innoaus.com/posts/20190412/</guid>
       <description>개발환경  MacOS 10.14 Arduino.app  준비물  Arduino UNO 2개 RF 433MHz 송신기(Transmitter) 1개, 수신기(Receiver) 1개 Breadboard 1개 LED Green, Yellow, Red 저항 220Ω 3개 RadioHead Library  RadioHead 라이브러리 준비하기 다음 링크를 클릭하여 바로 다운로드 할 수 있습니다. http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.89.zip
- 또는 아래 URL에서 RadioHead 라이브러리를 다운로드할 수 있습니다. https://www.airspayce.com/mikem/arduino/RadioHead/index.html   다운로드 받은 RadioHead 폴더를 Arduino.app(아두이노 프로그램 폴더)의 libraries 폴더 아래에 넣어줍니다.
- MacOS: ~/Documents/Arduino/libraries/ Windows: My Documents\Arduino\libraries</description>
+ 또는 아래 URL에서 RadioHead 라이브러리를 다운로드할 수 있습니다. https://www.airspayce.com/mikem/arduino/RadioHead/index.html   MacOS: ~/Documents/Arduino/libraries/ Windows: My Documents\Arduino\libraries\  아두이노와 RF 433MHz 송신기 연결하기 아두이노에 RF 433MHz 송신기를 연결할 차례입니다.</description>
     </item>
     
     <item>
@@ -38,7 +33,7 @@
       
       <guid>https://innoaus.com/posts/20190409/</guid>
       <description>개발환경  MacOS 10.14 Arduino.app Visual Studio Code GNURadio Companion XQuartz RadioHead Library  시연 도구  Arduino UNO 2개 RF 433MHz Transmitter(송신기) 1개, Receiver(수신기) 1개 HackRF One 1개  아두이노에서 RF 433MHz 통신 확인하기 아두이노 보드와 송,수신기를 다음과 같이 준비했습니다. 왼쪽 아두이노는 RF 433.92MHz로 데이터를 전송하고, 오른쪽 아두이노는 RF 433.92MHz 무선 신호로 전송된 데이터를 수신합니다.
-송신 아두이노에서는 &amp;ldquo;Hello, Arduino?&amp;ldquo;라는 메시지를 1초마다 한번씩 보냅니다. 수신 아두이노에서는 수신한 데이터를 시리얼모니터에 출력합니다.</description>
+송신 아두이노에서는 &amp;ldquo;Hello, Arduino?&amp;ldquo;라는 메시지를 1초마다 한번씩 보냅니다. 수신 아두이노에서는 수신한 데이터를 시리얼모니터에 출력합니다. RF 433MHz 무선 신호 캡쳐하기 GNU Radio Companion 프로그램과 HackRF One을 이용하여 무선신호를 캡쳐하고, 파일형태로 저장할 수 있습니다.</description>
     </item>
     
   </channel>

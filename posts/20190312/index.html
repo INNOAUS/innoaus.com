@@ -82,66 +82,50 @@ CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket
 </h1>
 
 <div id="article" class="article">
-    
-
-<ul>
+    <ul>
 <li><a href="/posts/20190308/">Nginx 1.14인스톨</a></li>
 <li><a href="/posts/201903011/">php7.2,php-fpm인스톨</a></li>
 <li>php-fpm UNIX socket접속설정</li>
 </ul>
-
 <h2 id="php-fpm설정">php-fpm설정</h2>
-
-<pre><code class="language-shell">$ cd /etc/php-fpm.d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd /etc/php-fpm.d
 $ vi www.conf
 
-# 24행
-- user = apache
-+ user = nginx
-- group = apache
-+ group = nginx
+<span style="color:#75715e"># 24행</span>
+- user <span style="color:#f92672">=</span> apache
++ user <span style="color:#f92672">=</span> nginx
+- group <span style="color:#f92672">=</span> apache
++ group <span style="color:#f92672">=</span> nginx
 
-# 38행
-- listen = 127.0.0.1:9000
-+ listen = /var/run/php-fpm/php-fpm.sock
+<span style="color:#75715e"># 38행</span>
+- listen <span style="color:#f92672">=</span> 127.0.0.1:9000
++ listen <span style="color:#f92672">=</span> /var/run/php-fpm/php-fpm.sock
 
-# 48행
-- ;listen.owner = nobody
-- ;listen.group = nobody
-- ;listen.mode = 0660
-+ listen.owner = nginx
-+ listen.group = nginx
-+ listen.mode = 0660
-</code></pre>
-
-<p>php-fpm 재기동 후、<code>php-fpm.sock</code>파일이 생성되어 있는지 확인합니다.</p>
-
-<pre><code class="language-shell">$ sudo systemctl restart php-fpm
+<span style="color:#75715e"># 48행</span>
+- ;listen.owner <span style="color:#f92672">=</span> nobody
+- ;listen.group <span style="color:#f92672">=</span> nobody
+- ;listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span>
++ listen.owner <span style="color:#f92672">=</span> nginx
++ listen.group <span style="color:#f92672">=</span> nginx
++ listen.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span>
+</code></pre></div><p>php-fpm 재기동 후、<code>php-fpm.sock</code>파일이 생성되어 있는지 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart php-fpm
 $ cd /var/run/php-fpm/
 $ ls
 php-fpm.pid  php-fpm.sock
-</code></pre>
-
-<h2 id="nginx수정">nginx수정</h2>
-
-<pre><code class="language-shell">$ sudo vi /etc/nginx/conf.d/exemple.com.conf
-location ~ \.php$ {
+</code></pre></div><h2 id="nginx수정">nginx수정</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vi /etc/nginx/conf.d/exemple.com.conf
+location ~ <span style="color:#ae81ff">\.</span>php$ <span style="color:#f92672">{</span>
         root   /usr/share/nginx/html;
         - fastcgi_pass   127.0.0.1:9000;
         + fastcgi_pass   unix:/var/run/php-fpm/php-fpm.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
         include        fastcgi_params;
-    }
-</code></pre>
-
-<p>Nginx 재기동</p>
-
-<pre><code class="language-shell">sudo systemctl restart nginx
-</code></pre>
-
-<h2 id="php동작확인">php동작확인</h2>
-
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>Nginx 재기동</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo systemctl restart nginx
+</code></pre></div><h2 id="php동작확인">php동작확인</h2>
 <p>브라우져로 ip어드레스(<code>http://xxx.xxx.xxx.xxx/phpinfo.php</code>)를 입력하여 php 정보확인 화면이 표시 되는지 확인합니다.</p>
 
 </div>
@@ -204,8 +188,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

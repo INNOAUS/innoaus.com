@@ -74,36 +74,25 @@ CentOS 7 에 ICE(Internet Communications Engine) 설치하기 - Innoaus 이노�
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>ICE는 ZeroC, Inc. (<a href="https://www.zeroc.com">https://www.zeroc.com</a>) 이 개발한 분산객체모델을 위한 프레임워크로 다양한 언어환경을 지원합니다.<br />
+    <p>ICE는 ZeroC, Inc. (<a href="https://www.zeroc.com">https://www.zeroc.com</a>) 이 개발한 분산객체모델을 위한 프레임워크로 다양한 언어환경을 지원합니다.<br>
 다음은 CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.</p>
-
 <h2 id="yum-리포지터리-구성하기">yum 리포지터리 구성하기</h2>
-
-<pre><code class="language-shell">$ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo
 $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/
-</code></pre>
-
-<h2 id="ice-설치하기-c-python-php-그리고-ice-기반-서비스-설치">Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치)</h2>
-
-<pre><code class="language-shell">$ sudo yum -y install ice-all-runtime ice-all-devel
-</code></pre>
-
-<h2 id="설치-확인하기">설치 확인하기</h2>
-
-<p><code>slice2cpp</code> 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.<br />
+</code></pre></div><h2 id="ice-설치하기-c-python-php-그리고-ice-기반-서비스-설치">Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum -y install ice-all-runtime ice-all-devel
+</code></pre></div><h2 id="설치-확인하기">설치 확인하기</h2>
+<p><code>slice2cpp</code> 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.<br>
 설치여부를 이 커멘드를 실행하여 확인합니다.</p>
-
-<pre><code class="language-shell">$ slice2cpp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ slice2cpp
 slice2cpp: error: no input file
-Usage: slice2cpp [options] slice-files...
+Usage: slice2cpp <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> slice-files...
 Options:
 -h, --help               Show this message.
 -v, --version            Display the Ice version.
 -DNAME                   Define NAME as 1.
--DNAME=DEF               Define NAME as DEF.
--UNAME                   Remove any definition for NAME.
+-DNAME<span style="color:#f92672">=</span>DEF               Define NAME as DEF.
+-UNAME                   Remove any definition <span style="color:#66d9ef">for</span> NAME.
 -IDIR                    Put DIR in the include file search path.
 -E                       Print preprocessor output on stdout.
 --output-dir DIR         Create files in the directory DIR.
@@ -112,28 +101,24 @@ Options:
 --depend-xml             Generate dependencies in XML format.
 --depend-file FILE       Write dependencies to FILE instead of standard output.
 --validate               Validate command line options.
---header-ext EXT         Use EXT instead of the default `h' extension.
---source-ext EXT         Use EXT instead of the default `cpp' extension.
---add-header HDR[,GUARD] Add #include for HDR (with guard GUARD) to generated source file.
+--header-ext EXT         Use EXT instead of the default <span style="color:#e6db74">`</span>h<span style="color:#e6db74">&#39; extension.
+</span><span style="color:#e6db74">--source-ext EXT         Use EXT instead of the default `cpp&#39;</span> extension.
+--add-header HDR<span style="color:#f92672">[</span>,GUARD<span style="color:#f92672">]</span> Add <span style="color:#75715e">#include for HDR (with guard GUARD) to generated source file.</span>
 --include-dir DIR        Use DIR as the header include directory in source files.
---impl-c++11             Generate sample implementations for C++11 mapping.
---impl-c++98             Generate sample implementations for C++98 mapping.
---checksum               Generate checksums for Slice definitions.
---dll-export SYMBOL      Use SYMBOL for DLL exports
-                         deprecated: use instead [[&quot;cpp:dll-export:SYMBOL&quot;]] metadata.
+--impl-c++11             Generate sample implementations <span style="color:#66d9ef">for</span> C++11 mapping.
+--impl-c++98             Generate sample implementations <span style="color:#66d9ef">for</span> C++98 mapping.
+--checksum               Generate checksums <span style="color:#66d9ef">for</span> Slice definitions.
+--dll-export SYMBOL      Use SYMBOL <span style="color:#66d9ef">for</span> DLL exports
+                         deprecated: use instead <span style="color:#f92672">[[</span><span style="color:#e6db74">&#34;cpp:dll-export:SYMBOL&#34;</span><span style="color:#f92672">]]</span> metadata.
 --ice                    Allow reserved Ice prefix in Slice identifiers
-                         deprecated: use instead [[&quot;ice-prefix&quot;]] metadata.
+                         deprecated: use instead <span style="color:#f92672">[[</span><span style="color:#e6db74">&#34;ice-prefix&#34;</span><span style="color:#f92672">]]</span> metadata.
 --underscore             Allow underscores in Slice identifiers
-                         deprecated: use instead [[&quot;underscore&quot;]] metadata.
+                         deprecated: use instead <span style="color:#f92672">[[</span><span style="color:#e6db74">&#34;underscore&#34;</span><span style="color:#f92672">]]</span> metadata.
 
-</code></pre>
-
-<h2 id="설치-버전-확인하기">설치 버전 확인하기</h2>
-
-<pre><code class="language-shell">$ slice2cpp --version
+</code></pre></div><h2 id="설치-버전-확인하기">설치 버전 확인하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ slice2cpp --version
 3.7.2
-</code></pre>
-
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -194,8 +179,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

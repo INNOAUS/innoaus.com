@@ -78,33 +78,20 @@ Linux 에서 패스워드 입력없이 &#39;sudo&#39; 커멘드 실행하기 - I
 </h1>
 
 <div id="article" class="article">
-    <p>개발환경 등에서 매번 sudo패스워드를 입력하는 것은 상당히 번거로운 일입니다.<br />
+    <p>개발환경 등에서 매번 sudo패스워드를 입력하는 것은 상당히 번거로운 일입니다.<br>
 패스워드 입력 없이 sudo 커멘드를 실행 할 수 있는 방법을 소개합니다.</p>
-
-<p><code>user1</code> 이라는 계정을 가정하여 설명.<br />
+<p><code>user1</code> 이라는 계정을 가정하여 설명.<br>
 sudo 커멘드 실행과 관련된 설정 파일은 <code>/etc/sudoers</code> 파일이고, <code>user1</code> 계정에 대해 패스워드 업력 없도록 설정하기 위하여 이 파일에 설정을 합니다.</p>
-
 <p><code>/etc/sudoers</code> 파일 수정</p>
-
-<pre><code class="language-shell"># sudo vi /etc/sudoers
-</code></pre>
-
-<p>관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># sudo vi /etc/sudoers</span>
+</code></pre></div><p>관리자 권한으로 구동하는 모든 커멘드에 대해 적용하려면<br>
 파일의 끝에</p>
-
-<pre><code class="language-shell">%user1 ALL=(ALL) NOPASSWD: ALL
-</code></pre>
-
-<p>을 추가.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">%user1 ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> NOPASSWD: ALL
+</code></pre></div><p>을 추가.</p>
 <p>특정 커멘드(<code>/bin/kill, /bin/rm</code>)에 대해 적용하려면</p>
-
-<pre><code class="language-shell">%user1 ALL=(ALL) NOPASSWD: /bin/kill, /bin/rm
-</code></pre>
-
-<p>을 추가하고 저장합니다.</p>
-
-<p>sudoers파일을 보다 안전하게 편집해야 하는 경우는 <code>visudo</code>커멘드를 이용합니다.<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">%user1 ALL<span style="color:#f92672">=(</span>ALL<span style="color:#f92672">)</span> NOPASSWD: /bin/kill, /bin/rm
+</code></pre></div><p>을 추가하고 저장합니다.</p>
+<p>sudoers파일을 보다 안전하게 편집해야 하는 경우는 <code>visudo</code>커멘드를 이용합니다.<br>
 <a href="https://www.google.co.kr/search?lr=lang_ko&amp;biw=1432&amp;bih=936&amp;tbs=lr%3Alang_1ko&amp;ei=WoZ4XNnCBduA-Qb9tJuADw&amp;q=visudo&amp;oq=visudo&amp;gs_l=psy-ab.3..0l10.775.775..1179...0.0..0.77.77.1......0....2j1..gws-wiz.gOIkVbwBy1Y">visudo</a></p>
 
 </div>
@@ -167,8 +154,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

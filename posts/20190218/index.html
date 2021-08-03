@@ -74,61 +74,35 @@ vuepress 사용해보기（환경준비） - Innoaus 이노스
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>vuepress는 현재 버젼<code>0.x</code>과 <code>1.x alpha</code> 2가지가 있습니다만, <code>1.x</code>부터는 plugin기능이 강화되어 Blog사이트 등을 구축하기 쉽게 되어 있다고 합니다.<br />
+    <p>vuepress는 현재 버젼<code>0.x</code>과 <code>1.x alpha</code> 2가지가 있습니다만, <code>1.x</code>부터는 plugin기능이 강화되어 Blog사이트 등을 구축하기 쉽게 되어 있다고 합니다.<br>
 (문서용 사이트만을 만든다면 어느 버젼도 크게 차이가 없을 듯 합니다.)</p>
-
 <h2 id="인스톨">인스톨</h2>
-
-<p>이번은 <code>1.x alpha</code>버젼을 로컬 인스톨 합니다.<br />
+<p>이번은 <code>1.x alpha</code>버젼을 로컬 인스톨 합니다.<br>
 작업용 폴더(vuepress_v1_test)를 만든 후</p>
-
-<pre><code class="language-sh">cd vuepress_v1_test
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd vuepress_v1_test
 npm init -y
 npm install -D vuepress@next
-</code></pre>
-
-<p>인스톨이 완료되면 폴더<code>dev_docs</code>를 만듭니다.<br />
-vuepress를 로컬 인스톨 한 경우는 <code>vuepress</code>커멘드를 사용할 수 없으므로 <code>npm scripts</code>을 이용합니다.<br />
+</code></pre></div><p>인스톨이 완료되면 폴더<code>dev_docs</code>를 만듭니다.<br>
+vuepress를 로컬 인스톨 한 경우는 <code>vuepress</code>커멘드를 사용할 수 없으므로 <code>npm scripts</code>을 이용합니다.<br>
 <code>package.json</code>파일의 <code>scripts</code>부분을 다음과 같이 변경합니다.</p>
-
-<pre><code class="language-json">&quot;scripts&quot;: {
-    &quot;dev&quot;: &quot;vuepress dev dev_docs&quot;,
-    &quot;build&quot;: &quot;vuepress build dev_docs&quot;
-},
-</code></pre>
-
-<p>*<code>scripts</code>를 사용 안하는 경우는</p>
-
-<pre><code class="language-sh">npx vuepress dev dev_docs
-</code></pre>
-
-<p>이것으로 환경 준비가 완료 되었습니다.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+    <span style="color:#f92672">&#34;dev&#34;</span>: <span style="color:#e6db74">&#34;vuepress dev dev_docs&#34;</span>,
+    <span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;vuepress build dev_docs&#34;</span>
+}<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>*<code>scripts</code>를 사용 안하는 경우는</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npx vuepress dev dev_docs
+</code></pre></div><p>이것으로 환경 준비가 완료 되었습니다.</p>
 <h2 id="markdown-파일-쓰기">markdown 파일 쓰기</h2>
-
 <p><code>dev_docs</code>폴더에 <code>readme.md</code>파일을 만든 후 markdown을 씁니다.</p>
-
-<pre><code class="language-sh"># VuePress테스트
-</code></pre>
-
-<p>（<code>readme.md</code>은 <code>index.html</code>로 출력됩니다.）</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># VuePress테스트</span>
+</code></pre></div><p>（<code>readme.md</code>은 <code>index.html</code>로 출력됩니다.）</p>
 <h2 id="브라우져로-표시-확인">브라우져로 표시 확인</h2>
-
-<pre><code class="language-sh">npm run dev
-</code></pre>
-
-<p>브라우져로 <code>http://localhost:8080/</code>을 열면 <code>VuePress테스트</code>가 표시됩니다.<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm run dev
+</code></pre></div><p>브라우져로 <code>http://localhost:8080/</code>을 열면 <code>VuePress테스트</code>가 표시됩니다.<br>
 <code>readme.md</code>파일을 편집,저장하면 브라우져가 자동 갱신되면서 실시간으로 편집 내용을 확인할 수 있습니다.</p>
-
 <h2 id="build">Build</h2>
-
-<pre><code class="language-sh">npm run build
-</code></pre>
-
-<p><code>build</code>커멘드를 실행하면 <code>.vuepress\dist</code>폴더에 html 파일이 출력됩니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm run build
+</code></pre></div><p><code>build</code>커멘드를 실행하면 <code>.vuepress\dist</code>폴더에 html 파일이 출력됩니다.</p>
 
 </div>
 
@@ -190,8 +164,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

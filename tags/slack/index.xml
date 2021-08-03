@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Slack on Innoaus 이노스</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Slack on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/slack/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/slack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Slack(슬랙)에 GitHub 정보를 연계하는 방법</title>
       <link>https://innoaus.com/posts/20190307_1/</link>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Drone on Innoaus 이노스</title>
+    <title>drone on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/drone/</link>
-    <description>Recent content in Drone on Innoaus 이노스</description>
+    <description>Recent content in drone on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/drone/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/drone/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HackRF One을 활용한 드론 해킹</title>
       <link>https://innoaus.com/posts/20190410/</link>

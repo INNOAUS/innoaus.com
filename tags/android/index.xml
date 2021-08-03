@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on Innoaus 이노스</title>
+    <title>android on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/android/</link>
-    <description>Recent content in Android on Innoaus 이노스</description>
+    <description>Recent content in android on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>안드로이드 코드에서 Date &amp; Time 설정 확인하기</title>
       <link>https://innoaus.com/posts/20190305_2/</link>
@@ -23,7 +19,8 @@ New Project 새 Project를 생성합니다.
 EmptyActivity Template를 선택하여 시작합니다.
 샘플 소스코드 결과를 표시할 TextView를 하나 추가합니다.
  activity_main.xml
-&amp;lt;TextView android:id=&amp;quot;@+id/text_result&amp;quot; android:layout_width=&amp;quot;wrap_content&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot;/&amp;gt;   다음 함수를 원하는 곳에서 호출합니다.</description>
+ &amp;lt;TextView android:id=&amp;#34;@+id/text_result&amp;#34; android:layout_width=&amp;#34;wrap_content&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;/&amp;gt; 다음 함수를 원하는 곳에서 호출합니다.
+ MainActivity.kt</description>
     </item>
     
   </channel>

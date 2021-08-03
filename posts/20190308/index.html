@@ -78,89 +78,53 @@ CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 1 (Nginx 1.14인스톨
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>작업 로그 형태로 남김니다.</p>
-
+    <p>작업 로그 형태로 남김니다.</p>
 <ul>
 <li>Nginx 1.14인스톨</li>
 <li><a href="/posts/201903011/">php7.2,php-fpm인스톨</a></li>
 <li><a href="/posts/201903012/">php-fpm UNIX socket접속설정</a></li>
 </ul>
-
 <h2 id="nginx리포지터리추가">Nginx리포지터리추가</h2>
-
-<pre><code class="language-shell">$ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-</code></pre>
-
-<h2 id="팩키지-정보에서-버젼-확인">팩키지 정보에서 버젼 확인</h2>
-
-<pre><code class="language-shell">$ sudo yum info --enablerepo=nginx nginx
-#~~~
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+</code></pre></div><h2 id="팩키지-정보에서-버젼-확인">팩키지 정보에서 버젼 확인</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum info --enablerepo<span style="color:#f92672">=</span>nginx nginx
+<span style="color:#75715e">#~~~</span>
 Version     : 1.14.2.
-</code></pre>
-
-<h2 id="인스톨">인스톨</h2>
-
-<pre><code class="language-shell">$ sudo yum -y install --enablerepo=nginx nginx
-</code></pre>
-
-<h2 id="버젼-확인">버젼 확인</h2>
-
-<pre><code class="language-shell">$ nginx -v
+</code></pre></div><h2 id="인스톨">인스톨</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum -y install --enablerepo<span style="color:#f92672">=</span>nginx nginx
+</code></pre></div><h2 id="버젼-확인">버젼 확인</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ nginx -v
 nginx version: nginx/1.14.2
-</code></pre>
-
-<h2 id="nginx기동">Nginx기동</h2>
-
-<pre><code class="language-shell">$ sudo systemctl start nginx
-</code></pre>
-
-<p>브라우져로 IP어드레스(<code>http://xxx.xxx.xxx.xxx/</code>)에 접속해 nginx페이지가 표시되는지 확인합니다.</p>
-
+</code></pre></div><h2 id="nginx기동">Nginx기동</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl start nginx
+</code></pre></div><p>브라우져로 IP어드레스(<code>http://xxx.xxx.xxx.xxx/</code>)에 접속해 nginx페이지가 표시되는지 확인합니다.</p>
 <h2 id="루트-디렉터리-변경">루트 디렉터리 변경</h2>
-
-<p>Nginx에 설정된 디폴트 디렉터리 ： <code>/usr/share/nginx/html</code><br />
+<p>Nginx에 설정된 디폴트 디렉터리 ： <code>/usr/share/nginx/html</code><br>
 <code>/var/www/html/exemple.com</code> 로 변경할 경우</p>
-
-<pre><code class="language-shell">$ cd /etc/nginx/conf.d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd /etc/nginx/conf.d
 // 혹시 모르니 백업합니다.
 $ sudo cp default.conf default.conf.back
 $ sudo mv default.conf exemple.com.conf
-</code></pre>
-
-<p><code>exemple.com.conf</code>의 <code>location</code>부분 <code>root</code>패스를 수정합니다.</p>
-
-<pre><code class="language-shell">$ sudo vi localhost.conf
-- location / {
+</code></pre></div><p><code>exemple.com.conf</code>의 <code>location</code>부분 <code>root</code>패스를 수정합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vi localhost.conf
+- location / <span style="color:#f92672">{</span>
 -     root   /usr/share/nginx/html;
 -     index  index.html index.htm;
-- }
-+ location / {
+- <span style="color:#f92672">}</span>
++ location / <span style="color:#f92672">{</span>
 +     root   /var/www/html/exemple.com;
 +     index  index.html index.htm;
-+ }
-</code></pre>
-
-<p><code>.conf</code> 파일 편집에 문제가 없는지 확인합니다.</p>
-
-<pre><code class="language-shell">$ nginx -t
++ <span style="color:#f92672">}</span>
+</code></pre></div><p><code>.conf</code> 파일 편집에 문제가 없는지 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ nginx -t
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
-</code></pre>
-
-<p>Nginx를 재기동해 확인합니다.</p>
-
-<pre><code class="language-shell">$ sudo systemctl restart nginx
-</code></pre>
-
-<h2 id="서비스-자동실행-유효화">서비스 자동실행 유효화</h2>
-
+</code></pre></div><p>Nginx를 재기동해 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart nginx
+</code></pre></div><h2 id="서비스-자동실행-유효화">서비스 자동실행 유효화</h2>
 <p>OS부팅시 Nginx가 자동으로 실행되도록 설정합니다.</p>
-
-<pre><code class="language-shell">$ sudo systemctl enable nginx
-</code></pre>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl enable nginx
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -221,8 +185,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

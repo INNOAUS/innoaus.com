@@ -74,36 +74,21 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>프로젝트 rang은 Abhinav Gauniyal 이 만든 헤더파일만으로 동작하는 콘솔 텍스트 색 적용하는 오픈소스 라이브러리 입니다.
-<a href="https://github.com/agauniyal/rang" target="_blank"><a href="https://github.com/agauniyal/rang">https://github.com/agauniyal/rang</a></a></p>
-
+    <p>프로젝트 rang은 Abhinav Gauniyal 이 만든 헤더파일만으로 동작하는 콘솔 텍스트 색 적용하는 오픈소스 라이브러리 입니다.
+<!-- raw HTML omitted --><a href="https://github.com/agauniyal/rang">https://github.com/agauniyal/rang</a><!-- raw HTML omitted --></p>
 <h5 id="colors-for-your-terminal">Colors for your Terminal.</h5>
-
 <p>Unix-like (리눅스, 유닉스, 맥)
-<img src="https://cloud.githubusercontent.com/assets/7630575/13501282/0bd00074-e18c-11e5-9848-5bd1f20566d9.gif" alt="rang-demo" /></p>
-
+<img src="https://cloud.githubusercontent.com/assets/7630575/13501282/0bd00074-e18c-11e5-9848-5bd1f20566d9.gif" alt="rang-demo"></p>
 <p>Windows Demo
-<img src="https://cloud.githubusercontent.com/assets/11349690/19836886/8134975e-9ebe-11e6-9ee4-c4657784ff3b.gif" alt="rang-windows-demo" /></p>
-
+<img src="https://cloud.githubusercontent.com/assets/11349690/19836886/8134975e-9ebe-11e6-9ee4-c4657784ff3b.gif" alt="rang-windows-demo"></p>
 <h2 id="라이브러리-의존성">라이브러리 의존성</h2>
-
 <p>rang은 C++ standard library만으로 동작하므로 별도의 추가 라이브러리는 필요하지 않습니다.</p>
-
 <h2 id="설치">설치</h2>
-
-<pre><code class="language-sh">$ git clone https://github.com/agauniyal/rang.git 
-</code></pre>
-
-<h2 id="내-프로젝트에-적용하기">내 프로젝트에 적용하기</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git clone https://github.com/agauniyal/rang.git 
+</code></pre></div><h2 id="내-프로젝트에-적용하기">내 프로젝트에 적용하기</h2>
 <p>설치 폴더내 <code>include/rang.hpp</code> 파일을 자신의 프로젝트의 적정한 위치에 복사하거나, 설치 폴더의 <code>include</code> 폴더를 프로젝트 경로에 추가합니다.</p>
-
 <h2 id="다양한-설정">다양한 설정</h2>
-
 <h4 id="text-styles">Text Styles</h4>
-
 <table>
 <thead>
 <tr>
@@ -112,56 +97,47 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 <th>Old Win</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>rang::style::bold</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::style::dim</code></td>
 <td>yes</td>
 <td>no</td>
 </tr>
-
 <tr>
 <td><code>rang::style::italic</code></td>
 <td>yes</td>
 <td>no</td>
 </tr>
-
 <tr>
 <td><code>rang::style::underline</code></td>
 <td>yes</td>
 <td>no</td>
 </tr>
-
 <tr>
 <td><code>rang::style::blink</code></td>
 <td>no</td>
 <td>no</td>
 </tr>
-
 <tr>
 <td><code>rang::style::rblink</code></td>
 <td>no</td>
 <td>no</td>
 </tr>
-
 <tr>
 <td><code>rang::style::reversed</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::style::conceal</code></td>
 <td>maybe</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::style::crossed</code></td>
 <td>yes</td>
@@ -169,9 +145,7 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </tr>
 </tbody>
 </table>
-
 <h4 id="text-color">Text Color</h4>
-
 <table>
 <thead>
 <tr>
@@ -180,50 +154,42 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 <th>Old Win</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>rang::fg::black</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::red</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::green</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::yellow</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::blue</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::magenta</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::cyan</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::gray</code></td>
 <td>yes</td>
@@ -231,9 +197,7 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </tr>
 </tbody>
 </table>
-
 <h4 id="background-color">Background Color</h4>
-
 <table>
 <thead>
 <tr>
@@ -242,50 +206,42 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 <th>Old Win</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>rang::bg::black</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::red</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::green</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::yellow</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::blue</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::magenta</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::cyan</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::gray</code></td>
 <td>yes</td>
@@ -293,9 +249,7 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </tr>
 </tbody>
 </table>
-
 <h4 id="bright-foreground-color">Bright Foreground Color</h4>
-
 <table>
 <thead>
 <tr>
@@ -304,50 +258,42 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 <th>Old Win</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>rang::fgB::black</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::red</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::green</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::yellow</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::blue</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::magenta</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::cyan</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fgB::gray</code></td>
 <td>yes</td>
@@ -355,9 +301,7 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </tr>
 </tbody>
 </table>
-
 <h4 id="bright-background-color">Bright Background Color</h4>
-
 <table>
 <thead>
 <tr>
@@ -366,50 +310,42 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 <th>Old Win</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>rang::bgB::black</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::red</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::green</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::yellow</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::blue</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::magenta</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::cyan</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bgB::gray</code></td>
 <td>yes</td>
@@ -417,9 +353,7 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </tr>
 </tbody>
 </table>
-
-<h4 id="reset-styles-colors">Reset Styles/Colors</h4>
-
+<h4 id="reset-stylescolors">Reset Styles/Colors</h4>
 <table>
 <thead>
 <tr>
@@ -428,20 +362,17 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 <th>Old Win</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>rang::style::reset</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::fg::reset</code></td>
 <td>yes</td>
 <td>yes</td>
 </tr>
-
 <tr>
 <td><code>rang::bg::reset</code></td>
 <td>yes</td>
@@ -449,25 +380,22 @@ C&#43;&#43; 콘솔 응용프로그램에 색 적용하기 - Innoaus 이노스
 </tr>
 </tbody>
 </table>
-
 <h2 id="간단한-sample-code">간단한 sample code</h2>
-
-<pre><code class="language-c++">#include &quot;rang.hpp&quot;
-int main()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;rang.hpp&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 {
-    rang::setControlMode(rang::control::Auto); 
-    // rang::control::Auto　//터미널이 색을 지원하는지 자동으로 검출하여 적용여부 결정
-    // rang::control::Off  //색 적용기능을 해제
-    // rang::control::Force  //터미널 색 지원여부 상관없이 강제 적용
-    
-    std::cout &lt;&lt; &quot;Hello world !!!&quot; 
-              &lt;&lt; rang::style::bold 
-              &lt;&lt; &quot;Rang styled text !!!&quot;
-              &lt;&lt; rang::style::reset &lt;&lt; std::endl;
-    return 0;
+    rang<span style="color:#f92672">::</span>setControlMode(rang<span style="color:#f92672">::</span>control<span style="color:#f92672">::</span>Auto); 
+    <span style="color:#75715e">// rang::control::Auto　//터미널이 색을 지원하는지 자동으로 검출하여 적용여부 결정
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// rang::control::Off  //색 적용기능을 해제
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// rang::control::Force  //터미널 색 지원여부 상관없이 강제 적용
+</span><span style="color:#75715e"></span>    
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Hello world !!!&#34;</span> 
+              <span style="color:#f92672">&lt;&lt;</span> rang<span style="color:#f92672">::</span>style<span style="color:#f92672">::</span>bold 
+              <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Rang styled text !!!&#34;</span>
+              <span style="color:#f92672">&lt;&lt;</span> rang<span style="color:#f92672">::</span>style<span style="color:#f92672">::</span>reset <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre>
-
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -528,8 +456,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

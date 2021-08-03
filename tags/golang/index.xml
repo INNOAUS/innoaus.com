@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on Innoaus 이노스</title>
+    <title>golang on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/golang/</link>
-    <description>Recent content in Golang on Innoaus 이노스</description>
+    <description>Recent content in golang on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 7 에 golang 설치하기</title>
       <link>https://innoaus.com/posts/20190224/</link>

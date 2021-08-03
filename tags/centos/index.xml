@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Centos on Innoaus 이노스</title>
+    <title>CentOS on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/centos/</link>
-    <description>Recent content in Centos on Innoaus 이노스</description>
+    <description>Recent content in CentOS on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 3 (php-fpm UNIX socket접속설정)</title>
       <link>https://innoaus.com/posts/20190312/</link>
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190312/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660  php-fpm 재기동 후、php-fpm.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660 php-fpm 재기동 후、php-fpm.</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190311/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm  yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16  인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm  버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS )  서비스 자동시작 설정 $ sudo systemctl enable php-fpm  Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16 인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm 버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS ) 서비스 자동시작 설정 $ sudo systemctl enable php-fpm Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
     </item>
     
     <item>
@@ -36,8 +32,9 @@
       
       <guid>https://innoaus.com/posts/20190308/</guid>
       <description>작업 로그 형태로 남김니다.
- Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2.  인스톨 $ sudo yum -y install --enablerepo=nginx nginx  버젼 확인 $ nginx -v nginx version: nginx/1.14.2  Nginx기동 $ sudo systemctl start nginx  브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
-루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html</description>
+ Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2. 인스톨 $ sudo yum -y install --enablerepo=nginx nginx 버젼 확인 $ nginx -v nginx version: nginx/1.14.2 Nginx기동 $ sudo systemctl start nginx 브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
+루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html
+/var/www/html/exemple.com 로 변경할 경우</description>
     </item>
     
     <item>
@@ -63,7 +60,7 @@ $ vi update_service.sh #!/bin/sh sudo service a_process.service stop sudo cp a_l
 CentOS 6,7 에 gcc 7 및 관련된 개발도구 설치하기 참고
 최신 릴리스 버전 다운로드 하기 https://github.com/DOCGroup/ACE_TAO/releases 에서 최신 버젼을 다운로드 합니다.
 2019년 3월 4일 현재 최신버전은 6.5.4 입니다. ACE-6.5.4.tar.gz
-$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz  압축해제하기 $ tar xvfz ACE-5.6.4.tar.gz  컴파일 환경 설정하기 ACE 라이브러리 컴파일을 위해서 환경변수 ACE_ROOT를 설정해야 합니다.</description>
+$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz 압축해제하기 $ tar xvfz ACE-5.6.4.tar.gz 컴파일 환경 설정하기 ACE 라이브러리 컴파일을 위해서 환경변수 ACE_ROOT를 설정해야 합니다.</description>
     </item>
     
     <item>
@@ -74,8 +71,9 @@ $ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE
       <guid>https://innoaus.com/posts/20190305/</guid>
       <description>ICE는 ZeroC, Inc. (https://www.zeroc.com) 이 개발한 분산객체모델을 위한 프레임워크로 다양한 언어환경을 지원합니다.
 다음은 CentOS 7 에 Ice Framework를 설치하는 방법을 간단히 정리한 것입니다.
-yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/  Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치) $ sudo yum -y install ice-all-runtime ice-all-devel  설치 확인하기 slice2cpp 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.
-설치여부를 이 커멘드를 실행하여 확인합니다.</description>
+yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo $ sudo cp zeroc-ice3.7.repo /etc/yum.repos.d/ Ice 설치하기 (C++, Python, PHP 그리고 Ice 기반 서비스 설치) $ sudo yum -y install ice-all-runtime ice-all-devel 설치 확인하기 slice2cpp 커멘드는 Slice 파일을 컴파일하여 C++ 코드로 생성하는 유틸리티입니다.
+설치여부를 이 커멘드를 실행하여 확인합니다.
+$ slice2cpp slice2cpp: error: no input file Usage: slice2cpp [options] slice-files.</description>
     </item>
     
     <item>
@@ -85,7 +83,7 @@ yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/z
       
       <guid>https://innoaus.com/posts/20190304_2/</guid>
       <description>다음은 소스코드를 이용하여 빌드하였거나 복사한 데이터베이스를 서비스로 동작하기 위한 방법을 정리한 것입니다.
-서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 # # It&#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;quot;/etc/systemd/system/postgresql-9.4.service&amp;quot;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
+서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 #  # It&amp;#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;#34;/etc/systemd/system/postgresql-9.4.service&amp;#34;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
     </item>
     
     <item>
@@ -98,7 +96,7 @@ yum 리포지터리 구성하기 $ wget https://zeroc.com/download/Ice/3.7/el7/z
 Postgres-BDR 을 소스코드 컴파일 하여 설치하기 소스코드를 컴파일하기 위해서 gcc 컴파일러를 설치해야 합니다.
 여기서는 gcc 7을 사용할 것입니다.
 gcc 7 인스톨 관련 글
-준비사항 $ sudo yum -y install centos-release-scl $ sudo yum -y install devtoolset-7 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel $ sudo yum -y install git  Postgres-BDR-9.4 설치하기 최신 소스코드를 $HOME/2ndquadrant_bdr 폴더에 다운로드한 후 컴파일 합니다.</description>
+준비사항 $ sudo yum -y install centos-release-scl $ sudo yum -y install devtoolset-7 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel $ sudo yum -y install git Postgres-BDR-9.4 설치하기 최신 소스코드를 $HOME/2ndquadrant_bdr 폴더에 다운로드한 후 컴파일 합니다.</description>
     </item>
     
     <item>
@@ -122,7 +120,7 @@ CentOS Download Page
       <guid>https://innoaus.com/posts/20190303/</guid>
       <description>SoftwareCollections.org 프로젝트 SoftwareCollections.org 프로젝트는 레드헷(Red Hat Enterprise Linux), Fedora, CentOS, 그리고 Scientific Linux를 위한 Software Collections(SCLs)를 만드는 프로젝트 입니다. https://www.softwarecollections.org
 이 것은 패키지간의 영향없이 하나의 시스템에 다양한 버전을 설치하여 개발에 도움을 줍니다.
-Software Collection 패키지 설치하기 $ sudo yum -y install centos-release-scl Loaded plugins: fastestmirror Determining fastest mirrors * base: data.aonenetworks.kr * extras: data.aonenetworks.kr * updates: data.aonenetworks.kr base | 3.6 kB 00:00:00 extras | 3.4 kB 00:00:00 updates | 3.</description>
+Software Collection 패키지 설치하기 $ sudo yum -y install centos-release-scl Loaded plugins: fastestmirror Determining fastest mirrors * base: data.aonenetworks.kr * extras: data.aonenetworks.kr * updates: data.aonenetworks.kr base | 3.6 kB 00:00:00 extras | 3.4 kB 00:00:00 updates | 3.4 kB 00:00:00 (1/4): base/7/x86_64/group_gz | 166 kB 00:00:00 (2/4): extras/7/x86_64/primary_db | 180 kB 00:00:00 (3/4): updates/7/x86_64/primary_db | 2.</description>
     </item>
     
     <item>

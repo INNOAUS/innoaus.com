@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virtualbox on Innoaus 이노스</title>
+    <title>virtualbox on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/virtualbox/</link>
-    <description>Recent content in Virtualbox on Innoaus 이노스</description>
+    <description>Recent content in virtualbox on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 04 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VirtualBox에 CentOS 7 추가하기</title>
       <link>https://innoaus.com/posts/20190304_3/</link>

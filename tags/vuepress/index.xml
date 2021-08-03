@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vuepress on Innoaus 이노스</title>
+    <title>vuepress on Innoaus 이노스</title>
     <link>https://innoaus.com/tags/vuepress/</link>
-    <description>Recent content in Vuepress on Innoaus 이노스</description>
+    <description>Recent content in vuepress on Innoaus 이노스</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://innoaus.com/tags/vuepress/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://innoaus.com/tags/vuepress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vuepress 사용해보기 (디폴트 테마)</title>
       <link>https://innoaus.com/posts/20190222/</link>
@@ -19,10 +15,10 @@
       <guid>https://innoaus.com/posts/20190222/</guid>
       <description>.vuepress폴더에 theme폴더를 만들고, github의 vuepress디폴트 테마를 참고하면서 필요한 폴더와 파일을 작성하면 자동으로 덥어씌우기가 됩니다.
 단, github를 참고하면서 작업을 진행하는 것은 힘드므로 디폴트 테마를 로컬에 복사해서 확인하는 것이 편합니다.
-cd dev_docs npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용  .vuepress\theme에 디폴트 테마 파일이 복사됩니다.
+cd dev_docs npx vuepress eject //vuepress는 로컬 인스톨 한 경우는 npx를 이용 .vuepress\theme에 디폴트 테마 파일이 복사됩니다.
 *아직 alpha버젼이므로 디렉토리 구성 등은 추후 변경될 수 있습니다.
 Home readme.me의 yaml부분에 다음과 같이 설정을 하면 vuepress.vuejs.org의 화면과 같이 표시 됩니다.
-home: true heroImage: /hero.</description>
+home: true heroImage: /hero.png heroText: Hero Title tagline: Hero subtitle actionText: Get Started → actionLink: /guide/ features: - title: Simplicity First details: Minimal setup with markdown-centered project structure helps you focus on writing.</description>
     </item>
     
     <item>
@@ -34,7 +30,7 @@ home: true heroImage: /hero.</description>
       <description>사이트 공통 항목 설정 메뉴, 사이드바 dev_docs폴더에 about.md를 만듭니다.
 .vuepress폴더에 public폴더와 config.js파일을 만들고 다음을 입력합니다.
 public폴더에는 정적파일(이미지 파일등)을 넣어 놓는 곳입니다.
-module.exports = { themeConfig: { logo : &#39;logo.png&#39;, // \dev_docs\.vuepress\public\logo.png search: true, // 검색기능 nav: [ //헤더 메뉴 { text: &#39;Home&#39;, link: &#39;/&#39; }, { text: &#39;About&#39;, link: &#39;/about.html&#39; }, { text: &#39;서브메뉴&#39;, items: [ { text: &#39;메뉴１&#39;, link: &#39;/&#39; }, { text: &#39;메뉴２&#39;, link: &#39;/about.html&#39; }, ] } ], sidebar: [　//사이드바 링크 [&#39;/&#39;, &#39;사이드바 메뉴１&#39;], [&#39;/about.</description>
+module.exports = { themeConfig: { logo : &amp;#39;logo.png&amp;#39;, // \dev_docs\.vuepress\public\logo.png  search: true, // 검색기능  nav: [ //헤더 메뉴  { text: &amp;#39;Home&amp;#39;, link: &amp;#39;/&amp;#39; }, { text: &amp;#39;About&amp;#39;, link: &amp;#39;/about.html&amp;#39; }, { text: &amp;#39;서브메뉴&amp;#39;, items: [ { text: &amp;#39;메뉴１&amp;#39;, link: &amp;#39;/&amp;#39; }, { text: &amp;#39;메뉴２&amp;#39;, link: &amp;#39;/about.html&amp;#39; }, ] } ], sidebar: [　//사이드바 링크  [&amp;#39;/&amp;#39;, &amp;#39;사이드바 메뉴１&amp;#39;], [&amp;#39;/about.</description>
     </item>
     
     <item>
@@ -47,9 +43,10 @@ module.exports = { themeConfig: { logo : &#39;logo.png&#39;, // \dev_docs\.vuepr
 (문서용 사이트만을 만든다면 어느 버젼도 크게 차이가 없을 듯 합니다.)
 인스톨 이번은 1.x alpha버젼을 로컬 인스톨 합니다.
 작업용 폴더(vuepress_v1_test)를 만든 후
-cd vuepress_v1_test npm init -y npm install -D vuepress@next  인스톨이 완료되면 폴더dev_docs를 만듭니다.
+cd vuepress_v1_test npm init -y npm install -D vuepress@next 인스톨이 완료되면 폴더dev_docs를 만듭니다.
 vuepress를 로컬 인스톨 한 경우는 vuepress커멘드를 사용할 수 없으므로 npm scripts을 이용합니다.
-package.json파일의 scripts부분을 다음과 같이 변경합니다.</description>
+package.json파일의 scripts부분을 다음과 같이 변경합니다.
+&amp;#34;scripts&amp;#34;: { &amp;#34;dev&amp;#34;: &amp;#34;vuepress dev dev_docs&amp;#34;, &amp;#34;build&amp;#34;: &amp;#34;vuepress build dev_docs&amp;#34; }, *scripts를 사용 안하는 경우는</description>
     </item>
     
   </channel>

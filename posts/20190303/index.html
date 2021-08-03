@@ -74,18 +74,12 @@ CentOS 6/7 에 gcc 7 및 관련된 개발도구 설치하기 - Innoaus 이노스
 </h1>
 
 <div id="article" class="article">
-    
-
-<h2 id="softwarecollections-org-프로젝트">SoftwareCollections.org 프로젝트</h2>
-
+    <h2 id="softwarecollectionsorg-프로젝트">SoftwareCollections.org 프로젝트</h2>
 <p>SoftwareCollections.org 프로젝트는 레드헷(Red Hat Enterprise Linux), Fedora, CentOS, 그리고 Scientific Linux를 위한 Software Collections(SCLs)를 만드는 프로젝트 입니다.
 <a href="https://www.softwarecollections.org">https://www.softwarecollections.org</a></p>
-
 <p>이 것은 패키지간의 영향없이 하나의 시스템에 다양한 버전을 설치하여 개발에 도움을 줍니다.</p>
-
 <h2 id="software-collection-패키지-설치하기">Software Collection 패키지 설치하기</h2>
-
-<pre><code class="language-shell">$ sudo yum -y install centos-release-scl
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum -y install centos-release-scl
 Loaded plugins: fastestmirror
 Determining fastest mirrors
  * base: data.aonenetworks.kr
@@ -94,40 +88,40 @@ Determining fastest mirrors
 base                                                                                                                                                   | 3.6 kB  00:00:00     
 extras                                                                                                                                                 | 3.4 kB  00:00:00     
 updates                                                                                                                                                | 3.4 kB  00:00:00     
-(1/4): base/7/x86_64/group_gz                                                                                                                          | 166 kB  00:00:00     
-(2/4): extras/7/x86_64/primary_db                                                                                                                      | 180 kB  00:00:00     
-(3/4): updates/7/x86_64/primary_db                                                                                                                     | 2.4 MB  00:00:00     
-(4/4): base/7/x86_64/primary_db                                                                                                                        | 6.0 MB  00:00:01     
+<span style="color:#f92672">(</span>1/4<span style="color:#f92672">)</span>: base/7/x86_64/group_gz                                                                                                                          | <span style="color:#ae81ff">166</span> kB  00:00:00     
+<span style="color:#f92672">(</span>2/4<span style="color:#f92672">)</span>: extras/7/x86_64/primary_db                                                                                                                      | <span style="color:#ae81ff">180</span> kB  00:00:00     
+<span style="color:#f92672">(</span>3/4<span style="color:#f92672">)</span>: updates/7/x86_64/primary_db                                                                                                                     | 2.4 MB  00:00:00     
+<span style="color:#f92672">(</span>4/4<span style="color:#f92672">)</span>: base/7/x86_64/primary_db                                                                                                                        | 6.0 MB  00:00:01     
 Resolving Dependencies
 --&gt; Running transaction check
 ---&gt; Package centos-release-scl.noarch 0:2-2.el7.centos will be installed
---&gt; Processing Dependency: centos-release-scl-rh for package: centos-release-scl-2-2.el7.centos.noarch
+--&gt; Processing Dependency: centos-release-scl-rh <span style="color:#66d9ef">for</span> package: centos-release-scl-2-2.el7.centos.noarch
 --&gt; Running transaction check
 ---&gt; Package centos-release-scl-rh.noarch 0:2-2.el7.centos will be installed
 --&gt; Finished Dependency Resolution
 
 Dependencies Resolved
 
-==============================================================================================================================================================================
+<span style="color:#f92672">==============================================================================================================================================================================</span>
  Package                                            Arch                                Version                                     Repository                           Size
-==============================================================================================================================================================================
+<span style="color:#f92672">==============================================================================================================================================================================</span>
 Installing:
- centos-release-scl                                 noarch                              2-2.el7.centos                              extras                               12 k
-Installing for dependencies:
- centos-release-scl-rh                              noarch                              2-2.el7.centos                              extras                               12 k
+ centos-release-scl                                 noarch                              2-2.el7.centos                              extras                               <span style="color:#ae81ff">12</span> k
+Installing <span style="color:#66d9ef">for</span> dependencies:
+ centos-release-scl-rh                              noarch                              2-2.el7.centos                              extras                               <span style="color:#ae81ff">12</span> k
 
 Transaction Summary
-==============================================================================================================================================================================
-Install  1 Package (+1 Dependent package)
+<span style="color:#f92672">==============================================================================================================================================================================</span>
+Install  <span style="color:#ae81ff">1</span> Package <span style="color:#f92672">(</span>+1 Dependent package<span style="color:#f92672">)</span>
 
-Total download size: 24 k
-Installed size: 39 k
-Is this ok [y/d/N]: y
+Total download size: <span style="color:#ae81ff">24</span> k
+Installed size: <span style="color:#ae81ff">39</span> k
+Is this ok <span style="color:#f92672">[</span>y/d/N<span style="color:#f92672">]</span>: y
 Downloading packages:
-(1/2): centos-release-scl-rh-2-2.el7.centos.noarch.rpm                                                                                                 |  12 kB  00:00:00     
-(2/2): centos-release-scl-2-2.el7.centos.noarch.rpm                                                                                                    |  12 kB  00:00:00     
+<span style="color:#f92672">(</span>1/2<span style="color:#f92672">)</span>: centos-release-scl-rh-2-2.el7.centos.noarch.rpm                                                                                                 |  <span style="color:#ae81ff">12</span> kB  00:00:00     
+<span style="color:#f92672">(</span>2/2<span style="color:#f92672">)</span>: centos-release-scl-2-2.el7.centos.noarch.rpm                                                                                                    |  <span style="color:#ae81ff">12</span> kB  00:00:00     
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Total                                                                                                                                          60 kB/s |  24 kB  00:00:00     
+Total                                                                                                                                          <span style="color:#ae81ff">60</span> kB/s |  <span style="color:#ae81ff">24</span> kB  00:00:00     
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -144,11 +138,8 @@ Dependency Installed:
   centos-release-scl-rh.noarch 0:2-2.el7.centos                                                                                                                               
 
 Complete!
-</code></pre>
-
-<h2 id="devtoolset-7-소프트웨어-컬렉션을-이용하여-gcc-7-을-설치하기">devtoolset-7 소프트웨어 컬렉션을 이용하여 gcc 7 을 설치하기</h2>
-
-<pre><code class="language-shell">$ sudo yum install devtoolset-7
+</code></pre></div><h2 id="devtoolset-7-소프트웨어-컬렉션을-이용하여-gcc-7-을-설치하기">devtoolset-7 소프트웨어 컬렉션을 이용하여 gcc 7 을 설치하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum install devtoolset-7
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
  * base: data.aonenetworks.kr
@@ -156,14 +147,14 @@ Loading mirror speeds from cached hostfile
  * updates: data.aonenetworks.kr
 centos-sclo-rh                                                                                                                                         | 3.0 kB  00:00:00     
 centos-sclo-sclo                                                                                                                                       | 2.9 kB  00:00:00     
-(1/2): centos-sclo-sclo/x86_64/primary_db                                                                                                              | 264 kB  00:00:02     
-(2/2): centos-sclo-rh/x86_64/primary_db                                                                                                                | 3.7 MB  00:00:04     
+<span style="color:#f92672">(</span>1/2<span style="color:#f92672">)</span>: centos-sclo-sclo/x86_64/primary_db                                                                                                              | <span style="color:#ae81ff">264</span> kB  00:00:02     
+<span style="color:#f92672">(</span>2/2<span style="color:#f92672">)</span>: centos-sclo-rh/x86_64/primary_db                                                                                                                | 3.7 MB  00:00:04     
 Resolving Dependencies
 --&gt; Running transaction check
 ---&gt; Package devtoolset-7.x86_64 0:7.1-4.el7 will be installed
---&gt; Processing Dependency: devtoolset-7-toolchain for package: devtoolset-7-7.1-4.el7.x86_64
---&gt; Processing Dependency: devtoolset-7-runtime for package: devtoolset-7-7.1-4.el7.x86_64
---&gt; Processing Dependency: devtoolset-7-perftools for package: devtoolset-7-7.1-4.el7.x86_64
+--&gt; Processing Dependency: devtoolset-7-toolchain <span style="color:#66d9ef">for</span> package: devtoolset-7-7.1-4.el7.x86_64
+--&gt; Processing Dependency: devtoolset-7-runtime <span style="color:#66d9ef">for</span> package: devtoolset-7-7.1-4.el7.x86_64
+--&gt; Processing Dependency: devtoolset-7-perftools <span style="color:#66d9ef">for</span> package: devtoolset-7-7.1-4.el7.x86_64
 --&gt; Running transaction check
 
 ...
@@ -209,34 +200,24 @@ Dependency Updated:
 Complete!
 
 
-</code></pre>
-
-<h2 id="gcc-혹은-g-환경설정하기">gcc 혹은 g++ 환경설정하기</h2>
-
-<pre><code class="language-shell">$ scl enable devtoolset-7 bash
-</code></pre>
-
-<p>이 명령은 devtoolset-7에 포함된 도구를 사용할 수 있는 환경을 즉석으로 구성하여 쉘을 구동시킵니다.<br />
+</code></pre></div><h2 id="gcc-혹은-g-환경설정하기">gcc 혹은 g++ 환경설정하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ scl enable devtoolset-7 bash
+</code></pre></div><p>이 명령은 devtoolset-7에 포함된 도구를 사용할 수 있는 환경을 즉석으로 구성하여 쉘을 구동시킵니다.<br>
 만약, 로그인 할 때 마다 적용되기 위해서는 ~/.bash_profile 에 다음과 같이 추가합니다.</p>
-
-<pre><code class="language-shell">. /opt/rh/devtoolset-7/enable
-</code></pre>
-
-<h2 id="gcc-와-g-버전-확인하기">gcc 와 g++ 버전 확인하기</h2>
-
-<pre><code class="language-shell">$ gcc --version
-gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
-Copyright (C) 2017 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">. /opt/rh/devtoolset-7/enable
+</code></pre></div><h2 id="gcc-와-g-버전-확인하기">gcc 와 g++ 버전 확인하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gcc --version
+gcc <span style="color:#f92672">(</span>GCC<span style="color:#f92672">)</span> 7.3.1 <span style="color:#ae81ff">20180303</span> <span style="color:#f92672">(</span>Red Hat 7.3.1-5<span style="color:#f92672">)</span>
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2017</span> Free Software Foundation, Inc.
+This is free software; see the source <span style="color:#66d9ef">for</span> copying conditions.  There is NO
+warranty; not even <span style="color:#66d9ef">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 $ g++ --version
-g++ (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
-Copyright (C) 2017 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</code></pre>
-
+g++ <span style="color:#f92672">(</span>GCC<span style="color:#f92672">)</span> 7.3.1 <span style="color:#ae81ff">20180303</span> <span style="color:#f92672">(</span>Red Hat 7.3.1-5<span style="color:#f92672">)</span>
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2017</span> Free Software Foundation, Inc.
+This is free software; see the source <span style="color:#66d9ef">for</span> copying conditions.  There is NO
+warranty; not even <span style="color:#66d9ef">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -297,8 +278,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

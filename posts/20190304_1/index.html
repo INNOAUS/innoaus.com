@@ -78,116 +78,69 @@ CentOS7에 PostgreSQL Multi-Master 데이터베이스 Postgresql-BDR 9.4 설치�
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>다음은 2ndQuadrant사에서 만든 PostgreSQL Multi-Master 플러그인 bdr(Bidirectional Replication Plugin)을 설치방법을 정리한 것입니다.</p>
-
+    <p>다음은 2ndQuadrant사에서 만든 PostgreSQL Multi-Master 플러그인 bdr(Bidirectional Replication Plugin)을 설치방법을 정리한 것입니다.</p>
 <h2 id="postgres-bdr-을-소스코드-컴파일-하여-설치하기">Postgres-BDR 을 소스코드 컴파일 하여 설치하기</h2>
-
-<p>소스코드를 컴파일하기 위해서 gcc 컴파일러를 설치해야 합니다.<br />
-여기서는 gcc 7을 사용할 것입니다.<br />
+<p>소스코드를 컴파일하기 위해서 gcc 컴파일러를 설치해야 합니다.<br>
+여기서는 gcc 7을 사용할 것입니다.<br>
 <a href="/posts/20190303/">gcc 7 인스톨 관련 글</a></p>
-
 <h3 id="준비사항">준비사항</h3>
-
-<pre><code class="language-shell">$ sudo yum -y install centos-release-scl
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum -y install centos-release-scl
 $ sudo yum -y install devtoolset-7
 $ sudo yum -y install readline-devel bison-devel bison flex-devel flex zlib-devel
 $ sudo yum -y install git
-</code></pre>
-
-<h3 id="postgres-bdr-9-4-설치하기">Postgres-BDR-9.4 설치하기</h3>
-
+</code></pre></div><h3 id="postgres-bdr-94-설치하기">Postgres-BDR-9.4 설치하기</h3>
 <p>최신 소스코드를 <code>$HOME/2ndquadrant_bdr</code> 폴더에 다운로드한 후 컴파일 합니다.</p>
-
-<pre><code class="language-shell">$ curl -s &quot;https://raw.githubusercontent.com/2ndQuadrant/bdr/bdr-plugin/REL1_0_STABLE/scripts/bdr_quickstart.sh&quot; | bash
-</code></pre>
-
-<h3 id="설치-결과-확인하기">설치 결과 확인하기</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -s <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/2ndQuadrant/bdr/bdr-plugin/REL1_0_STABLE/scripts/bdr_quickstart.sh&#34;</span> | bash
+</code></pre></div><h3 id="설치-결과-확인하기">설치 결과 확인하기</h3>
 <p>컴파일이 성공적으로 진행되었다면, <code>$HOME/2ndquadrant_bdr</code> 폴더에</p>
-
-<pre><code class="language-shell">drwxrwxr-x.  6 user user    56 Mar  3 11:30 bdr
-drwxrwxr-x.  7 user user  4096 Mar  3 11:28 bdr-pg-src
-drwxrwxr-x. 11 user user  4096 Mar  3 11:32 bdr-plugin-src
--rw-rw-r--.  1 user user 16110 Mar  3 11:32 install.log
-</code></pre>
-
-<p>와 같이 <code>bdr</code>, <code>bdr-pg-src</code>, <code>bdr-plugin-src</code> 폴더가 생깁니다.<br />
-<code>bdr</code> 폴더는 컴파일된 결과로 이 폴더를 복사하여 사용하면 됩니다.<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">drwxrwxr-x.  <span style="color:#ae81ff">6</span> user user    <span style="color:#ae81ff">56</span> Mar  <span style="color:#ae81ff">3</span> 11:30 bdr
+drwxrwxr-x.  <span style="color:#ae81ff">7</span> user user  <span style="color:#ae81ff">4096</span> Mar  <span style="color:#ae81ff">3</span> 11:28 bdr-pg-src
+drwxrwxr-x. <span style="color:#ae81ff">11</span> user user  <span style="color:#ae81ff">4096</span> Mar  <span style="color:#ae81ff">3</span> 11:32 bdr-plugin-src
+-rw-rw-r--.  <span style="color:#ae81ff">1</span> user user <span style="color:#ae81ff">16110</span> Mar  <span style="color:#ae81ff">3</span> 11:32 install.log
+</code></pre></div><p>와 같이 <code>bdr</code>, <code>bdr-pg-src</code>, <code>bdr-plugin-src</code> 폴더가 생깁니다.<br>
+<code>bdr</code> 폴더는 컴파일된 결과로 이 폴더를 복사하여 사용하면 됩니다.<br>
 <code>bdr-pg-src</code> 폴더는 2ndQuadrant에서 Multi-master 환경 구성이 가능하도록 postgresql-9.4 를 변경한 코드가 저장된 곳이고, <code>bdr-plugin-src</code> 폴더는 관련된 plugin 소스코드가 저장된 곳입니다.</p>
-
 <p>만약, 컴파일 시 오류가 발생하였다면 폴더 중 <code>bdr</code> 폴더가 생성되지 않습니다.</p>
-
 <h3 id="독립실행환경-구성하기">독립실행환경 구성하기</h3>
-
-<p><code>$HOME/2ndquadrant_bdr/bdr</code> 폴더를 원하는 위치에 복사하여 구성합니다.<br />
+<p><code>$HOME/2ndquadrant_bdr/bdr</code> 폴더를 원하는 위치에 복사하여 구성합니다.<br>
 다음은 <code>$HOME/dbroot</code> 폴더를 가정하였습니다.</p>
-
-<pre><code class="language-shell">$ cp -R $HOME/2ndquadrant_bdr/bdr $HOME/dbroot
-</code></pre>
-
-<p>환경변수에 database 커멘드 실행을 위한 경로를 설정합니다.</p>
-
-<pre><code class="language-shell">$ echo &quot;export PATH=$PATH:$HOME/dbroot/bin&quot; | tee -a ~/.bash_profile
-$ echo &quot;export DBROOT=$HOME/dbroot&quot; | tee -a ~/.bash_profile
-</code></pre>
-
-<p>설정된 환경변수 리로드합니다.</p>
-
-<pre><code class="language-shell">$ . $HOME/.bash_profile
-</code></pre>
-
-<p>버전을 확인합니다.</p>
-
-<pre><code class="language-shell">$ psql --version
-psql (PostgreSQL) 9.4.13
-</code></pre>
-
-<h4 id="데이터베이스-초기화-하기">데이터베이스 초기화 하기</h4>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cp -R $HOME/2ndquadrant_bdr/bdr $HOME/dbroot
+</code></pre></div><p>환경변수에 database 커멘드 실행을 위한 경로를 설정합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ echo <span style="color:#e6db74">&#34;export PATH=</span>$PATH<span style="color:#e6db74">:</span>$HOME<span style="color:#e6db74">/dbroot/bin&#34;</span> | tee -a ~/.bash_profile
+$ echo <span style="color:#e6db74">&#34;export DBROOT=</span>$HOME<span style="color:#e6db74">/dbroot&#34;</span> | tee -a ~/.bash_profile
+</code></pre></div><p>설정된 환경변수 리로드합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ . $HOME/.bash_profile
+</code></pre></div><p>버전을 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ psql --version
+psql <span style="color:#f92672">(</span>PostgreSQL<span style="color:#f92672">)</span> 9.4.13
+</code></pre></div><h4 id="데이터베이스-초기화-하기">데이터베이스 초기화 하기</h4>
 <p><code>$HOME/dbroot/data</code> 폴더에 새로운 데이터베이스를 초기화합니다.</p>
-
-<pre><code class="language-shell">$ initdb -D $DBROOT/data -A trust -U postgres
-</code></pre>
-
-<h4 id="데이터베이스-구동하기">데이터베이스 구동하기</h4>
-
-<pre><code class="language-shell">$ pg_ctl -D /home/user/dbroot/data -l logfile start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ initdb -D $DBROOT/data -A trust -U postgres
+</code></pre></div><h4 id="데이터베이스-구동하기">데이터베이스 구동하기</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ pg_ctl -D /home/user/dbroot/data -l logfile start
 server starting
-</code></pre>
-
-<h4 id="데이터베이스-중지하기">데이터베이스 중지하기</h4>
-
-<pre><code class="language-shell">$ pg_ctl -D /home/user/dbroot/data stop
-waiting for server to shut down.... done
+</code></pre></div><h4 id="데이터베이스-중지하기">데이터베이스 중지하기</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ pg_ctl -D /home/user/dbroot/data stop
+waiting <span style="color:#66d9ef">for</span> server to shut down.... <span style="color:#66d9ef">done</span>
 server stopped
-</code></pre>
-
-<h4 id="데이터베이스-동작-확인하기">데이터베이스 동작 확인하기</h4>
-
+</code></pre></div><h4 id="데이터베이스-동작-확인하기">데이터베이스 동작 확인하기</h4>
 <p>프로세스가 정상동작 확인하기 위하여 <code>ps</code> 커멘드를 이용하여 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ps -ef | grep postgres
+user        <span style="color:#ae81ff">829</span>     <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span> 11:58 pts/0    00:00:00 /home/user/dbroot/bin/postgres -D /home/user/dbroot/data
+user        <span style="color:#ae81ff">831</span>   <span style="color:#ae81ff">829</span>  <span style="color:#ae81ff">0</span> 11:58 ?        00:00:00 postgres: checkpointer process   
+user        <span style="color:#ae81ff">832</span>   <span style="color:#ae81ff">829</span>  <span style="color:#ae81ff">0</span> 11:58 ?        00:00:00 postgres: writer process   
+user        <span style="color:#ae81ff">833</span>   <span style="color:#ae81ff">829</span>  <span style="color:#ae81ff">0</span> 11:58 ?        00:00:00 postgres: wal writer process   
+user        <span style="color:#ae81ff">834</span>   <span style="color:#ae81ff">829</span>  <span style="color:#ae81ff">0</span> 11:58 ?        00:00:00 postgres: autovacuum launcher process   
+user        <span style="color:#ae81ff">835</span>   <span style="color:#ae81ff">829</span>  <span style="color:#ae81ff">0</span> 11:58 ?        00:00:00 postgres: stats collector process   
+user        <span style="color:#ae81ff">838</span>  <span style="color:#ae81ff">1225</span>  <span style="color:#ae81ff">0</span> 11:59 pts/0    00:00:00 grep --color<span style="color:#f92672">=</span>auto postgres
+</code></pre></div><h4 id="데이터베이스-접속-확인하기">데이터베이스 접속 확인하기</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ psql -U postgres
+psql <span style="color:#f92672">(</span>9.4.13<span style="color:#f92672">)</span>
+Type <span style="color:#e6db74">&#34;help&#34;</span> <span style="color:#66d9ef">for</span> help.
 
-<pre><code class="language-shell">$ ps -ef | grep postgres
-user        829     1  0 11:58 pts/0    00:00:00 /home/user/dbroot/bin/postgres -D /home/user/dbroot/data
-user        831   829  0 11:58 ?        00:00:00 postgres: checkpointer process   
-user        832   829  0 11:58 ?        00:00:00 postgres: writer process   
-user        833   829  0 11:58 ?        00:00:00 postgres: wal writer process   
-user        834   829  0 11:58 ?        00:00:00 postgres: autovacuum launcher process   
-user        835   829  0 11:58 ?        00:00:00 postgres: stats collector process   
-user        838  1225  0 11:59 pts/0    00:00:00 grep --color=auto postgres
-</code></pre>
-
-<h4 id="데이터베이스-접속-확인하기">데이터베이스 접속 확인하기</h4>
-
-<pre><code class="language-shell">$ psql -U postgres
-psql (9.4.13)
-Type &quot;help&quot; for help.
-
-postgres=# \q
+postgres<span style="color:#f92672">=</span><span style="color:#75715e"># \q</span>
 $
-</code></pre>
-
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -248,8 +201,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>

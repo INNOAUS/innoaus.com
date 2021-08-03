@@ -74,17 +74,12 @@ CentOS 7 에 Cisco VPN 연결을 위한 VPN 클라이언트 vpnc 설치하기 - 
 </h1>
 
 <div id="article" class="article">
-    
-
-<p>vpnc 패키지는 기본 리포지터리에 패키지가 없어 EPEL(Extra Packages for Enterprise Linux) 최신 패키지 목록을 설치해야 합니다.</p>
-
+    <p>vpnc 패키지는 기본 리포지터리에 패키지가 없어 EPEL(Extra Packages for Enterprise Linux) 최신 패키지 목록을 설치해야 합니다.</p>
 <h2 id="epel-최신-패키지-목록-설치하기">EPEL 최신 패키지 목록 설치하기</h2>
-
 <p>EPEL Site : <a href="https://fedoraproject.org/wiki/EPEL">https://fedoraproject.org/wiki/EPEL</a></p>
-
-<pre><code class="language-shell"># yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span>
 Loaded plugins: fastestmirror
-epel-release-latest-7.noarch.rpm                                                                                               |  15 kB  00:00:00
+epel-release-latest-7.noarch.rpm                                                                                               |  <span style="color:#ae81ff">15</span> kB  00:00:00
 Examining /var/tmp/yum-root-I01hVd/epel-release-latest-7.noarch.rpm: epel-release-7-11.noarch
 Marking /var/tmp/yum-root-I01hVd/epel-release-latest-7.noarch.rpm to be installed
 Resolving Dependencies
@@ -94,19 +89,19 @@ Resolving Dependencies
 
 Dependencies Resolved
 
-======================================================================================================================================================
+<span style="color:#f92672">======================================================================================================================================================</span>
  Package                            Arch                         Version                    Repository                                           Size
-======================================================================================================================================================
+<span style="color:#f92672">======================================================================================================================================================</span>
 Installing:
- epel-release                       noarch                       7-11                       /epel-release-latest-7.noarch                        24 k
+ epel-release                       noarch                       7-11                       /epel-release-latest-7.noarch                        <span style="color:#ae81ff">24</span> k
 
 Transaction Summary
-======================================================================================================================================================
-Install  1 Package
+<span style="color:#f92672">======================================================================================================================================================</span>
+Install  <span style="color:#ae81ff">1</span> Package
 
-Total size: 24 k
-Installed size: 24 k
-Is this ok [y/d/N]: y
+Total size: <span style="color:#ae81ff">24</span> k
+Installed size: <span style="color:#ae81ff">24</span> k
+Is this ok <span style="color:#f92672">[</span>y/d/N<span style="color:#f92672">]</span>: y
 Downloading packages:
 Running transaction check
 Running transaction test
@@ -119,43 +114,37 @@ Installed:
   epel-release.noarch 0:7-11
 
 Complete!
-</code></pre>
-
-<h2 id="vpnc-패키지-검색하기">vpnc 패키지 검색하기</h2>
-
-<pre><code class="language-shell"># yum search vpnc
+</code></pre></div><h2 id="vpnc-패키지-검색하기">vpnc 패키지 검색하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># yum search vpnc</span>
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
  * base: mirror.kakao.com
  * epel: mirror.premi.st
  * extras: mirror.kakao.com
  * updates: mirror.kakao.com
-====================================================================== N/S matched: vpnc =======================================================================
-NetworkManager-vpnc.x86_64 : NetworkManager VPN plugin for vpnc
-NetworkManager-vpnc-gnome.x86_64 : NetworkManager VPN plugin for vpnc - GNOME files
-kde-plasma-networkmanagement-vpnc.x86_64 : Vpnc support for kde-plasma-networkmanagement-extras
-vpnc-script.noarch : Routing setup script for vpnc and openconnect
+<span style="color:#f92672">======================================================================</span> N/S matched: vpnc <span style="color:#f92672">=======================================================================</span>
+NetworkManager-vpnc.x86_64 : NetworkManager VPN plugin <span style="color:#66d9ef">for</span> vpnc
+NetworkManager-vpnc-gnome.x86_64 : NetworkManager VPN plugin <span style="color:#66d9ef">for</span> vpnc - GNOME files
+kde-plasma-networkmanagement-vpnc.x86_64 : Vpnc support <span style="color:#66d9ef">for</span> kde-plasma-networkmanagement-extras
+vpnc-script.noarch : Routing setup script <span style="color:#66d9ef">for</span> vpnc and openconnect
 vpnc.x86_64 : IPSec VPN client compatible with Cisco equipment
 vpnc-consoleuser.x86_64 : Allows console user to run the VPN client directly
 
-  Name and summary matches only, use &quot;search all&quot; for everything.
-</code></pre>
-
-<h2 id="vpnc-패키지-설치하기">vpnc 패키지 설치하기</h2>
-
-<pre><code class="language-shell"># yum install -y vpnc
+  Name and summary matches only, use <span style="color:#e6db74">&#34;search all&#34;</span> <span style="color:#66d9ef">for</span> everything.
+</code></pre></div><h2 id="vpnc-패키지-설치하기">vpnc 패키지 설치하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># yum install -y vpnc</span>
 ...
 Resolving Dependencies
 --&gt; Running transaction check
 ---&gt; Package vpnc.x86_64 0:0.5.3-22.svn457.el7 will be installed
---&gt; Processing Dependency: libgnutls.so.28(GNUTLS_1_4)(64bit) for package: vpnc-0.5.3-22.svn457.el7.x86_64
---&gt; Processing Dependency: vpnc-script for package: vpnc-0.5.3-22.svn457.el7.x86_64
---&gt; Processing Dependency: libgnutls.so.28()(64bit) for package: vpnc-0.5.3-22.svn457.el7.x86_64
+--&gt; Processing Dependency: libgnutls.so.28<span style="color:#f92672">(</span>GNUTLS_1_4<span style="color:#f92672">)(</span>64bit<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> package: vpnc-0.5.3-22.svn457.el7.x86_64
+--&gt; Processing Dependency: vpnc-script <span style="color:#66d9ef">for</span> package: vpnc-0.5.3-22.svn457.el7.x86_64
+--&gt; Processing Dependency: libgnutls.so.28<span style="color:#f92672">()(</span>64bit<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> package: vpnc-0.5.3-22.svn457.el7.x86_64
 --&gt; Running transaction check
 ---&gt; Package gnutls.x86_64 0:3.3.29-8.el7 will be installed
---&gt; Processing Dependency: trousers &gt;= 0.3.11.2 for package: gnutls-3.3.29-8.el7.x86_64
---&gt; Processing Dependency: libnettle.so.4()(64bit) for package: gnutls-3.3.29-8.el7.x86_64
---&gt; Processing Dependency: libhogweed.so.2()(64bit) for package: gnutls-3.3.29-8.el7.x86_64
+--&gt; Processing Dependency: trousers &gt;<span style="color:#f92672">=</span> 0.3.11.2 <span style="color:#66d9ef">for</span> package: gnutls-3.3.29-8.el7.x86_64
+--&gt; Processing Dependency: libnettle.so.4<span style="color:#f92672">()(</span>64bit<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> package: gnutls-3.3.29-8.el7.x86_64
+--&gt; Processing Dependency: libhogweed.so.2<span style="color:#f92672">()(</span>64bit<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> package: gnutls-3.3.29-8.el7.x86_64
 ---&gt; Package vpnc-script.noarch 0:0.5.3-22.svn457.el7 will be installed
 --&gt; Running transaction check
 ---&gt; Package nettle.x86_64 0:2.7.1-8.el7 will be installed
@@ -164,38 +153,38 @@ Resolving Dependencies
 
 Dependencies Resolved
 
-================================================================================================================================================================
+<span style="color:#f92672">================================================================================================================================================================</span>
  Package                                Arch                              Version                                         Repository                       Size
-================================================================================================================================================================
+<span style="color:#f92672">================================================================================================================================================================</span>
 Installing:
- vpnc                                   x86_64                            0.5.3-22.svn457.el7                             epel                             85 k
-Installing for dependencies:
- gnutls                                 x86_64                            3.3.29-8.el7                                    base                            680 k
- nettle                                 x86_64                            2.7.1-8.el7                                     base                            327 k
- trousers                               x86_64                            0.3.14-2.el7                                    base                            289 k
- vpnc-script                            noarch                            0.5.3-22.svn457.el7                             epel                             14 k
+ vpnc                                   x86_64                            0.5.3-22.svn457.el7                             epel                             <span style="color:#ae81ff">85</span> k
+Installing <span style="color:#66d9ef">for</span> dependencies:
+ gnutls                                 x86_64                            3.3.29-8.el7                                    base                            <span style="color:#ae81ff">680</span> k
+ nettle                                 x86_64                            2.7.1-8.el7                                     base                            <span style="color:#ae81ff">327</span> k
+ trousers                               x86_64                            0.3.14-2.el7                                    base                            <span style="color:#ae81ff">289</span> k
+ vpnc-script                            noarch                            0.5.3-22.svn457.el7                             epel                             <span style="color:#ae81ff">14</span> k
 
 Transaction Summary
-================================================================================================================================================================
-Install  1 Package (+4 Dependent packages)
+<span style="color:#f92672">================================================================================================================================================================</span>
+Install  <span style="color:#ae81ff">1</span> Package <span style="color:#f92672">(</span>+4 Dependent packages<span style="color:#f92672">)</span>
 
 Total download size: 1.4 M
 Installed size: 3.7 M
 Downloading packages:
-(1/5): nettle-2.7.1-8.el7.x86_64.rpm                                                                                                     | 327 kB  00:00:00     
-(2/5): trousers-0.3.14-2.el7.x86_64.rpm                                                                                                  | 289 kB  00:00:00     
-(3/5): gnutls-3.3.29-8.el7.x86_64.rpm                                                                                                    | 680 kB  00:00:00     
+<span style="color:#f92672">(</span>1/5<span style="color:#f92672">)</span>: nettle-2.7.1-8.el7.x86_64.rpm                                                                                                     | <span style="color:#ae81ff">327</span> kB  00:00:00     
+<span style="color:#f92672">(</span>2/5<span style="color:#f92672">)</span>: trousers-0.3.14-2.el7.x86_64.rpm                                                                                                  | <span style="color:#ae81ff">289</span> kB  00:00:00     
+<span style="color:#f92672">(</span>3/5<span style="color:#f92672">)</span>: gnutls-3.3.29-8.el7.x86_64.rpm                                                                                                    | <span style="color:#ae81ff">680</span> kB  00:00:00     
 warning: /var/cache/yum/x86_64/7/epel/packages/vpnc-0.5.3-22.svn457.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
-Public key for vpnc-0.5.3-22.svn457.el7.x86_64.rpm is not installed
-(4/5): vpnc-0.5.3-22.svn457.el7.x86_64.rpm                                                                                               |  85 kB  00:00:00     
-(5/5): vpnc-script-0.5.3-22.svn457.el7.noarch.rpm                                                                                        |  14 kB  00:00:00     
+Public key <span style="color:#66d9ef">for</span> vpnc-0.5.3-22.svn457.el7.x86_64.rpm is not installed
+<span style="color:#f92672">(</span>4/5<span style="color:#f92672">)</span>: vpnc-0.5.3-22.svn457.el7.x86_64.rpm                                                                                               |  <span style="color:#ae81ff">85</span> kB  00:00:00     
+<span style="color:#f92672">(</span>5/5<span style="color:#f92672">)</span>: vpnc-script-0.5.3-22.svn457.el7.noarch.rpm                                                                                        |  <span style="color:#ae81ff">14</span> kB  00:00:00     
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Total                                                                                                                           2.4 MB/s | 1.4 MB  00:00:00     
 Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 Importing GPG key 0x352C64E5:
- Userid     : &quot;Fedora EPEL (7) &lt;epel@fedoraproject.org&gt;&quot;
+ Userid     : <span style="color:#e6db74">&#34;Fedora EPEL (7) &lt;epel@fedoraproject.org&gt;&#34;</span>
  Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
- Package    : epel-release-7-11.noarch (installed)
+ Package    : epel-release-7-11.noarch <span style="color:#f92672">(</span>installed<span style="color:#f92672">)</span>
  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 Running transaction check
 Running transaction test
@@ -221,15 +210,11 @@ Dependency Installed:
 Complete!
 
 
-</code></pre>
-
-<h2 id="설치-확인">설치 확인</h2>
-
+</code></pre></div><h2 id="설치-확인">설치 확인</h2>
 <p>설치 후 버전 확인을 하여 설치여부를 확인합니다.</p>
-
-<pre><code class="language-shell"># vpnc --version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># vpnc --version</span>
 vpnc version 0.5.3
-Copyright (C) 2002-2006 Geoffrey Keating, Maurice Massar, others
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> 2002-2006 Geoffrey Keating, Maurice Massar, others
 vpnc comes with NO WARRANTY, to the extent permitted by law.
 You may redistribute copies of vpnc under the terms of the GNU General
 Public License.  For more information about these matters, see the files
@@ -239,36 +224,25 @@ Built with certificate support.
 Supported DH-Groups: nopfs dh1 dh2 dh5
 Supported Hash-Methods: md5 sha1
 Supported Encryptions: null des 3des aes128 aes192 aes256
-Supported Auth-Methods: psk psk+xauth hybrid(rsa)
+Supported Auth-Methods: psk psk+xauth hybrid<span style="color:#f92672">(</span>rsa<span style="color:#f92672">)</span>
 
-</code></pre>
-
-<h2 id="vpn-클라이언트-설정하기">VPN 클라이언트 설정하기</h2>
-
+</code></pre></div><h2 id="vpn-클라이언트-설정하기">VPN 클라이언트 설정하기</h2>
 <p>기본 설정 파일을 활용하여 특정 VPN서버용 설정파일로 만들기위하여 복사하여 설정합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># cp /etc/vpnc/default.conf /etc/vpnc/myvpnc.conf</span>
+<span style="color:#75715e"># vi /etc/vpnc/myvpnc.conf</span>
+IPSec gateway my.vpn.gateway  <span style="color:#75715e"># vpn 서버 주소 혹은 hostname</span>
+IPSec ID my.ipsec.id          <span style="color:#75715e"># vpn group id</span>
+IPSec secret mysecret         <span style="color:#75715e"># vpn group password</span>
+<span style="color:#75715e"># your username goes here:</span>
+Xauth username userid               <span style="color:#75715e"># user id</span>
+Xauth password passwd               <span style="color:#75715e"># user password</span>
 
-<pre><code class="language-shell"># cp /etc/vpnc/default.conf /etc/vpnc/myvpnc.conf
-# vi /etc/vpnc/myvpnc.conf
-IPSec gateway my.vpn.gateway  # vpn 서버 주소 혹은 hostname
-IPSec ID my.ipsec.id          # vpn group id
-IPSec secret mysecret         # vpn group password
-# your username goes here:
-Xauth username userid               # user id
-Xauth password passwd               # user password
-
-</code></pre>
-
-<h2 id="vpn-클라이언트-구동하기">VPN 클라이언트 구동하기</h2>
-
-<pre><code class="language-shell"># vpnc /etc/vpnc/myvpnc.conf
-VPNC started in background (pid: 3581)...
-</code></pre>
-
-<h2 id="vpn-연결끊기">VPN 연결끊기</h2>
-
-<pre><code class="language-shell"># vpnc-disconnect
-</code></pre>
-
+</code></pre></div><h2 id="vpn-클라이언트-구동하기">VPN 클라이언트 구동하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># vpnc /etc/vpnc/myvpnc.conf</span>
+VPNC started in background <span style="color:#f92672">(</span>pid: 3581<span style="color:#f92672">)</span>...
+</code></pre></div><h2 id="vpn-연결끊기">VPN 연결끊기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># vpnc-disconnect</span>
+</code></pre></div>
 </div>
 
 </div><div class="sidebar">
@@ -329,8 +303,8 @@ window.onload = function () {
 
 </div><div class="footer">
         <div class="container">
-                <p>(주)이노스코리아<br>서울시 영등포구 양평로22길 21 코오롱디지털타워 1207<br>support@innoaus.com</p>
-                <p>© 2019 Innoaus Inc. All Rights Reserved.</p>
+                <p>(주)이노스코리아<br>서울시 서초구 반포대로 30길 81, 웅진타워 1222호<br>support@innoaus.com</p>
+                <p>© 2021 Innoaus Korea Inc. All Rights Reserved.</p>
         </div>
 </div></body>
 </html>
