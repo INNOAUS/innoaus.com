@@ -81,32 +81,32 @@ CentOS 7 에서 ACE 라이브러리 빌드하기 - Innoaus 이노스
 <h2 id="최신-릴리스-버전-다운로드-하기">최신 릴리스 버전 다운로드 하기</h2>
 <p><a href="https://github.com/DOCGroup/ACE_TAO/releases">https://github.com/DOCGroup/ACE_TAO/releases</a> 에서 최신 버젼을 다운로드 합니다.<br>
 2019년 3월 4일 현재 최신버전은 6.5.4 입니다.  <code>ACE-6.5.4.tar.gz</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz
-</code></pre></div><h2 id="압축해제하기">압축해제하기</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ tar xvfz ACE-5.6.4.tar.gz
-</code></pre></div><h2 id="컴파일-환경-설정하기">컴파일 환경 설정하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ wget https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-6_5_4/ACE-6.5.4.tar.gz
+</span></span></code></pre></div><h2 id="압축해제하기">압축해제하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ tar xvfz ACE-5.6.4.tar.gz
+</span></span></code></pre></div><h2 id="컴파일-환경-설정하기">컴파일 환경 설정하기</h2>
 <p>ACE 라이브러리 컴파일을 위해서 환경변수 <code>ACE_ROOT</code>를 설정해야 합니다.<br>
 이 때 <code>ACE_ROOT</code> 환경변수는 <code>ACE_wrappers</code> 폴더 경로를 의미합니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ACE_wrappers
-$ export ACE_ROOT<span style="color:#f92672">=</span>$PWD
-</code></pre></div><p>또한 리눅스버전의 <code>config.h</code> 파일을 <code>ACE_wrappers/ace</code> 에 생성합니다.<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd ACE_wrappers
+</span></span><span style="display:flex;"><span>$ export ACE_ROOT<span style="color:#f92672">=</span>$PWD
+</span></span></code></pre></div><p>또한 리눅스버전의 <code>config.h</code> 파일을 <code>ACE_wrappers/ace</code> 에 생성합니다.<br>
 여기서는 간단히 <code>symbolic link</code>를 사용하여 생성합니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ACE_wrappers/ace
-$ ln -s config-linux.h config.h
-</code></pre></div><p>그리고, 컴파일러 옵션을 설정하기위하여 <code>ACE_wrappers/include/makeinclude/platform_macros.GNU</code> 파일을 다음과 같이 생성합니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ vi ACE_wrappers/include/makeinclude/platform_macros.GNU
-include <span style="color:#66d9ef">$(</span>ACE_ROOT<span style="color:#66d9ef">)</span>/include/makeinclude/platform_linux.GNU
-INSTALL_PREFIX<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>HOME<span style="color:#66d9ef">)</span>/devtools
-CPPFLAGS<span style="color:#f92672">=</span>-fPIC
-</code></pre></div><h2 id="동적라이브러리-빌드하기">동적라이브러리 빌드하기</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ACE_wrappers
-$ make -j <span style="color:#ae81ff">8</span> install
-</code></pre></div><p>위와 같이 실행하면 컴파일이 진행되고 결과는 <code>$HOME/devtools</code> 아래에 설치됩니다.<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd ACE_wrappers/ace
+</span></span><span style="display:flex;"><span>$ ln -s config-linux.h config.h
+</span></span></code></pre></div><p>그리고, 컴파일러 옵션을 설정하기위하여 <code>ACE_wrappers/include/makeinclude/platform_macros.GNU</code> 파일을 다음과 같이 생성합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ vi ACE_wrappers/include/makeinclude/platform_macros.GNU
+</span></span><span style="display:flex;"><span>include <span style="color:#66d9ef">$(</span>ACE_ROOT<span style="color:#66d9ef">)</span>/include/makeinclude/platform_linux.GNU
+</span></span><span style="display:flex;"><span>INSTALL_PREFIX<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>HOME<span style="color:#66d9ef">)</span>/devtools
+</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">=</span>-fPIC
+</span></span></code></pre></div><h2 id="동적라이브러리-빌드하기">동적라이브러리 빌드하기</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd ACE_wrappers
+</span></span><span style="display:flex;"><span>$ make -j <span style="color:#ae81ff">8</span> install
+</span></span></code></pre></div><p>위와 같이 실행하면 컴파일이 진행되고 결과는 <code>$HOME/devtools</code> 아래에 설치됩니다.<br>
 여기서 <code>-j 8</code> 은 병렬컴파일 옵션으로 <code>8</code> 은 코어수를 의미합니다.</p>
 <h2 id="정적라이브러리-빌드하기">정적라이브러리 빌드하기</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ACE_wrappers
-$ make -j <span style="color:#ae81ff">8</span> install static_libs_only<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cd ACE_wrappers
+</span></span><span style="display:flex;"><span>$ make -j <span style="color:#ae81ff">8</span> install static_libs_only<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div>
 </div>
 
 </div><div class="sidebar">

@@ -13,7 +13,7 @@
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190312/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660 php-fpm 재기동 후、php-fpm.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정 php-fpm설정 $ cd /etc/php-fpm.d $ vi www.conf # 24행 - user = apache + user = nginx - group = apache + group = nginx # 38행 - listen = 127.0.0.1:9000 + listen = /var/run/php-fpm/php-fpm.sock # 48행 - ;listen.owner = nobody - ;listen.group = nobody - ;listen.mode = 0660 + listen.owner = nginx + listen.group = nginx + listen.mode = 0660 php-fpm 재기동 후、php-fpm.</description>
     </item>
     
     <item>
@@ -22,7 +22,8 @@
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190311/</guid>
-      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16 인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm 버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS ) 서비스 자동시작 설정 $ sudo systemctl enable php-fpm Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.</description>
+      <description>Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정 php7.2, php-fpm인스톨 리포지터리 정보추가 $ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm yum info로 PHP팩키지 정보 확인 $ yum info --enablerepo=remi,remi-php72 php #~~~ Version : 7.2.16 인스톨 $ sudo yum -y install --enablerepo=remi,remi-php72 php php-fpm 버젼확인 $ php -v PHP 7.2.16 (cli) (built: Mar 5 2019 14:45:10) ( NTS ) 서비스 자동시작 설정 $ sudo systemctl enable php-fpm Nginx설정 변(경php-fpm) 일단 php-fpm은 TCP접속으로 확인합니다.
+UNIX socket접속은 다음 기사에서 설명합니다.</description>
     </item>
     
     <item>
@@ -32,7 +33,7 @@
       
       <guid>https://innoaus.com/posts/20190308/</guid>
       <description>작업 로그 형태로 남김니다.
- Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정  Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2. 인스톨 $ sudo yum -y install --enablerepo=nginx nginx 버젼 확인 $ nginx -v nginx version: nginx/1.14.2 Nginx기동 $ sudo systemctl start nginx 브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
+Nginx 1.14인스톨 php7.2,php-fpm인스톨 php-fpm UNIX socket접속설정 Nginx리포지터리추가 $ sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 팩키지 정보에서 버젼 확인 $ sudo yum info --enablerepo=nginx nginx #~~~ Version : 1.14.2. 인스톨 $ sudo yum -y install --enablerepo=nginx nginx 버젼 확인 $ nginx -v nginx version: nginx/1.14.2 Nginx기동 $ sudo systemctl start nginx 브라우져로 IP어드레스(http://xxx.xxx.xxx.xxx/)에 접속해 nginx페이지가 표시되는지 확인합니다.
 루트 디렉터리 변경 Nginx에 설정된 디폴트 디렉터리 ： /usr/share/nginx/html
 /var/www/html/exemple.com 로 변경할 경우</description>
     </item>
@@ -44,7 +45,7 @@
       
       <guid>https://innoaus.com/posts/20190307/</guid>
       <description>동작중인 사용자 서비스를 다운타임을 최소로 하여 업데이트 하는 방법을 간단히 소개합니다.
-가정  서비스는 이미 등록되어 동작 중입니다. 서비스 실행파일 명은 a_process 입니다. 서비스 실행파일 동작에 필요한 shared object 파일 명을 a_lib.so 입니다. 서비스 명은 a_process.service 입니다.  업데이트 시나리오 a_lib.so 파일이 수정되어 이 파일을 교체해야 합니다.
+가정 서비스는 이미 등록되어 동작 중입니다. 서비스 실행파일 명은 a_process 입니다. 서비스 실행파일 동작에 필요한 shared object 파일 명을 a_lib.so 입니다. 서비스 명은 a_process.service 입니다. 업데이트 시나리오 a_lib.so 파일이 수정되어 이 파일을 교체해야 합니다.
 스크립트 작성 업데이트를 위하여 간단한 스크립트를 다음과 같이 작성합니다.
 $ vi update_service.sh #!/bin/sh sudo service a_process.service stop sudo cp a_lib.so {대상폴더}/a_lib.so sudo systemctl daemon-reload sudo service a_process.</description>
     </item>
@@ -83,7 +84,7 @@ $ slice2cpp slice2cpp: error: no input file Usage: slice2cpp [options] slice-fil
       
       <guid>https://innoaus.com/posts/20190304_2/</guid>
       <description>다음은 소스코드를 이용하여 빌드하였거나 복사한 데이터베이스를 서비스로 동작하기 위한 방법을 정리한 것입니다.
-서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 #  # It&amp;#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;#34;/etc/systemd/system/postgresql-9.4.service&amp;#34;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
+서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 # # It&amp;#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;#34;/etc/systemd/system/postgresql-9.4.service&amp;#34;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
     </item>
     
     <item>
@@ -105,11 +106,11 @@ gcc 7 인스톨 관련 글
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://innoaus.com/posts/20190304_3/</guid>
-      <description>개발환경  Windows 10 x64 ASUS BIOS  준비물 Download VirtualBox VirtualBox를 다운로드합니다.
+      <description>개발환경 Windows 10 x64 ASUS BIOS 준비물 Download VirtualBox VirtualBox를 다운로드합니다.
 VirtualBox Download Page Download CentOS 7 ISO 최신 iso파일을 미러사이트에서 다운로드합니다.
 CentOS Download Page
- 파일이름 참고: CentOS-7-x86_64-DVD-1810.iso   VirtualBox에 CentOS 7 새로 만들기 VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.
- VirtualBox를 설치합니다. VirtualBox 실행. VirtualBox -&amp;gt; 새로 만들기.  Name : centos7 64 종류 : Linux 버전 : Red Hat(64-bit) / 64비트 표시되지 않을 때는 4번 진행후 다시 확인합니다.</description>
+파일이름 참고: CentOS-7-x86_64-DVD-1810.iso VirtualBox에 CentOS 7 새로 만들기 VirtualBox에 CentOS 7을 생성하기 위해 다음 과정을 진행합니다.
+VirtualBox를 설치합니다. VirtualBox 실행. VirtualBox -&amp;gt; 새로 만들기. Name : centos7 64 종류 : Linux 버전 : Red Hat(64-bit) / 64비트 표시되지 않을 때는 4번 진행후 다시 확인합니다. 3번 진행시에 64비트가 표시되지 않을 때만 진행합니다.</description>
     </item>
     
     <item>

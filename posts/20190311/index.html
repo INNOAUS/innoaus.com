@@ -89,45 +89,45 @@ CentOS7&#43;Nginx 1.14&#43;php7.2&#43;php-fpm환경구축 2 (php7.2,php-fpm인�
 </ul>
 <h2 id="php72-php-fpm인스톨">php7.2, php-fpm인스톨</h2>
 <h3 id="리포지터리-정보추가">리포지터리 정보추가</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-</code></pre></div><h3 id="yum-info로-php팩키지-정보-확인">yum info로 PHP팩키지 정보 확인</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yum info --enablerepo<span style="color:#f92672">=</span>remi,remi-php72 php
-<span style="color:#75715e">#~~~</span>
-Version     : 7.2.16
-</code></pre></div><h3 id="인스톨">인스톨</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo yum -y install --enablerepo<span style="color:#f92672">=</span>remi,remi-php72 php php-fpm
-</code></pre></div><h3 id="버젼확인">버젼확인</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ php -v
-PHP 7.2.16 <span style="color:#f92672">(</span>cli<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>built: Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">2019</span> 14:45:10<span style="color:#f92672">)</span> <span style="color:#f92672">(</span> NTS <span style="color:#f92672">)</span>
-</code></pre></div><h3 id="서비스-자동시작-설정">서비스 자동시작 설정</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl enable php-fpm
-</code></pre></div><h2 id="nginx설정-변경php-fpm">Nginx설정 변(경php-fpm)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+</span></span></code></pre></div><h3 id="yum-info로-php팩키지-정보-확인">yum info로 PHP팩키지 정보 확인</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ yum info --enablerepo<span style="color:#f92672">=</span>remi,remi-php72 php
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#~~~</span>
+</span></span><span style="display:flex;"><span>Version     : 7.2.16
+</span></span></code></pre></div><h3 id="인스톨">인스톨</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo yum -y install --enablerepo<span style="color:#f92672">=</span>remi,remi-php72 php php-fpm
+</span></span></code></pre></div><h3 id="버젼확인">버젼확인</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ php -v
+</span></span><span style="display:flex;"><span>PHP 7.2.16 <span style="color:#f92672">(</span>cli<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>built: Mar  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">2019</span> 14:45:10<span style="color:#f92672">)</span> <span style="color:#f92672">(</span> NTS <span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="서비스-자동시작-설정">서비스 자동시작 설정</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo systemctl enable php-fpm
+</span></span></code></pre></div><h2 id="nginx설정-변경php-fpm">Nginx설정 변(경php-fpm)</h2>
 <p>일단 <code>php-fpm</code>은 TCP접속으로 확인합니다.<br>
 UNIX socket접속은 다음 기사에서 설명합니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vi /etc/nginx/conf.d/exemple.com.conf
-- <span style="color:#75715e">#location ~ \.php$ {</span>
-- <span style="color:#75715e">#    root           html;</span>
-- <span style="color:#75715e">#    fastcgi_pass   127.0.0.1:9000;</span>
-- <span style="color:#75715e">#    fastcgi_index  index.php;</span>
-- <span style="color:#75715e">#    fastcgi_param SCRIPT_FILENAME /scripts$fastcgi_script_name;</span>
-- <span style="color:#75715e">#    include        fastcgi_params;</span>
-- <span style="color:#75715e">#}</span>
-+ location ~ <span style="color:#ae81ff">\.</span>php$ <span style="color:#f92672">{</span>
-+     root           /var/www/html/exemple.com;
-+     fastcgi_pass   127.0.0.1:9000;
-+     fastcgi_index  index.php;
-+     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
-+     include        fastcgi_params;
-+ <span style="color:#f92672">}</span>
-</code></pre></div><p><code>.conf</code>파일 편집에 문제가 없는지 확인합니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ nginx -t
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-</code></pre></div><p>Nginx 재시작</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart nginx
-</code></pre></div><h2 id="php-동작확인">php 동작확인</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo echo <span style="color:#e6db74">&#34;&lt;?php phpinfo(); ?&gt;&#34;</span> &gt; /var/www/html/exemple.com/phpinfo.php
-</code></pre></div><p>브라우져로 ip어드레스(<code>http://xxx.xxx.xxx.xxx/phpinfo.php</code>)를 입력하여 php 정보확인 화면이 표시 되는지 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo vi /etc/nginx/conf.d/exemple.com.conf
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#location ~ \.php$ {</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#    root           html;</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#    fastcgi_pass   127.0.0.1:9000;</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#    fastcgi_index  index.php;</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#    fastcgi_param SCRIPT_FILENAME /scripts$fastcgi_script_name;</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#    include        fastcgi_params;</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#75715e">#}</span>
+</span></span><span style="display:flex;"><span>+ location ~ <span style="color:#ae81ff">\.</span>php$ <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>+     root           /var/www/html/exemple.com;
+</span></span><span style="display:flex;"><span>+     fastcgi_pass   127.0.0.1:9000;
+</span></span><span style="display:flex;"><span>+     fastcgi_index  index.php;
+</span></span><span style="display:flex;"><span>+     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+</span></span><span style="display:flex;"><span>+     include        fastcgi_params;
+</span></span><span style="display:flex;"><span>+ <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><code>.conf</code>파일 편집에 문제가 없는지 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ nginx -t
+</span></span><span style="display:flex;"><span>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+</span></span><span style="display:flex;"><span>nginx: configuration file /etc/nginx/nginx.conf test is successful
+</span></span></code></pre></div><p>Nginx 재시작</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo systemctl restart nginx
+</span></span></code></pre></div><h2 id="php-동작확인">php 동작확인</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo echo <span style="color:#e6db74">&#34;&lt;?php phpinfo(); ?&gt;&#34;</span> &gt; /var/www/html/exemple.com/phpinfo.php
+</span></span></code></pre></div><p>브라우져로 ip어드레스(<code>http://xxx.xxx.xxx.xxx/phpinfo.php</code>)를 입력하여 php 정보확인 화면이 표시 되는지 확인합니다.</p>
 
 </div>
 

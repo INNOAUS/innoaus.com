@@ -14,7 +14,7 @@
       
       <guid>https://innoaus.com/posts/20190304_2/</guid>
       <description>다음은 소스코드를 이용하여 빌드하였거나 복사한 데이터베이스를 서비스로 동작하기 위한 방법을 정리한 것입니다.
-서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 #  # It&amp;#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;#34;/etc/systemd/system/postgresql-9.4.service&amp;#34;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
+서비스 스크립트 작성 $ vi postgresql.service # Systemd service definition for postgresql-bdr94 # # It&amp;#39;s not recommended to modify this file in-place, because it will be # overwritten during package upgrades. If you want to customize, the # best way is to create a file &amp;#34;/etc/systemd/system/postgresql-9.4.service&amp;#34;, # containing # .include /lib/systemd/system/postgresql-9.4.service # ...make your changes here... # For more info about custom unit files, see # http://fedoraproject.</description>
     </item>
     
     <item>
