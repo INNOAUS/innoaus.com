@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hotspot Planet — 자주 쓰는 Wi-Fi를 원터치로 on Innoaus 이노스</title>
+    <link>https://innoaus.com/hotspotplanet/</link>
+    <description>Recent content in Hotspot Planet — 자주 쓰는 Wi-Fi를 원터치로 on Innoaus 이노스</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language><atom:link href="https://innoaus.com/hotspotplanet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개인정보 처리방침 — Hotspot Planet</title>
+      <link>https://innoaus.com/hotspotplanet/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://innoaus.com/hotspotplanet/privacy/</guid>
+      <description>개인정보 처리방침 (Privacy Policy) 앱 이름: Hotspot Planet
+개발사: (주)이노스코리아 / INNOAUS KOREA INC.
+시행일: 2026년 7월 6일
+1. 개요 (주)이노스코리아(이하 &amp;ldquo;회사&amp;rdquo;)는 Hotspot Planet 앱(이하 &amp;ldquo;앱&amp;rdquo;) 이용자의 개인정보를 소중히 여기며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 앱이 수집·이용·보관하는 정보의 범위와 방법을 안내합니다.
+Hotspot Planet은 사용자가 직접 입력한 Wi-Fi 접속 정보를 기기에 안전하게 저장하고, 빠르게 연결하도록 돕는 앱입니다. 회사는 사용자의 Wi-Fi 자격증명(SSID·비밀번호 등)을 서버로 수집하거나 전송하지 않습니다.
+2. 앱이 다루는 정보 앱이 다루는 정보는 크게 두 가지입니다.</description>
+    </item>
+    
+  </channel>
+</rss>
